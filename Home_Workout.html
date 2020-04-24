@@ -1,0 +1,203 @@
+<!-- Home della sezione HomeWorkout-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+                                                                   <!--use-scalable decide se l'tente puo zoommare da mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- per rendere il sito responsive-->
+        
+      
+      <script src="js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <style type="text/css">
+  
+
+        .rounded-pill{                        /* volevo l'immagine della card solo un po smussata: ho diminuito il border radius da 50 a 3 (Border di bootstrap)*/
+            border-radius:0rem!important      /*alla fine non mi è piu servito*/
+        }
+
+       .card{         
+            height:20%;                 
+                      
+       }
+           
+       /*la uso per fare l'immagine non fissa ma non la riesco a rendere responsive per ora la metto fissa con un semplice img/workout*/
+      
+      .principale{
+      width: 100%; height: 100%; top: 0; left: 0;
+       background: url("img/workout/workoutsfondo2.jpg") no-repeat center top; position: fixed; z-index: -1;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      /*background-attachment: fixed; /*questo centra la foto sullo sfondo*/
+      background-size: cover; /* questo adatta lo sfondo a tutta la pagina*/
+    
+      }
+
+      .navbar-brand   /* ho dovuto impostare la dimensione del log altrimenti sforava per il css inline per renderlo responsive*/
+      {
+        height: 5%;
+        width: 5%;
+      }
+
+      .card-group{    /*volevo le card in basso */
+        margin-top:70%;
+      }
+
+      .h1{
+        margin-top: 20cm;
+      }
+
+    
+        </style>
+       
+        <title> Home Workout</title>
+      
+
+    </head>
+    <body>  
+
+      
+
+
+      <!--aggiungendo la classe  sticky top la navbar rimane fissa--><!--shadow fa l'effetto ombra--> <!--navbar-dark e bg-dark per il tema scuro, p è il padding e mb margin-bottom , rounded bho-->
+      
+      <!--Navbar-->
+      <nav class="sticky-top navbar-expand-lg  navbar  navbar-dark bg-dark shadow-lg  mb-3 rounded" style="width:100%;">
+      
+        <!--Logo-->
+        <a class="navbar-brand" href="#" >
+          <img/workout src="img/Cranio.png" width="50" height="50" alt=""> <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
+          </a>
+
+         <!--bottone che apre la Nvbar ridimensionata-->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+
+        <!--sezioni della Navbar-->
+        <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+         
+              <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item active">
+                  <a class="nav-item nav-link active" href="#">Home </a><!-- <span class="sr-only">(current)</span> -->
+              
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="#">Esercizi</a>
+              
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="#">Schede</a> <!--ml sta per margin left (spacing in bootstrap)-->
+              
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="#">Fondamentali</a>
+                </li>
+            </ul>
+              
+          
+          </div>
+
+          
+     </nav>
+
+
+
+     
+     <h1 align="center" ><font color="White"> Home Workout</font></h1>
+     
+     <!--solo con lo sfondo fisso riesco a farla responsive l'immagine, ancora non ho capito come fare i lcontainer responsive-->
+   <div class=" principale">
+    
+   </div> <!--per ora mi serve solo per mettere l'immagine fissa poi ci aggiungero qualcosa probabilmente-->
+       <!-- <img/workout src="img/workout/workoutsfondo2.jpg" style="width: 100%;"> -->
+   
+
+<!-- card groub mi permette di ordinare le carte in moodo compatto, margin top = 0-->
+<div class=" card-group">
+  <div class="card bg-light text-dark rounded-pill" align=center> <!--sfondo bianco scritte nere-->
+    <img/workout src="img/workout/workoutcard.jpg" class="card-img/workout-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Esercizi</h5>
+      <p class="card-text">Stamattina faccio schifo
+        La camera da letto pare una distilleria
+        La puzza di 'sto whiskey non la copre il dentifricio
+        E forse che sto male è vero, non è una diceria
+        Preferisco perdermi che ritrovarmi
+        Mi sono cercato a lungo, lungo 'sta via
+        Mi hai visto partire solo, senza armi
+        E mi ritrovi alcolizzato in preda alla follia
+        E non posso farne a meno
+        Anni ripetendo, promettendo che smettevo
+        Ferite sotto pelle
+        Vedi me sotto pillole
+        Tutto pallido, questo corpo lo malmeno, ah
+        Non ne posso più (no)</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Footer 3</small>
+    </div>
+  </div>
+  <div class="card bg-light text-dark rounded-pill" align=center>
+    <img/workout src="img/workout/workoutcard2.jpg" class="card-img/workout-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Schede Complete</h5>
+      <p class="card-text">Di vedere mamma senza un euro
+        Senza il tempo per un hobby
+        Lei che per i figli cose folli
+        Che rincasando strilla, le notti
+        "Vittorio non ci stanno i soldi"
+        Non posso che odiarti a te che
+        Hai tutto fra le mani e non combini niente
+        Non si può guarire veramente
+        Da quando un padre assente
+        Si ammazza senza manco dirti niente (Fanculo)
+        Non posso ridare a Chicco David
+        Ma ruggire sulle sue basi, quello sì, ah
+        Dal primo giorno che m'ha detto "vali"
+        Me son messo l'elmetto e gli ho promesso</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">footer 2</small>
+    </div>
+  </div>
+  <div class="card bg-light text-dark rounded-pill" align=center>
+    <img/workout src="img/workout/workoutcard3.jpg" class="card-img/workout-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Basi dell'allenamento</h5>
+      <p class="card-text">Imagine there's no heaven
+        It's easy if you try
+        No hell below us
+        Above us only sky
+        Imagine all the people living for today
+        Imagine there's no countries
+        It isn't hard to do
+        Nothing to kill or die for
+        And no religion too
+        Imagine all the people living life in peace, you
+        You may say I'm a dreamer
+        But I'm not the only one</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">footer 1</small>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+      
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+    </body>
+</html>
+
