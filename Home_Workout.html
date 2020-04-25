@@ -16,19 +16,11 @@
         .rounded-pill{                        /* volevo l'immagine della card solo un po smussata: ho diminuito il border radius da 50 a 3 (Border di bootstrap)*/
             border-radius:0rem!important      /*alla fine non mi è piu servito*/
         }
-
-       .card{         
-            height:20%;                 
-                      
-       }
-
-       
            
-       /*la uso per fare l'immagine non fissa ma non la riesco a rendere responsive per ora la metto fissa con un semplice img/workout*/
-      
+       /*la uso per fare l'immagine di sfondo non fissa, devo metterla in un contenitore */
       .principale{
       width: 100%; height: 100%; top: 0; left: 0;
-       background: url("img/workout/workoutsfondo2.jpg") no-repeat center top; position: fixed; z-index: -1;
+       background: url("assets/img/workout/workoutsfondo2.jpg") no-repeat center top; position: fixed; z-index: -1;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -70,7 +62,7 @@
       
         <!--Logo-->
         <a class="navbar-brand" href="#" >
-          <img/workout src="img/Cranio.png" width="50" height="50" alt=""> <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
+          <img/workout src="assets/img/Cranio.png" width="50" height="50" alt=""> <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
           </a>
 
          <!--bottone che apre la Nvbar ridimensionata-->
@@ -80,7 +72,7 @@
        </button>
 
         <!--sezioni della Navbar-->
-        <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+        <div class=" collapse navbar-collapse" id="navbarSupportedContent"> <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
          
               <ul class="navbar-nav mr-auto text-center">
                 <li class="nav-item active">
@@ -88,7 +80,7 @@
               
                 </li>
                 <li class="nav-item">
-                  <a class="nav-item nav-link" href="#">Esercizi</a>
+                  <a class="nav-item nav-link" href="WorkoutEsercizi.html">Esercizi</a>
               
                 </li>
                 <li class="nav-item">
@@ -121,7 +113,7 @@
 <!-- card groub mi permette di ordinare le carte in moodo compatto, margin top = 0-->
 <div class=" card-group">
   <div class="card bg-light text-dark rounded-pill" align=center> <!--sfondo bianco scritte nere-->
-    <img src="img/workout/workoutcard.jpg" class="card-img-top" alt="">
+    <img src="assets/img/workout/workoutcard.jpg" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">Esercizi</h5>
       <p class="card-text">Stamattina faccio schifo
@@ -144,7 +136,7 @@
     </div>
   </div>
   <div class="card bg-light text-dark rounded-pill" align=center>
-    <img src="img/workout/workoutcard2.jpg" class="card-img-top" alt="">
+    <img src="assets/img/workout/workoutcard2.jpg" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">Schede Complete</h5>
       <p class="card-text">Di vedere mamma senza un euro
@@ -162,12 +154,12 @@
         Dal primo giorno che m'ha detto "vali"
         Me son messo l'elmetto e gli ho promesso</p>
     </div>
-    <div class="card-footer">
+    <div class="card-footer" >
       <small class="text-muted">footer 2</small>
     </div>
   </div>
   <div class="card bg-light text-dark rounded-pill" align=center>
-    <img src="img/workout/workoutcard3.jpg" class="card-img-top" alt="">
+    <img src="assets/img/workout/workoutcard3.jpg" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">Basi dell'allenamento</h5>
       <p class="card-text">Imagine there's no heaven
