@@ -38,7 +38,7 @@
          
               <ul class="navbar-nav mr-auto text-center">
                 <li class="nav-item">
-                  <a class="nav-item nav-link" href="#">Home </a><!-- <span class="sr-only">(current)</span> -->
+                  <a class="nav-item nav-link" href="Home_Workout.html">Home </a><!-- <span class="sr-only">(current)</span> -->
               
                 </li>
                 <li class="nav-item">
@@ -65,7 +65,7 @@
 
 
   <!-- questa si deve muovere quando scrollo, il box serve a non farla sovrapporle all altra navbar-->
-  <nav class=" box-position-2 navbar-expand-lg  navbar  navbar-dark bg-dark shadow-lg rounded"> <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->    
+  <nav class=" box-position-2 navbar-expand-lg  navbar  navbar-dark bg-dark"> <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->    
 
      <!--bottone che apre la Nvbar ridimensionata-->
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
@@ -80,21 +80,22 @@
       <!-- Control buttons -->
 <ul class="navbar-nav mr-auto text-center">
 
-  <li class="nav-item">
-    <a class="nav-item nav-link active" href="#">cerca</a>
-  </li>
+
   <li>
    <div id="myBtnContainer"> <!--l'id mi servira per gestire i bottoni nel javascript-->
-    <button class="btn active" onclick="filterSelection('all')">Tutti</button>  
-
-     <button class="btn" onclick="filterSelection('petto')"> Petto </button>
-     <button class="btn" onclick="filterSelection('addome')"> Addome   </button>
-     <button class="btn" onclick="filterSelection('glutei')"> Glutei </button>
-     <button class="btn" onclick="filterSelection('aerobica')"> Aerobica</button> 
+    <button class="btn all active" onclick="filterSelection('all')">Tutti</button>  
+     <button class="btn petto" onclick="filterSelection('petto')"> Petto </button>
+     <button class="btn addome" onclick="filterSelection('addome')"> Addome   </button>
+     <button class="btn glutei" onclick="filterSelection('glutei')"> Glutei </button>
+     <button class="btn aerobica" onclick="filterSelection('aerobica')"> Aerobica</button> 
      <!--premere uno dei bottoni triggera la funzione javascript filterSelection passandogli come parametro una 
      stringa diversa a seconda di quale bottone si preme.
      verranno mostrati tutti gli oggetti che hanno una classe con nome uguale alla stringa passata alla
     funzione javascript triggerata-->
+
+    <!-- anche fra le classi dei bottoni ho aggiunto una classe che non serve per effetti grafici ma serve per
+    identificare quale bottone viene premuto, cosi che nella funzione js io possa aggiungere la classe active al 
+   bottone che è stato premuto-->
     </div>
   </li>
   </ul>
@@ -124,7 +125,7 @@
     </div>
   </div>
 
-  <div class="card filterDiv glutei ">
+  <div class="card filterDiv show glutei ">
     <img src="assets/img/workout/glutei1.jpg" class="card-img-top" alt="">
     <div class="card-body" >
       <h5 class="card-title">Card title</h5>
@@ -132,7 +133,7 @@
     </div>
   </div>
 
-  <div class="card filterDiv petto ">
+  <div class="card filterDiv show petto ">
     <img src="assets/img/workout/petto1.jpg" class="card-img-top" alt="">
     <div class="card-body" >
       <h5 class="card-title">Card title</h5>
@@ -140,7 +141,7 @@
     </div>
   </div>
 
-  <div class="card filterDiv addome ">
+  <div class="card filterDiv show addome ">
     <img src="assets/img/workout/addome1.jpg" class="card-img-top"  alt="">
     <div class="card-body" >
       <h5 class="card-title">Card title</h5>
@@ -148,7 +149,7 @@
     </div>
   </div>
 
-  <div class="card filterDiv glutei ">
+  <div class="card filterDiv show glutei ">
     <img src="assets/img/workout/glutei1.jpg" class="card-img-top" alt="">
     <div class="card-body" >
       <h5 class="card-title">Card title</h5>
@@ -156,7 +157,7 @@
     </div>
   </div> 
 
-  <div class="card filterDiv petto ">
+  <div class="card filterDiv show petto ">
     <img src="assets/img/workout/petto1.jpg" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
@@ -164,7 +165,7 @@
     </div>
   </div>
 
- <div class="card filterDiv addome">
+ <div class="card filterDiv show addome">
     <img src="assets/img/workout/addome1.jpg" class="card-img-top"alt="">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
@@ -172,7 +173,7 @@
     </div>
   </div>
     
-  <div class="card filterDiv glutei ">
+  <div class="card filterDiv show glutei ">
     <img src="assets/img/workout/glutei1.jpg" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
@@ -180,7 +181,7 @@
     </div>
   </div>
 
-  <div class="card filterDiv petto ">
+  <div class="card filterDiv show petto ">
     <img src="assets/img/workout/petto1.jpg" class="card-img-top"  alt="">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>

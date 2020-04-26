@@ -36,7 +36,7 @@
         /*volevo mettere lo sfondo nel body ma non me lo metteva non so perche, cosi ho crato un contenitore e l'ho metto li*/
        .principale{
             width: 100%; height: 100%; top: 0; left: 0;
-            background: url("assets/img/workout/SfondoEsercizi.jpg") no-repeat center top; position: fixed; z-index: -1;
+            background: url("../assets/img/workout/SfondoEsercizi.jpg") no-repeat center top; position: fixed; z-index: -1;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
