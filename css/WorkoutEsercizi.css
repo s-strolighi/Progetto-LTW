@@ -1,27 +1,29 @@
+#nav-fixed {
+  z-index: 2;
+}
 
-    .box-position-1 {width:100%;position:fixed; top:0%;z-index:3;}  
+#nav-hide {
+  background-color: #333;
+  position: fixed;
+  top: 86px;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 1;
+}
 
-    /*mi serve a posizionare la seconda navbar dove voglio, position: absolute quindi la posizine non guarda gli altri oggetti*/
-     .box-position-2 {width:100%;position:absolute; top:76px;z-index:2; }  
-                                  /*anche se è in px la barra resta responsive e si vede bene anche da mobile, per via dei posizionamenti dei vari oggetti*/
-                                  /* z-index serve a impostare il livello al quale si trova quell'oggetto. 
-                                  se due oggettti si sovrappongono sara visibile solo quello con index piu alto*/
-     
-      .navbar-brand   /*ho dovuto impostare la dimensione del log altrimenti sforava per il css inline per renderlo responsive*/
-      {
-        height: 5%;
-        width: 5%;
-      }
+.titolo {
+  position: relative;
+  left: 0%;
+  /*il left lo sposta rispetto al centro perche nel tag del titolo c'è align center, se metto position relative*/
+  z-index: 0;
+  /* margin-bottom: 50rem;*/
+  /* era solo per verificare il comportamento degli oggetti quando si scrolla */
+  margin-top: 130px;
+  /*anche qui uso i px e rimane responsive, se uso la percentuale sfaciola la posizione su mobile*/
+}
 
-     .titolo{
-       position: relative;
-       left:0%;    /*il left lo sposta rispetto al centro perche nel tag del titolo c'è align center, se metto position relative*/
-       z-index:0;
-      /* margin-bottom: 50rem;*/   /* era solo per verificare il comportamento degli oggetti quando si scrolla */
-       margin-top: 130px;     /*anche qui uso i px e rimane responsive, se uso la percentuale sfaciola la posizione su mobile*/
-     }
-
-     /* se usiamo position poi gestiamo la collocazione con i 4 attributi top,bottom,right,left
+/* se usiamo position poi gestiamo la collocazione con i 4 attributi top,bottom,right,left
         position:
                   relative --> indica che viene messo in relazione alla sua posizione di norma
                   absolute --> rispetto alla radice html
@@ -31,30 +33,36 @@
                   altre cose su bootstrap*/
 
 
-     
 
-        /*volevo mettere lo sfondo nel body ma non me lo metteva non so perche, cosi ho crato un contenitore e l'ho metto li*/
-       .principale{
-            width: 100%; height: 100%; top: 0; left: 0;
-            background: url("../assets/img/workout/SfondoEsercizi.jpg") no-repeat center top; position: fixed; z-index: -1;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-attachment: fixed; /*questo centra la foto sullo sfondo*/
-            background-size: cover; /* questo adatta lo sfondo a tutta la pagina*/
-      }
 
-      /*GRAFICA DEL FILTRO*/
+/*volevo mettere lo sfondo nel body ma non me lo metteva non so perche, cosi ho crato un contenitore e l'ho metto li*/
+.principale {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../assets/img/workout/SfondoEsercizi.jpg") no-repeat center top;
+  position: fixed;
+  z-index: -1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+  /*questo centra la foto sullo sfondo*/
+  background-size: cover;
+  /* questo adatta lo sfondo a tutta la pagina*/
+}
 
-      /* Style the buttons */
+/*GRAFICA DEL FILTRO*/
+
+/* Style the buttons */
 .btn {
   border: none;
   outline: none;
   padding: 12px 16px;
   background-color: #f1f1f1;
   cursor: pointer;
-  color:black
-  
+  color: black
 }
 
 /* Add a light grey background on mouse-over */
@@ -69,59 +77,80 @@
 }
 
 /*in questa sotto classe metto anche tutti gli stili delle carte, come la larghezza*/
-.filterDiv {    /*tutti gli oggetti filtrabili devono avere questa classe per potermi riferire a loro nel javascript*/
-                /*tutte le card hanno questa classe*/
-  float:left;  /*ordina da sinistra a destra le linee righe di esercizi*/
-  display:none; /*se metto none le card si vedono solo se premo tutti. quindi all'inizio la pagina è vuota*/
-  max-width: 20%;
-  overflow:scroll;          /*cosi il testo in eccesso nelle card non sfora ma possiamo scorrere per visualizzarlo*/
+.filterDiv {
+  /*tutti gli oggetti filtrabili devono avere questa classe per potermi riferire a loro nel javascript*/
+  /*tutte le card hanno questa classe*/
+
+  display: none;
+  /*se metto none le card si vedono solo se premo tutti. quindi all'inizio la pagina è vuota*/
+
+  overflow: scroll;
+  /*cosi il testo in eccesso nelle card non sfora ma possiamo scorrere per visualizzarlo*/
   margin: 1rem
 }
 
-.card-img-top{
-  height: 10rem;   /*!!!USARE L'UNITA rem PER DIMENSIONI RESPONSIVE E RELATIVE*/
+.card-img-top {
+  height: 25vw;
+  object-fit: cover;
 }
 
-.card-body{
+.card-body {
   height: 10rem;
-  
+
 }
 
-.mio-container{     /*il container che contiene tutti gli oggetti filtrabili*/
-  overflow: hidden  ;
+.mio-container {
+  /*il container che contiene tutti gli oggetti filtrabili*/
+  overflow: hidden;
 }
 
 /* The "show" class is added to the filtered elements */
 .show {
-  width:50%;
+  width: 22.6vw;
   display: block;
 }
-
 
 /*gestione dei breakpoint per visualizzare le schede bene su schermi di ogni dimensione*/
 
 
+
+@media (max-width: 1610px) {
+  .show {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 1290px) {
+  .show {
+    width: 46vw;
+  }
+  .card-img-top {
+    height: 45vw;
+  }
+}
+
+@media (max-width: 1213px) {
+  .show {
+    width: 44vw;
+  }
+  .card-img-top {
+    height: 52vw;
+  }
+}
+
 @media (max-width: 800px) {
 
-.filterDiv{
-  /*float: left;*/
-    position: relative;  /*aggiungo questo per poter spostare le schede con top,right e averle centrate*/
-    left:25%;
-    display:none; 
-    max-width: 100%;
-    overflow:scroll;  
-}   
+  .show {
+    width: 100%;
+  }
 
-.show {
-  width:50%;
-  display:block ;
+  .card-img-top {
+    height: 80vw;
+  }
 }
-    
-}
-   
+
 /*
 
 altri eventuali @media
 
 */
-

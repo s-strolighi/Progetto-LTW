@@ -1,0 +1,32 @@
+.rounded-pill {
+    /* volevo l'immagine della card solo un po smussata: ho diminuito il border radius da 50 a 3 (Border di bootstrap)*/
+    border-radius: 0rem !important
+        /*alla fine non mi è piu servito*/
+}
+
+/*la uso per fare l'immagine di sfondo non fissa, devo metterla in un contenitore */
+.principale {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("assets/img/workout/workoutsfondo2.jpg") no-repeat center top;
+    position: fixed;
+    z-index: -1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /*background-attachment: fixed; /*questo centra la foto sullo sfondo*/
+    background-size: cover;
+    /* questo adatta lo sfondo a tutta la pagina*/
+
+}
+
+.card-group {
+    /*volevo le card in basso */
+    margin-top: 70%;
+}
+
+.h1 {
+    margin-top: 20cm;
+}

@@ -1,207 +1,278 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Esercizi </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- per rendere il sito responsive-->
-        
-    <script src="js/bootstrap.min.js"></script>       <!-- collego i fogli di stle css e i fogli javascript fatti da me e di bootstrap-->
-    <script src="js/WorkoutEsercizi.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/WorkoutEsercizi.css">
-    
-  </head>
-  <body>
 
-   
-<div class="principale"></div> <!--serve solo a mette l'immagine di sfondo-->
+<head>
+  <title> Esercizi </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- per rendere il sito responsive-->
 
-       <!--PRIMA Navbar-->
-       
-       
-       
-       <!-- fixed top la tiene ferma in alto anche mentre scrollo-->
-       <nav class=" box-position-1  navbar-expand-lg  navbar  navbar-dark bg-dark shadow-lg rounded mt-0" >
-      
-        <!--Logo-->
-        <a class="navbar-brand" href="#" >
-          <img/workout src="assets/img/Cranio.png" width="50" height="50" alt=""> <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
-          </a>
+  <!-- collego i fogli di stle css e i fogli javascript fatti da me e di bootstrap-->
+  <script src="../../js/WorkoutEsercizi.js"></script>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/WorkoutEsercizi.css">
 
-         <!--bottone che apre la Nvbar ridimensionata-->
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-       </button>
+</head>
 
-        <!--sezioni della Navbar-->
-        <div class=" collapse navbar-collapse" id="navbarSupportedContent">
-         
-              <ul class="navbar-nav mr-auto text-center">
-                <li class="nav-item">
-                  <a class="nav-item nav-link" href="Home_Workout.html">Home </a><!-- <span class="sr-only">(current)</span> -->
-              
-                </li>
-                <li class="nav-item">
-                  <a class="nav-item nav-link active" href="#">Esercizi</a>
-              
-                </li>
-                <li class="nav-item">
-                  <a class="nav-item nav-link" href="#">Schede</a> <!--ml sta per margin left (spacing in bootstrap)-->
-              
-                </li>
-                <li class="nav-item">
-                  <a class="nav-item nav-link" href="#">Fondamentali</a>
-                </li>
-              </ul>
-          </div>
-     </nav>
+<body>
 
 
-    
+  <div class="principale"></div>
+  <!--serve solo a mette l'immagine di sfondo-->
+
+  <!--PRIMA Navbar-->
+
+  <!-- fixed top la tiene ferma in alto anche mentre scrollo-->
+  <nav id="nav-fixed" class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark shadow-lg rounded mt-0">
+
+    <!--Logo-->
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../assets/img/logo.png" width="60" height="60" alt="">
+      <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
+    </a>
+
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--sezioni della Navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../HomeWorkout.html">Home </a>
+          <!-- <span class="sr-only">(current)</span> -->
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="#">Esercizi</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="Schede.html">Schede</a>
+          <!--ml sta per margin left (spacing in bootstrap)-->
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="Teoria.html">Teoria</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
-     <!--SECONDA NAVBAR con il filtra e il cerca-->
+
+
+
+  <!--SECONDA NAVBAR con il filtra e il cerca-->
 
 
 
   <!-- questa si deve muovere quando scrollo, il box serve a non farla sovrapporle all altra navbar-->
-  <nav class=" box-position-2 navbar-expand-lg  navbar  navbar-dark bg-dark"> <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->    
+  <nav id="nav-hide" class="navbar-expand-lg navbar navbar-dark bg-dark">
+    <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->
 
-     <!--bottone che apre la Nvbar ridimensionata-->
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
-       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-   </button>
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!--sezioni della Navbar-->
-<div class="collapse navbar-collapse" id="navbarSupportedContent2"> <!--l id mi serve per potermi riferire a questa navbar nel bottone della navbar ridimensionata-->
-     
+    <!--sezioni della Navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <!--l id mi serve per potermi riferire a questa navbar nel bottone della navbar ridimensionata-->
+
       <!-- bottoni che filtrano -->
       <!-- Control buttons -->
-<ul class="navbar-nav mr-auto text-center">
+      <ul class="navbar-nav mr-auto text-center">
 
 
-  <li>
-   <div id="myBtnContainer"> <!--l'id mi servira per gestire i bottoni nel javascript-->
-    <button class="btn all active" onclick="filterSelection('all')">Tutti</button>  
-     <button class="btn petto" onclick="filterSelection('petto')"> Petto </button>
-     <button class="btn addome" onclick="filterSelection('addome')"> Addome   </button>
-     <button class="btn glutei" onclick="filterSelection('glutei')"> Glutei </button>
-     <button class="btn aerobica" onclick="filterSelection('aerobica')"> Aerobica</button> 
-     <!--premere uno dei bottoni triggera la funzione javascript filterSelection passandogli come parametro una 
+        <li>
+          <div id="myBtnContainer">
+            <!--l'id mi servira per gestire i bottoni nel javascript-->
+            <button class="btn all active" onclick="filterSelection('all')">Tutti</button>
+            <button class="btn petto" onclick="filterSelection('petto')"> Petto </button>
+            <button class="btn addome" onclick="filterSelection('addome')"> Addome </button>
+            <button class="btn glutei" onclick="filterSelection('glutei')"> Glutei </button>
+            <button class="btn aerobica" onclick="filterSelection('aerobica')"> Aerobica</button>
+            <button class="btn gambe" onclick="filterSelection('gambe')"> Gambe</button>
+            <button class="btn schiena" onclick="filterSelection('schiena')"> Schiena</button>
+            <button class="btn braccia" onclick="filterSelection('braccia')"> Braccia</button>
+            <button class="btn spalle" onclick="filterSelection('spalle')"> Spalle</button>
+            <!--premere uno dei bottoni triggera la funzione javascript filterSelection passandogli come parametro una 
      stringa diversa a seconda di quale bottone si preme.
      verranno mostrati tutti gli oggetti che hanno una classe con nome uguale alla stringa passata alla
     funzione javascript triggerata-->
 
-    <!-- anche fra le classi dei bottoni ho aggiunto una classe che non serve per effetti grafici ma serve per
+            <!-- anche fra le classi dei bottoni ho aggiunto una classe che non serve per effetti grafici ma serve per
     identificare quale bottone viene premuto, cosi che nella funzione js io possa aggiungere la classe active al 
    bottone che è stato premuto-->
+          </div>
+        </li>
+      </ul>
     </div>
-  </li>
-  </ul>
- </div>
 
-</nav>
+  </nav>
 
 
 
- <!--finite le navbar metto il titolo-->
+  <!--finite le navbar metto il titolo-->
 
 
- <h1 class="titolo" align=center><font color=White>Esercizi</font></h1> <!--titolo pagin avisualizzato tra i due navbar-->
-   
+  <h1 class="titolo text-center text-light">Esercizi</h1>
 
+  <!--dopo il titolo metto il card deck con le card con gli esercizi-->
 
- <!--dopo il titolo metto il card deck con le card con gli esercizi-->
-
- <div class="mio-container"> <!--tutti gli oggetti che sono soggetti al filtro li metto nel mio container-->
-
-
-  <div class="card filterDiv show addome "> <!--!!!!!!le carte che hanno gia la classe show in partenza vengono mostrate fin dall'inizio-->
-    <img src="assets/img/workout/addome1.jpg" class="card-img-top"   alt="">
-    <div class="card-body" >
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  <div class="row mio-container text-center m-2">
+    <!--tutti gli oggetti che sono soggetti al filtro li metto nel mio container-->
+    <div class="card filterDiv show aerobica gambe">
+      <!--!!!!!!le carte che hanno gia la classe show in partenza vengono mostrate fin dall'inizio-->
+      <img src="../../assets/img/workout/EserciziBurpees.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Burpees</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card filterDiv show glutei ">
-    <img src="assets/img/workout/glutei1.jpg" class="card-img-top" alt="">
-    <div class="card-body" >
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card  has supporting text below as a natural lead-in to a has supporting text below as a natural lead-in to ahas supporting text below as a natural lead-in to additional content.</p>
+    <div class="card filterDiv show gambe">
+      <img src="../../assets/img/workout/EserciziCalfRaises.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Calf Raises</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to a has supporting text below as
+          a natural lead-in to ahas supporting text below as a natural lead-in to additional content.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card filterDiv show petto ">
-    <img src="assets/img/workout/petto1.jpg" class="card-img-top" alt="">
-    <div class="card-body" >
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    <div class="card filterDiv show schiena braccia">
+      <img src="../../assets/img/workout/EserciziChinUp.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Trazione supina</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card filterDiv show addome ">
-    <img src="assets/img/workout/addome1.jpg" class="card-img-top"  alt="">
-    <div class="card-body" >
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="card filterDiv show braccia petto">
+      <img src="../../assets/img/workout/EserciziDiamondPushUp.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Diamond push-up</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card filterDiv show glutei ">
-    <img src="assets/img/workout/glutei1.jpg" class="card-img-top" alt="">
-    <div class="card-body" >
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text has supporting text below as a natural lead-in to a has supporting text below as a natural lead-in to a below as a natural lead-in to additional content.</p>
+    <div class="card filterDiv show glutei">
+      <img src="../../assets/img/workout/EserciziHipBridge.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Hip Bridge</h5>
+        <p class="card-text">This card has supporting text has supporting text below as a natural lead-in to a has
+          supporting text below as a natural lead-in to a below as a natural lead-in to additional content.</p>
+      </div>
     </div>
-  </div> 
 
-  <div class="card filterDiv show petto ">
-    <img src="assets/img/workout/petto1.jpg" class="card-img-top" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    <div class="card filterDiv show glutei">
+      <img src="../../assets/img/workout/EserciziHipThrust.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Hip Thrust</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
     </div>
-  </div>
 
- <div class="card filterDiv show addome">
-    <img src="assets/img/workout/addome1.jpg" class="card-img-top"alt="">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="card filterDiv show addome aerobica">
+      <img src="../../assets/img/workout/EserciziClimbers.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Scalatore</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
     </div>
-  </div>
+
+    <div class="card filterDiv show gambe glutei">
+      <img src="../../assets/img/workout/EserciziLunges.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Affondi</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+          content. This content is a little bit longer.</p>
+      </div>
+    </div>
+
+    <div class="card filterDiv show spalle">
+      <img src="../../assets/img/workout/EserciziPikePushUp.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Pike push-up</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+
+    <div class="card filterDiv show gambe">
+      <img src="../../assets/img/workout/EserciziPistolSquat.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Pistol squat</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
+
+    <div class="card filterDiv show schiena braccia">
+      <img src="../../assets/img/workout/EserciziPullUp.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Trazione prona</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
+
+    <div class="card filterDiv show addome">
+      <img src="../../assets/img/workout/EserciziSitUp.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Sit-up</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
     
-  <div class="card filterDiv show glutei ">
-    <img src="assets/img/workout/glutei1.jpg" class="card-img-top" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    <div class="card filterDiv show braccia petto">
+      <img src="../../assets/img/workout/EserciziPushUp.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Piegamenti</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card filterDiv show petto ">
-    <img src="assets/img/workout/petto1.jpg" class="card-img-top"  alt="">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    <div class="card filterDiv show gambe glutei">
+      <img src="../../assets/img/workout/EserciziSquat.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Squat</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
     </div>
+
+    <div class="card filterDiv show gambe glutei aerobica">
+      <img src="../../assets/img/workout/EserciziSquatJump.gif" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Squat jump</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+          This card has even longer content than the first to show that equal height action.</p>
+      </div>
+    </div>
+
   </div>
-  
-   
+  <!--chiusura container-->
 
-</div> <!--chiusura container-->
+  <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
-      
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-          crossorigin="anonymous"></script>
-  </body>
 </html>
