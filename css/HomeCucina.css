@@ -1,0 +1,92 @@
+html,
+body {
+    height:100%;
+}
+
+/*Testo al centro del body*/
+.centrale{                 
+    position:absolute;
+    top: 30%;
+    left:40%;
+}
+
+/*Sfondo home*/
+.principale{
+    width: 100%; height: 100%; top: 0; left: 0;
+    background: url("../assets/img/cucina/Home1.jpg") no-repeat center top;
+    position: fixed;
+    z-index: -1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: fixed; /*questo centra la foto sullo sfondo*/
+    background-size: cover; /* questo adatta lo sfondo a tutta la pagina*/
+}
+
+/*Stile del testo al centro della home*/
+.stile-testo-centrale{
+    font-size:5vw;
+    z-index:2;
+    border: 3px solid #f1f1f1;
+    padding: 20px;
+}
+/*Dimensione immagine della card*/
+.card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+/*Margine del card-group*/
+.card-group {
+    margin-top:50%;
+}
+
+@media (max-width: 1700px) {
+    .card-group{
+        margin-top:70%;
+    }
+}
+@media (max-width:1200px){
+    .card-group{
+        margin-top:100%;
+    } 
+}
+
+@media (max-width:900px){
+    .card-group{
+        margin-top:110%;
+    } 
+}
+
+@media (max-width:800px){
+    .card-group{
+        margin-top:100%;
+    } 
+    .card-img-top {
+        width: 100%;
+        height: 70vw;
+        object-fit: cover;
+    }
+}
+/*
+@media (max-width:750px){
+    .card-group{
+        margin-top:132%;
+    } 
+}
+
+@media (max-width:650px){
+    .card-group{
+        margin-top:140%;
+    } 
+}
+
+@media (max-width:625px){
+    .card-group{
+        margin-top:150%;
+    } 
+}
+*/
+
+
+
