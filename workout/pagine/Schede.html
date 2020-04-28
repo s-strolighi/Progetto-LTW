@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Schede </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- per rendere il sito responsive-->
+
+  <!-- collego i fogli di stle css e i fogli javascript fatti da me e di bootstrap-->
+  <script src="../../js/WorkoutSchede.js"></script>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/WorkoutSchede.css">
+
+
+  
+  <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+  <div class="principale"></div>
+  <!--serve solo a mette l'immagine di sfondo-->
+
+  <!--PRIMA Navbar-->
+
+  <!-- fixed top la tiene ferma in alto anche mentre scrollo-->
+  <nav id="nav-fixed" class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark shadow-lg rounded mt-0">
+
+    <!--Logo-->
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../assets/img/logo.png" width="60" height="60" alt="">
+      <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
+    </a>
+
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--sezioni della Navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../HomeWorkout.html">Home </a>
+          <!-- <span class="sr-only">(current)</span> -->
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="Esercizi.html">Esercizi</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="Schede.html">Schede</a>
+          <!--ml sta per margin left (spacing in bootstrap)-->
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="Teoria.html">Teoria</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  
+  <!-- questa si deve muovere quando scrollo, il box serve a non farla sovrapporle all altra navbar-->
+  <nav id="nav-hide" class="navbar-expand-lg navbar navbar-dark bg-dark">
+    <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->
+
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--sezioni della Navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <!--l id mi serve per potermi riferire a questa navbar nel bottone della navbar ridimensionata-->
+
+     <!--nella navbar metto solo la casella cerca del filtro-->
+      <ul class="navbar-nav mr-auto text-center">
+        <li>
+          <input class="search" type="text" id="myInput" onkeyup="myFunction()"  placeholder="Cerca per nome scheda">
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--finite le navbar metto il titolo-->
+  <h1 class="title text-center text-dark ">Schede</h1>
+
+
+
+
+<!-- fuori dalla navbar vado a mettere l'elenco(in questo caso sara di card) tra cui filtrare-->
+<ul id="myUL">
+
+  <!--voce 1-->
+  <li>
+    <div class="voce">
+    <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="../../assets/img/workout/SchedeCard1.jpg" class="card-img image" alt="..."> 
+
+        <div class="overlay">
+         
+            
+            <table class="table">
+              <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+              <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+              <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+              <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+              </table>
+  
+           
+        </div>
+
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">prima carta</h5>
+          <p class="card-text">zero</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+
+<!--voce 2-->
+  <li>
+    <div class="voce">
+    <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="../../assets/img/workout/SchedeCard2.jpg" class="card-img image" alt="...">
+
+        <div class="overlay">
+         
+            
+            <table class="table">
+              <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+              <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+              <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+              <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+              </table>
+  
+            </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">seconda carta</h5>
+          <p class="card-text">nulla</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+
+
+<!--voce 3-->
+<li>
+  <div class="voce">
+  <div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="../../assets/img/workout/SchedeCard3.jpg" class="card-img image" alt="...">
+
+      <div class="overlay">
+        
+          
+          <table class="table">
+            <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+            <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            </table>
+
+             </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">terza carta</h5>
+        <p class="card-text">nothing</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</li>
+
+<!--voce 4-->
+<li>
+  <div class="voce">
+  <div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="../../assets/img/workout/SchedeCard4.jpg" class="card-img image" alt="...">
+
+      <div class="overlay">
+       
+          
+          <table class="table">
+            <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+            <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            </table>
+
+         </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">quarta carta</h5>
+        <p class="card-text">zero</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</li>
+
+<!--voce 5-->
+<li>
+  <div class="voce">
+  <div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="../../assets/img/workout/SchedeCard5.jpg" class="card-img image" alt="...">
+
+      <div class="overlay">
+       
+          
+          <table class="table">
+            <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+            <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            </table>
+
+         
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">quinta carta</h5>
+        <p class="card-text">zero</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</li>
+
+<!--voce 6-->
+<li>
+  <div class="voce">
+  <div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="../../assets/img/workout/SchedeCard6.png" class="card-img image" alt="...">
+
+      <div class="overlay">
+        
+          
+          <table class="table">
+            <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+            <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            </table>
+
+         </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">sesta carta</h5>
+        <p class="card-text">zero</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</li>
+
+<!--voce 7-->
+<li>
+  <div class="voce"> 
+  <div class="card mb-3">    <!--classe card con 3 di margine sotto-->
+  <div class="row no-gutters"> 
+    <div class="col-md-4">
+      <img src="../../assets/img/workout/SchedeCard7.jpg" class="card-img image" alt="...">
+
+      <!--la classe che permette l'apparizione della slide-->
+      <div class="overlay">
+        
+          
+          <table class="table">
+            <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+            <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            </table>
+
+         
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">settima carta</h5>
+        <p class="card-text">zero</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</li>
+
+<!--voce 8-->
+<li>
+  <div class="voce">
+  <div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="../../assets/img/workout/SchedeCard8.jpg" class="card-img image" alt="...">
+     
+      <!--la classe che permette l'apparizione della slide-->
+      <div class="overlay">
+        
+          
+          <!-- la tabella con esercizi serie e ripetizioni, messa nella slide-->
+          <table class="table">
+            <tr><td>Esercizio</td><td> Serie 1</td><td>Serie 2</td><td>Serie 3</td></tr>
+            <tr><td> Squat </td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Leg curl</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            <tr><td> Military Press</td><td>10 rep</td><td>10 rep</td><td>10 rep</td></tr>
+            </table>
+          
+
+          
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">ottava carta</h5>
+        <p class="card-text">zero</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</li>
+
+
+</ul>
+
+
+</body>
+
+</html>
