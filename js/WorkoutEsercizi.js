@@ -3,7 +3,7 @@ function filterSelection(c) {
   var c2 = c;
   var x, i, y, k;
   x = document.getElementsByClassName("filterDiv"); //x = array degli oggetti che hanno la classe filterDiv (tutti quelli che possono essere filtrati)
-  if (c == "all") c = "";
+  if (c == "tutti") c = "";
 
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) //per tutti gli oggetti filtrabili
