@@ -12,17 +12,6 @@
   z-index: 1;
 }
 
-.titolo {
-  position: relative;
-  left: 0%;
-  /*il left lo sposta rispetto al centro perche nel tag del titolo c'è align center, se metto position relative*/
-  z-index: 0;
-  /* margin-bottom: 50rem;*/
-  /* era solo per verificare il comportamento degli oggetti quando si scrolla */
-  margin-top: 130px;
-  /*anche qui uso i px e rimane responsive, se uso la percentuale sfaciola la posizione su mobile*/
-}
-
 /* se usiamo position poi gestiamo la collocazione con i 4 attributi top,bottom,right,left
         position:
                   relative --> indica che viene messo in relazione alla sua posizione di norma
@@ -32,7 +21,14 @@
                   
                   altre cose su bootstrap*/
 
+.title{
 
+  margin-top: 5rem;
+  font-size: 3rem;
+  font-weight: 300;
+    line-height: 1.2;
+    text-shadow: 0px 0px black;
+}
 
 
 /*volevo mettere lo sfondo nel body ma non me lo metteva non so perche, cosi ho crato un contenitore e l'ho metto li*/
@@ -99,6 +95,9 @@
 
 }
 
+.h1{
+  font-size: 10rem;
+}
 .mio-container {
   /*il container che contiene tutti gli oggetti filtrabili*/
   overflow: hidden;

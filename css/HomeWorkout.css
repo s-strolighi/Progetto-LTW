@@ -10,7 +10,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: url("assets/img/workout/workoutsfondo2.jpg") no-repeat center top;
+    background: url("../assets/img/workout/workoutsfondo2.jpg") no-repeat center top;
     position: fixed;
     z-index: -1;
     -webkit-background-size: cover;
