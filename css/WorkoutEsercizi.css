@@ -79,9 +79,7 @@
 
   display: none;
   /*se metto none le card si vedono solo se premo tutti. quindi all'inizio la pagina è vuota*/
-
-  overflow: scroll;
-  /*cosi il testo in eccesso nelle card non sfora ma possiamo scorrere per visualizzarlo*/
+  overflow: hidden; /* di base è overflow hidden, viene impostato su scroll al caricamento della pagina o si resize della pagina*/
   margin: 1rem
 }
 
@@ -111,6 +109,10 @@
 
 /*gestione dei breakpoint per visualizzare le schede bene su schermi di ogni dimensione*/
 
+.scroll{
+   overflow: scroll;
+   overflow-x: hidden;
+}
 
 
 @media (max-width: 1610px) {

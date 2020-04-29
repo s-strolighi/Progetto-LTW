@@ -1,33 +1,61 @@
 //filterSelection("all")
 function filterSelection(c) {
-  var c2 = c;
-  var x, i, y, k;
-  x = document.getElementsByClassName("filterDiv"); //x = array degli oggetti che hanno la classe filterDiv (tutti quelli che possono essere filtrati)
-  if (c == "tutti") c = "";
 
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) //per tutti gli oggetti filtrabili
-  {
-    RemoveClass(x[i], "show"); //rimuoviamo a tutti la classe show (quella che permette che siano visibili definita nel file css)     
-    if (x[i].className.indexOf(c) > -1) {
-      AddClass(x[i], "show"); //x[i].className restituisce le classi dell'oggetto attuale
-    } //indexOf ritorna la prima occorrenza della stringa c in quelle classi
-    //poi verifica se la stringa ritornata è >-1 (in pratica se c'è stato un riscontro)
-    //se è cosi allora aggiungo la classe show che permette di mostrare l'oggetto
-  }
+  buttons = document.getElementsByClassName("btn"); //elenco dei bottoni
+  filters = []; //elenco dei filtri attualmente attivi
 
-  //faccio la stessa cosa con la classe active dei bottoni cosi da evidenziare solo quello appena premuto
-  y = document.getElementsByClassName("btn");
+  if(c == "tutti") c='';
 
-  for (k = 0; k < y.length; k++) {
-    RemoveClass(y[k], "active");
-    if (y[k].className.indexOf(c2) > -1) {
-      AddClass(y[k], "active");
+  //solo se c == "tutti" li setto tutti disattivati
+  for (var i = 0; i < buttons.length; i++) {
+    if(buttons[i].className.indexOf(c) > -1){
+      if(buttons[i].className.indexOf('active') > -1 || c == '') { //attivo bottone se ha quel filtro o se "tutti" è attivo
+        RemoveClass(buttons[i], "active");
+      }
+      else{
+        AddClass(buttons[i], "active");
+      }
+      
+    }
+
+    //salvo le classi dei bottoni attivi come filtri attualmente attivi
+    if (buttons[i].className.indexOf('active') > -1 && buttons[i].className.indexOf('tutti') < 0) {
+      filters[filters.length]=getFilter(buttons[i]); //aggiungo a filters[] tutte le classi dei bottoni attivi
     }
   }
 
+  //se non ho filtri attivi (tutte le schede), attivo il primo bottone
+  if(filters.length == 0){
+    AddClass(buttons[0], 'active');
+  }
+  else{
+    RemoveClass(buttons[0], 'active');
+  }
+
+  cards = document.getElementsByClassName("filterDiv"); //x = array degli oggetti che hanno la classe filterDiv (tutti quelli che possono essere filtrati)
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < cards.length; i++) //per tutti gli oggetti filtrabili
+  {
+    card_class = cards[i].className.split(' '); //tutte le classi della cards
+
+    // !IMPORTANTE! every controlla che TUTTE le occorrenze matchano, SOME controlla che almeno una matcha
+    if (filters.some(filtro => card_class.indexOf(filtro) > -1) || filters.length==0) { //controllo che i filtri selezionati nei bottoni sono presenti all'interno delle calssi della cards
+      //se la card deve essere vista
+      AddClass(cards[i], "show"); 
+    }
+    else{
+      RemoveClass(cards[i], "show");
+    }
+  }
 
 } //chiusura funzione
+
+//Restituisce la classe del bottone inerente agli esercizi (toglie active e btn dalle classi)
+function getFilter(c){
+  classes = c.className.split(' ');
+  classes = classes.filter(e => e !== 'btn').filter(e => e !== 'active');
+  return(classes[0]);
+}
 
 // Show filtered elements
 function AddClass(element, name) {
@@ -35,7 +63,7 @@ function AddClass(element, name) {
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
+    if (arr1.indexOf(arr2[i]) < 0) {
       element.className += " " + arr2[i];
     }
   }
@@ -57,11 +85,27 @@ function RemoveClass(element, name) {
 // movimento navbar del filtra
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("nav-hide").style.top = "86px";
-    } else {
-      document.getElementById("nav-hide").style.top = "-86px";
-    }
-    prevScrollpos = currentScrollPos;
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("nav-hide").style.top = "86px";
+  } else {
+    document.getElementById("nav-hide").style.top = "-86px";
   }
+  prevScrollpos = currentScrollPos;
+}
+
+
+
+window.onresize = scrollCheck;
+window.onload = scrollCheck;
+
+function scrollCheck() {
+  var e = document.getElementsByClassName("card");
+  for (var i = 0; i < e.length; i++) {
+    if (0 > e[i].clientHeight - e[i].scrollHeight) {
+      e[i].className += " scroll";
+    }
+  }
+}
+
+//mostro la barra all'interno delle card solo se il testo va in overflow
