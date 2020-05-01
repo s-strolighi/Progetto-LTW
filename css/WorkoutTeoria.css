@@ -1,0 +1,108 @@
+
+/*TUTTE LE DIMENSIONI E LO STILE IN QUESTO FOGLIO SONO QUELLE INIZILI CHE POI BISOGNERA MODIFICARE NEL JS
+ PER QUANDO APRO LA SIDEBAR E ALLA FINE DEL FOGLIO PER QUANDO RIDIENSIONO LA PAGINA*/
+
+ /*contiene la navbar dei menu fissa sopra*/
+ #nav-fixed
+{   
+    z-index: 5;  
+}
+
+
+/*SIDEBAR: INIZIO*/
+/*stile e dimensioni della sidebar*/
+.sidebar
+ {
+  margin: 0;
+  top:86px;
+  padding: 0;
+  width: 15%; /*il restate 85% lo prende il contenitore*/
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a 
+{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active 
+{
+  background-color: lightblue;
+  color: white;
+}
+
+/* Links on mouse-over except the active link*/
+.sidebar a:hover:not(.active) 
+{
+  background-color: #555;
+  color: white;
+}
+
+/*SIDEBAR: FINE*/
+
+#contenitore{
+  top:86px;
+  position: relative; /*rispetto alla pagina*/
+  width:85%; /*della pagina intera*/
+  margin-left:15%; /*la larghezza della sidebar*/
+}
+
+
+#titolo{
+
+  
+  background-color: #f1f1f1;
+  width:100%;     /*del contenitore*/
+  margin-top:0;   /*del contenitore*/
+  text-align: center;
+  font-weight: 400;
+  font-size: 50px;
+  color: black;
+}
+
+/*dimensioni e stile della zona dinamica iniziali, cioè quando la sidebar è chiusa*/
+#zonaDinamica
+{
+  margin-left: 0%; /*del contenitore*/
+  border: grey solid;
+  width:100%; /*del contenitore*/
+  margin-top:6px; /*lo stacco pochissimo dal titolo*/
+  height: 1000px;
+ 
+}
+
+
+
+
+/*da mobile o ridimensionato la sidebar diventa topbar sotto quella originale*/
+/*IMPORTANTE: a seconda del numero di indici che decidiamo di metterci in fase finale vanno cambiate solo:
+            -margin top del contenitore
+            */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;  /*deve stare ferma anche quando va su*/
+    z-index: 2;       /*titolo e zona dinamica devono passargli dietro on davanti*/
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+
+  #contenitore{
+    top:125px; /*devo aumentare questo valore perche devo fare spazio per la sidebar risalita*/
+    position: relative; /*rispetto alla pagina*/
+    width:100%; /*quando la sidebar va su il contenitore si prende tutta la larghezza di pagina*/
+    margin-left:0%; /*sidebar che è andata su*/
+  }
+}
+
+
+
