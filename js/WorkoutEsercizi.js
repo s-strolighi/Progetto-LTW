@@ -4,31 +4,29 @@ function filterSelection(c) {
   buttons = document.getElementsByClassName("btn"); //elenco dei bottoni
   filters = []; //elenco dei filtri attualmente attivi
 
-  if(c == "tutti") c='';
+  if (c == "tutti") c = '';
 
   //solo se c == "tutti" li setto tutti disattivati
   for (var i = 0; i < buttons.length; i++) {
-    if(buttons[i].className.indexOf(c) > -1){
-      if(buttons[i].className.indexOf('active') > -1 || c == '') { //attivo bottone se ha quel filtro o se "tutti" è attivo
+    if (buttons[i].className.indexOf(c) > -1) {
+      if (buttons[i].className.indexOf('active') > -1 || c == '') { //attivo bottone se ha quel filtro o se "tutti" è attivo
         RemoveClass(buttons[i], "active");
-      }
-      else{
+      } else {
         AddClass(buttons[i], "active");
       }
-      
+
     }
 
     //salvo le classi dei bottoni attivi come filtri attualmente attivi
     if (buttons[i].className.indexOf('active') > -1 && buttons[i].className.indexOf('tutti') < 0) {
-      filters[filters.length]=getFilter(buttons[i]); //aggiungo a filters[] tutte le classi dei bottoni attivi
+      filters[filters.length] = getFilter(buttons[i]); //aggiungo a filters[] tutte le classi dei bottoni attivi
     }
   }
 
   //se non ho filtri attivi (tutte le schede), attivo il primo bottone
-  if(filters.length == 0){
+  if (filters.length == 0) {
     AddClass(buttons[0], 'active');
-  }
-  else{
+  } else {
     RemoveClass(buttons[0], 'active');
   }
 
@@ -39,11 +37,10 @@ function filterSelection(c) {
     card_class = cards[i].className.split(' '); //tutte le classi della cards
 
     // !IMPORTANTE! every controlla che TUTTE le occorrenze matchano, SOME controlla che almeno una matcha
-    if (filters.some(filtro => card_class.indexOf(filtro) > -1) || filters.length==0) { //controllo che i filtri selezionati nei bottoni sono presenti all'interno delle calssi della cards
+    if (filters.some(filtro => card_class.indexOf(filtro) > -1) || filters.length == 0) { //controllo che i filtri selezionati nei bottoni sono presenti all'interno delle calssi della cards
       //se la card deve essere vista
-      AddClass(cards[i], "show"); 
-    }
-    else{
+      AddClass(cards[i], "show");
+    } else {
       RemoveClass(cards[i], "show");
     }
   }
@@ -51,10 +48,10 @@ function filterSelection(c) {
 } //chiusura funzione
 
 //Restituisce la classe del bottone inerente agli esercizi (toglie active e btn dalle classi)
-function getFilter(c){
+function getFilter(c) {
   classes = c.className.split(' ');
   classes = classes.filter(e => e !== 'btn').filter(e => e !== 'active');
-  return(classes[0]);
+  return (classes[0]);
 }
 
 // Show filtered elements
@@ -86,26 +83,15 @@ function RemoveClass(element, name) {
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
+
+  position = document.getElementById("nav-fixed").clientHeight;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("nav-hide").style.top = "86px";
+    document.getElementById("nav-hide").style.top = position+"px";
   } else {
-    document.getElementById("nav-hide").style.top = "-86px";
+    document.getElementById("nav-hide").style.top = "-"+position+"86px";
   }
   prevScrollpos = currentScrollPos;
 }
 
-
-
-window.onresize = scrollCheck;
-window.onload = scrollCheck;
-
-function scrollCheck() {
-  var e = document.getElementsByClassName("card");
-  for (var i = 0; i < e.length; i++) {
-    if (0 > e[i].clientHeight - e[i].scrollHeight) {
-      e[i].className += " scroll";
-    }
-  }
-}
 
 //mostro la barra all'interno delle card solo se il testo va in overflow

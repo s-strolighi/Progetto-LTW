@@ -1,3 +1,8 @@
+body {
+  background-image: url(../assets/img/workout/pattern.png);
+  background-attachment: fixed;
+}
+
 #nav-fixed {
   z-index: 2;
 }
@@ -5,7 +10,6 @@
 #nav-hide {
   background-color: #333;
   position: fixed;
-  top: 86px;
   width: 100%;
   display: block;
   transition: top 0.3s;
@@ -28,25 +32,6 @@
   font-weight: 300;
     line-height: 1.2;
     text-shadow: 0px 0px black;
-}
-
-
-/*volevo mettere lo sfondo nel body ma non me lo metteva non so perche, cosi ho crato un contenitore e l'ho metto li*/
-.principale {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: url("../assets/img/workout/SfondoEsercizi.jpg") no-repeat center top;
-  position: fixed;
-  z-index: -1;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-attachment: fixed;
-  /*questo centra la foto sullo sfondo*/
-  background-size: cover;
-  /* questo adatta lo sfondo a tutta la pagina*/
 }
 
 /*GRAFICA DEL FILTRO*/
@@ -79,8 +64,8 @@
 
   display: none;
   /*se metto none le card si vedono solo se premo tutti. quindi all'inizio la pagina è vuota*/
-  overflow: hidden; /* di base è overflow hidden, viene impostato su scroll al caricamento della pagina o si resize della pagina*/
-  margin: 1rem
+  margin: 1rem;
+
 }
 
 .card-img-top {
@@ -93,12 +78,26 @@
 
 }
 
+.card {
+  margin: 0 auto;
+  /* Added */
+  float: none;
+  /* Added */
+  margin-bottom: 2%;
+  /* Added */
+    overflow: auto;
+
+}
+
 .h1{
   font-size: 10rem;
 }
 .mio-container {
   /*il container che contiene tutti gli oggetti filtrabili*/
-  overflow: hidden;
+  text-align: center; 
+  width: 96%;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
 /* The "show" class is added to the filtered elements */
@@ -109,19 +108,15 @@
 
 /*gestione dei breakpoint per visualizzare le schede bene su schermi di ogni dimensione*/
 
-.scroll{
-   overflow: scroll;
-   overflow-x: hidden;
-}
 
 
-@media (max-width: 1610px) {
+@media (max-width: 1600px) {
   .show {
     width: 30vw;
   }
 }
 
-@media (max-width: 1290px) {
+@media (max-width: 1300px) {
   .show {
     width: 46vw;
   }
@@ -130,7 +125,7 @@
   }
 }
 
-@media (max-width: 1213px) {
+@media (max-width: 1200px) {
   .show {
     width: 44vw;
   }
@@ -151,7 +146,6 @@
 }
 
 /*
-
 altri eventuali @media
 
 */

@@ -1,0 +1,112 @@
+<!-- Home della sezione Intrattenimento-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <!--pagina responsive-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/HomeIntrattenimento.css" />
+    <!--css-->
+    <title>Home Intrattenimento </title>
+    <!--titolo-->
+</head>
+
+<body>
+    <!-- navbar-->
+    <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-3">
+        <!--Inserisci stile in file css-->
+        <!--Logo-->
+        <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" width="60" height="60"
+                alt="" /></a>
+        <!--Immagine da cambiare-->
+
+        <!--bottone che apre la Nvbar ridimensionata-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--Elementi navbar-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
+            <ul class="navbar-nav mr-auto text-center">
+                <!--Home-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="HomeIntrattenimento.html">Home</a>
+                </li>
+                <!--Film e serie-->
+                <li class="nav-item">
+                    <a class="nav-link" href="pagine/FilmSerieTV.html">Film/Serie TV</a>
+                    <!--Link mancante-->
+                </li>
+                <!--Musica-->
+                <li class="nav-item">
+                    <a class="nav-link" href="pagine/Musica.html">Musica</a>
+                    <!--Link mancante-->
+                </li>
+                <!--Videogiochi-->
+                <li class="nav-item">
+                    <a class="nav-link" href="pagine/Videogiochi.html">Videogiochi</a>
+                    <!--Link mancante-->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="centrale">
+        <h1 class="stile-testo-centrale text-light">Intrattenimento</h1>
+    </div>
+
+    <!--Card delle sottosezioni-->
+    <div class="card-group">
+        <!--Prima card (Film e serie)-->
+        <div class="card">
+            <a href="pagine/FilmSerieTV.html"><img src="../assets/img/intrattenimento/Home2.jpg" class="card-img-top"
+                    alt=""></a>
+            <div class="card-body">
+                <a href="pagine/FilmSerieTV.html">
+                    <h5 class="card-title">Film e serie TV</h5>
+                </a>
+                <p class="card-text">In questa sezione troverai moltissimi servizi che forniscono film e serie per non annoiarti mai!
+                </p>
+            </div>
+        </div>
+        <!--Seconda card (Musica)-->
+        <div class="card">
+            <a href="pagine/Musica.html"><img src="../assets/img/intrattenimento/Home3.jpg" class="card-img-top"
+                    alt=""></a>
+            <div class="card-body">
+                <a href="pagine/Musica.html">
+                    <h5 class="card-title">Musica</h5>
+                </a>
+                <p class="card-text">Metti le cuffie e lasciati ispirare dalla nostra ampia sezione musicale!</p>
+            </div>
+        </div>
+        <!--Terza card (Videogiochi)-->
+        <div class="card">
+            <a href="pagine/Videogiochi.html"><img src="../assets/img/intrattenimento//Home4.jpg" class="card-img-top"
+                    alt=""></a>
+            <div class="card-body">
+                <a href="pagine/Videogiochi.html">
+                    <h5 class="card-title">Videogiochi</h5>
+                </a>
+                <p class="card-text">Sezione videogiochiiii</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

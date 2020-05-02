@@ -10,7 +10,7 @@ function myFunction() {
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) /*scorro tutte le voci del menu*/
   {
-    card = li[i].getElementsByClassName("card-title")[0]; /*dalla voce i del menu prendo l'elemento per nome della classe(prendo la div che contiene il titolo cosi cerco per titolo di card/scheda)*/
+    card = li[i].getElementsByClassName("card")[0]; /*dalla voce i del menu prendo l'elemento per nome della classe(prendo la div che contiene il titolo cosi cerco per titolo di card/scheda)*/
     txtValue =  card.textContent || card.innerText  /*metto in txtvalue quello che c'è scritto all'interno dei tag con classe card mb-3 */ 
     if (txtValue.toUpperCase().indexOf(filter) > -1) /*se c'è un occorrenza di filter(cioe il testo inserito in search) in txtvalue(cioe nel testo all'interno delle card)*/
      {
@@ -19,6 +19,21 @@ function myFunction() {
       li[i].style.display = "none"; /*se non è cosi assegno none all' attributo css display di quella voce*/
     }
   }
+}
+
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+
+  position = document.getElementById("nav-fixed").clientHeight;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("nav-hide").style.top = position + "px";
+  } else {
+    document.getElementById("nav-hide").style.top = "-" + position + "86px";
+  }
+  prevScrollpos = currentScrollPos;
 }
 
 

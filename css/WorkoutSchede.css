@@ -1,18 +1,20 @@
+body{
+  background-image: url(../assets/img/workout/pattern.png);
+  background-attachment: fixed;
+}
 
-/*per la posizione delle due navabar fissa e non*/
 #nav-fixed {
-    z-index: 2;
-  }
-  
-  #nav-hide {
-    background-color: #333;
-    position: fixed;
-    top: 86px;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
-    z-index: 1;
-  }
+  z-index: 2;
+}
+
+#nav-hide {
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 1;
+}
   
 .title{
 
@@ -23,30 +25,6 @@
     text-shadow: 0px 0px black;
  
   }
-
-
-/*per lo sfondo che in questo caso non credo serva */
- /* .principale {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: black no-repeat center top;
-    position: fixed;
-    z-index: -1;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-attachment: fixed;
-    /*questo centra la foto sullo sfondo*/
-   /* background-size: cover;
-    /* questo adatta lo sfondo a tutta la pagina
-  }*/
-  
-
-
-
-
 
 
  /*stile della casella di ricerca*/
@@ -71,23 +49,6 @@
     margin: 0;
   }
   
-  /*stile delle voci di menu, solo di quelli figli di li, cioe quelli in elenchi puntati*/
-  .voce {
-    border: 1px solid #ddd; /* Add a border to all links */
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6; /* Grey background color */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove default text underline */
-    font-size: 18px; /* Increase the font-size */
-    color: black; /* Add a black text color */
-    display: block; /* Make it into a block element to fill the whole list */
-  }
-
-  
-  /*effetto per i link negli elenchi quando passo con il mouse, tranne che sull header*/
-  .voce:hover:not(.header) {
-    background-color: #eee; /* Add a hover effect to all links, except for headers */
-  }
 
   
   .card-img{
@@ -104,16 +65,15 @@
 }
 
 .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #008CBA;
-    overflow: hidden;           /*tronca il testo in eccesso*/
-    width: 100%;
-    height: 0;
-    transition: 0.5s ease;      /*tempo impiegato per passare da altezza di default 0 a quella impotata per quando passo con il mouse*/
-   overflow:scroll; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;      /*tempo impiegato per passare da altezza di default 0 a quella impotata per quando passo con il mouse*/
+  overflow: auto; 
 }
 
   .col-md-4:hover .overlay { /* hover = quando ci passo con il mouse si aggiunge alla classe .overlay l'altezza 100%*/
@@ -127,121 +87,5 @@ la slide per tutte le possibili dimensioni. Vanno tutte bene ma per ipad sfaciol
     border: 10rem;
     border-color: blanchedalmond;
     max-width: 100%;
+    overflow: auto;
   }
-
-
-
-
-
-
-
-
-/*volevo rendere il colore della scritta del placeholder uguale al colore della gif search*/
-::-webkit-input-placeholder { /* WebKit browsers */ /*tipo edge*/
-    color:royalblue ;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:  royalblue;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: royalblue;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:  royalblue;
-}
-  
-
-
-
-
-/*gestione dei breakpoint per visualizzare le schede bene su schermi di ogni dimensione*/
-@media (max-width: 1610px) {
-   
-    #myInput {
-        background-image: url('../assets/gif/search.gif'); /* Add a search icon to input */
-        background-repeat: no-repeat; /* Do not repeat the icon image */
-        background-clip: border-box;
-        background-size: 3rem;
-        width: 100%; /* Full-width */
-        font-size: 16px; /* Increase font-size */
-        color: black;
-        padding: 12px 20px 12px 40px; /* Add some padding */
-        border: 1px solid #ddd; /* Add a grey border */
-       /* margin-top:2rem ; /* Add some space below the input */
-      }
-  }
-  
-  @media (max-width: 1290px) {
-  
-   /* .card-img {
-      height: 45vw;
-    }*/
-
-    #myInput {
-        background-image: url('../assets/gif/search.gif'); /* Add a search icon to input */
-        background-repeat: no-repeat; /* Do not repeat the icon image */
-        background-clip: border-box;
-        background-size: 3rem;
-        width: 100%; /* Full-width */
-        font-size: 16px; /* Increase font-size */
-        color: black;
-        padding: 12px 20px 12px 40px; /* Add some padding */
-        border: 1px solid #ddd; /* Add a grey border */
-        margin-top:2rem ; /* Add some space below the input */
-      }
-  }
-  
-  @media (max-width: 1213px) {  
-   
-   /* .card-img {
-      height: 45vw;
-      width: 100%;
-    }*/
-
-    #myInput {
-        background-image: url('../assets/gif/search.gif'); /* Add a search icon to input */
-        background-repeat: no-repeat; /* Do not repeat the icon image */
-        background-clip: border-box;
-        background-size: 3rem;
-        width: 100%; /* Full-width */
-        font-size: 16px; /* Increase font-size */
-        color: black;
-        padding: 12px 20px 12px 40px; /* Add some padding */
-        border: 1px solid #ddd; /* Add a grey border */
-        margin-top:2rem ; /* Add some space below the input */
-      }
-  }
-  
-  @media (max-width: 800px) {   /*non so perche se modifico questo modifica la visualizzazione da ipad, che è l'unica sfaciolata*/
-  /*
-    .card-img {
-      height: 40vw;
-      width: 100%;
-    }
-  
-    .table {  
-        border: 10rem;
-        border-color: blanchedalmond;
-        width:5rem;
-      }
-*/
-
-    #myInput {
-        background-image: url('../assets/gif/search.gif'); /* Add a search icon to input */
-        background-repeat: no-repeat; /* Do not repeat the icon image */
-        background-clip: border-box;
-        background-size: 3rem;
-        width: 100%; /* Full-width */
-        font-size: 16px; /* Increase font-size */
-        color: black;
-        padding: 12px 20px 12px 40px; /* Add some padding */
-        border: 1px solid #ddd; /* Add a grey border */
-        margin-top:2rem ; /* Add some space below the input */
-      }
-  }
-  
-  /*
-  
-  altri eventuali @media
-  
-  */
