@@ -53,23 +53,19 @@ body{
   
   .card-img{
       width: 100%;
+      height: auto;
+      display: block;
   }
 
 
 
   /*da qui css per la tabella overlay*/
-  .image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #008CBA;
+  background-color:lightblue;
   width: 100%;
   height: 0;
   transition: 0.5s ease;      /*tempo impiegato per passare da altezza di default 0 a quella impotata per quando passo con il mouse*/
@@ -89,3 +85,28 @@ la slide per tutte le possibili dimensioni. Vanno tutte bene ma per ipad sfaciol
     max-width: 100%;
     overflow: auto;
   }
+
+
+  /*volevo rendere il colore della scritta del placeholder uguale al colore della gif search in tutti i browser*/
+::-webkit-input-placeholder { /* WebKit browsers */ /*tipo edge*/
+  color:royalblue ;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:  royalblue;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: royalblue;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:  royalblue;
+}
+
+
+
+@media (min-width: 768px) and (max-width: 900px)
+{
+.row{          /*IMPORTANTE: questa dimensione da modificare per avere l'immagine piu grande o piu piccola e far entrare sempre 
+              la tabella overlay al suo interno*/
+     width:150%;
+    }
+}
