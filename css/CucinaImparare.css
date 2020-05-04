@@ -1,0 +1,189 @@
+body {
+    height:100vw;
+    background-image: url("../assets/img/cucina/pattern.png");
+}
+/*contenitore carte per gestire i margini*/
+.contenitore-cards{
+    height:100%;
+    margin-left:33%;
+    margin-right:15%;
+}
+
+/*spazio tra le carte + altezza delle carte*/
+.card{
+    margin-top:5%;
+    height:20vw;
+}
+
+/*scroll del corpo delle carte*/
+.card-body{
+    overflow:auto;
+    overflow-x:hidden;
+    height:20vw;
+}
+
+/*scritta a 22 pixel*/
+.stile-testo {
+    font-size: 22px;
+}
+
+/*ridimensionamento immagine card*/
+.card-img{
+    object-fit:cover;
+    height:100%;
+}
+
+/*ridimensionamento contenuto card*/
+.row{
+    height:100%;
+}
+
+/*ridimensionamento classe small*/
+small{
+    font-size:15px;
+}
+
+/*INIZIO CSS DELLO SLIDER*/
+/*css per il range slider*/
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    margin-top:15vh;
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+/*FINE CSS DELLO SLIDER*/
+
+/*sidebar*/
+.sidebar {
+    margin: 0;
+    top:76px;
+    padding: 0;
+    width: 18vw; /*il restate 85% lo prende il contenitore*/
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    opacity:0.85;
+  }
+
+  /*in questo modo gli stili gia esistenti di elenchi puntato sono tolti(senza questo verrebbe il classico elenco con il pallino a sinistra di tutte le voci*/
+  #myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+/*distanza tra il primo e il secondo filtro*/
+.filtra-radio{
+    margin-top:15vh;
+}
+
+/*sposto di pochissimo gli elementi radio del filtra per categoria*/
+li {
+    margin-left:5px;
+}
+
+
+/*INIZIO CSS @MEDIA*/ 
+/*ridimensionamento sidebar*/
+@media screen and (max-width: 1050px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;  /*deve stare ferma anche quando va su*/
+      z-index: 2;       /*titolo e zona dinamica devono passargli dietro on davanti*/
+    }
+}
+
+/*ridimensionamento telefono*/
+@media (max-width:800px){
+    .card-body {
+        overflow:auto;
+        overflow-x:hidden;
+        height:30vw;
+    }
+    /*riduzione dei margini a destra e a sinistra delle card*/
+    .contenitore-cards{
+        margin-left:10%;
+        margin-right:10%;
+    }
+    .card{
+        height:30vw;
+    }
+    .card-img{
+        height:30vw;
+    }
+
+}
+/*ridimensionamento margini per ipad*/
+@media (max-width:1050px){
+    .contenitore-cards {
+        margin-right:10%;
+        margin-left:10%;
+        margin-top:25vh;
+    }
+    .card{
+        height:30vw;
+    }
+
+    .card-body{
+        height:30vw;
+    }
+    /*gli elementi della lista non sono più posizionati in verticale ma in orizzontale*/
+    li{
+        display:inline;
+        margin-left:1vw;
+    }
+    .filtra-radio{
+        margin-top:0vh;
+    }
+    .slidecontainer{
+        margin-top:0vh;
+    }
+
+}
+/*ulteriori aggiustamenti per dimensioni ancora minori*/
+@media (max-width:767px){
+    .card{
+        height:80vw;
+    }
+    .card-img{
+        height:50vw;
+    }
+    .card-body{
+        height:30vw;
+    }
+}
