@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <!--pagina responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="../../js/CucinaImparare.js"></script>
+  <link rel="stylesheet" href="../../css/CucinaImparare.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--titolo-->
+  <title>Imparare</title>
+</head>
+
+<body onload="assegnaEventHandler();">
+  <!-- navbar-->
+  <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-3">
+    <!--Inserisci stile in file css-->
+    <!--Logo-->
+    <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="50" height="50"
+        alt="" /></a>
+    <!--Immagine da cambiare-->
+
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Elementi navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
+      <ul class="navbar-nav mr-auto text-center">
+        <!--Home-->
+        <li class="nav-item">
+          <a class="nav-link" href="../HomeCucina.html">Home</a>
+        </li>
+        <!--Imparare-->
+        <li class="nav-item active">
+          <a class="nav-link" href="Imparare.html">Imparare</a>
+        </li>
+        <!--Cucinare-->
+        <li class="nav-item">
+          <a class="nav-link" href="Cucinare.html">Cucinare</a>
+        </li>
+        <!--Dieta-->
+        <li class="nav-item">
+          <a class="nav-link" href="DietaENutrizione.html">Dieta</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--SIDEBAR-->
+  <div class="sidebar">
+    <!--range slider-->
+    <div class="slidecontainer">
+      <h2>Filtra per prezzo</h2>
+      <input type="range" min="0" max="" value="100" class="slider" id="myRange">
+      <span>Prezzo massimo: </span><span id="demo"></span>
+    </div>
+
+    <!--filtra radio-->
+    <div class="filtra-radio" id="filtro">
+      <h2>Filtra per categoria</h2>
+      <ul id="myUL">
+        <li>
+          <input type="radio" name="tipo" value="nessuno" id="nessuno" checked>
+          <label for="nessuno">Tutte</label>
+        </li>
+        <li>
+          <input type="radio" name="tipo" value="libro" id="libro">
+          <label for="libro">Libri</label>
+        </li>
+        <li>
+          <input type="radio" name="tipo" value="tutorial" id="tutorial">
+          <label for="tutorial">Tutorial</label>
+        </li>
+        <li>
+          <input type="radio" name="tipo" value="corso" id="corso">
+          <label for="corso">Corsi</label>
+        </li>
+      </ul> 
+    </div>
+  </div>
+
+  <!--CONTENITORE CARDS-->
+  <div class="contenitore-cards" id="contenitore">
+    <!--Prima carta   // class libro/tutorial/corso per filtro per categoria-->
+    <div class="card mb-3 libro" id="card0">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/img/cucina/ImparareCard1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">La grammatica dei sapori</h1>
+            <small class="text-muted">Libro - </small><small class="text-muted prezzo">25</small><small
+              class="text-muted">€</small>
+            <p class="card-text stile-testo">Chiunque voglia diventare davvero bravo in cucina dovrebbe leggere questo
+              libro.
+              Infatti, imparerete ad abbinare gli ingredienti tra loro e ad utilizzare diverse tecniche di cottura.
+              Questo libro
+              non contiene alcuna ricetta al suo interno, ma grazie alle conoscenze acquisite riuscirete a crearle voi
+              stessi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Seconda carta-->
+    <div class="card mb-3 libro" id="card1">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/img/cucina/ImparareCard2.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">Manuale dello chef</h1>
+            <small class="text-muted">Libro - </small><small class="text-muted prezzo">10.9</small><small
+              class="text-muted">€</small>
+            <p class="card-text stile-testo"> Il Manuale dello Chef Claudio Sadler è uno dei libri per imparare a
+              cucinare più
+              famosi ed importanti. L'autore ha trasformato la sua esperienza e le sue conoscenze in tantissimi consigli
+              utili ad
+              innalzare il livello del lettore.<br>
+              Il libro contiene descrizioni molto accurate di quasi tutti gli alimenti con
+              foto ed esempi.<br>
+              Si tratta di un manuale il cui obiettivo è rendere il lettore un esperto di cucina,quindi risulta più
+              adatto
+              a chi sa già muoversi in cucina. Per chi è alle prime armi il consiglio è quello di partire da un libro
+              più semplice e approcciare questo solo successivamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Terza carta-->
+    <div class="card mb-3 tutorial" id="card2">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/img/cucina/ImparareCard1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">La grammatica dei sapori</h1>
+            <small class="text-muted">Libro - </small><small class="text-muted prezzo">25</small><small
+              class="text-muted">€</small>
+            <p class="card-text stile-testo">Chiunque voglia diventare davvero bravo in cucina dovrebbe leggere questo
+              libro.
+              Infatti, imparerete ad abbinare gli ingredienti tra loro e ad utilizzare diverse tecniche di cottura.
+              Questo libro
+              non contiene alcuna ricetta al suo interno, ma grazie alle conoscenze acquisite riuscirete a crearle voi
+              stessi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Quarta carta-->
+    <div class="card mb-3 corso" id="card3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/img/cucina/ImparareCard1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">La grammatica dei sapori</h1>
+            <small class="text-muted">Libro - </small><small class="text-muted prezzo">25</small><small
+              class="text-muted">€</small>
+            <p class="card-text stile-testo">Chiunque voglia diventare davvero bravo in cucina dovrebbe leggere questo
+              libro.
+              Infatti, imparerete ad abbinare gli ingredienti tra loro e ad utilizzare diverse tecniche di cottura.
+              Questo libro
+              non contiene alcuna ricetta al suo interno, ma grazie alle conoscenze acquisite riuscirete a crearle voi
+              stessi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Quinta carta-->
+    <div class="card mb-3 tutorial" id="card4">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/img/cucina/ImparareCard1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">La grammatica dei sapori</h1>
+            <small class="text-muted">Libro - </small><small class="text-muted prezzo">25</small><small
+              class="text-muted">€</small>
+            <p class="card-text stile-testo">Chiunque voglia diventare davvero bravo in cucina dovrebbe leggere questo
+              libro.
+              Infatti, imparerete ad abbinare gli ingredienti tra loro e ad utilizzare diverse tecniche di cottura.
+              Questo libro
+              non contiene alcuna ricetta al suo interno, ma grazie alle conoscenze acquisite riuscirete a crearle voi
+              stessi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Sesta carta-->
+    <div class="card mb-3 corso" id="card5">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/img/cucina/ImparareCard1.jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">La grammatica dei sapori</h1>
+            <small class="text-muted">Libro - </small><small class="text-muted prezzo">25</small><small
+              class="text-muted">€</small>
+            <p class="card-text stile-testo">Chiunque voglia diventare davvero bravo in cucina dovrebbe leggere questo
+              libro.
+              Infatti, imparerete ad abbinare gli ingredienti tra loro e ad utilizzare diverse tecniche di cottura.
+              Questo libro
+              non contiene alcuna ricetta al suo interno, ma grazie alle conoscenze acquisite riuscirete a crearle voi
+              stessi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
