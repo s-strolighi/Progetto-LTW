@@ -5,14 +5,23 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        
+
+        <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
         <script type="text/javascript" lang="javascript" src="js/home.js"></script>
+        <script type="text/javascript" lang="javascript" src="js/storage.js"></script>
         <link rel="stylesheet" type="text/css" href="css/home.css" />
         
         <title>Free-Time Zone Home</title>
 
     </head>
-    <body onload="assegnaEvent()">
+    <body onload="assegnaEvent(); controllaLogin()">
         <!---  Navbar  -->
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
             <!-- Logo -->
@@ -29,7 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto text-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index/ChiSiamo.html">Chi siamo</a>
@@ -41,7 +50,7 @@
                     <!-- Tasto Login/Registrazione -->
                     <div class="text-center">
                         <!-- id preso da funzione javascript -->
-                        <button id="nav-button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">Login</button>
+                        <button id="nav-button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#loginModal" onclick="logout();">Login</button>
                     </div>
                 </div>
         </nav>
@@ -54,50 +63,55 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Form Login</h5>
+                        <h5 class="modal-title modal-lg" id="loginModalLabel">Form Login</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="form-login"> <!-- Form di Login (per default) poi cambiato da funzioni javascript tramite id-->
+                        <form id="form-login" action="php/validateLogin.php" method="POST" name="form-login">
+                            <!-- Form di Login (per default) poi cambiato da funzioni javascript tramite id-->
                             <div class="form-row align-items-center">
                                 <div class="col-auto">
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text">Username</div>
+                                            <div class="input-group-text">email</div>
                                         </div>
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Mailik947">
+                                        <input type="email" class="form-control" name="email" placeholder="name@example.com">
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text">Password&nbsp;</div>
+                                            <div class="input-group-text">Password</div>
                                         </div>
-                                        <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Your secret password">
+                                        <input type="password" class="form-control" size="25" name="password"
+                                            placeholder="Your secret password" minlength="5">
                                     </div>
                                 </div>
-                                <div class="col-auto">
-                                    <div class="input-group mb-1 mt-3">
-                                        <div class="input-group-prepend">
-                                            <!-- Bottone che triggera le funzioni javascript per il cambiamento della form -->
-                                            <div>Non hai un account? Effettua la <a href="#" id="registr-button">registrazione</a>!</a>
-                                            </div>
+                                <div id="login-correct" class="alert" role="alert"></div>
+                                <div class="input-group mb-1 mt-3">
+                                    <div class="input-group-prepend">
+                                        <!-- Bottone che triggera le funzioni javascript per il cambiamento della form -->
+                                        <div>Non hai un account? Effettua la <a href="#"
+                                                id="registr-button">registrazione</a>!</a>
                                         </div>
                                     </div>
-                            
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button id="form-submit" type="sbmit" class="btn btn-primary" form="form-login">Login</button>
+                        <button id="form-submit" name="form-submit-button" type="sbmit" class="btn btn-primary" form="form-login">Login</button>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- Message Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
         <!--  Page name -->
         <h1 class="title text-center">Free-Time Zone</h1>
@@ -322,15 +336,6 @@
         </div>
 
 
-        <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+        
     </body>
 </html>
