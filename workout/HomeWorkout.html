@@ -4,25 +4,26 @@
 <html>
 
 <head>
-  <meta charset="utf-8"/>
-  
+  <meta charset="utf-8" />
+
   <!--use-scalable decide se l'utente puo zoommare da mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <!-- per rendere il sito responsive-->
 
   <!-- jquery per la navbar e per lo stile del titolo-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
-   <!--css miei e di bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--css miei e di bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/HomeWorkout.css">
 
   <!--file javascript per il log-in-->
@@ -76,18 +77,20 @@
           <a class="nav-item nav-link" href="pagine/Teoria.html">Teoria</a>
         </li>
       </ul>
-
-
+      <!-- Tasto Logout -->
+      <div class="text-center">
+        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+      </div>
     </div>
 
 
   </nav>
 
   <div class="centrale">
-      <h1 class="stile-testo-centrale text-light">Home Workout</h1>
+    <h1 class="stile-testo-centrale text-light">Home Workout</h1>
   </div>
 
- 
+
   <!--per ora mi serve solo per mettere l'immagine fissa poi ci aggiungero qualcosa probabilmente-->
   <!-- <img/workout src="img/workout/workoutsfondo2.jpg" style="width: 100%;"> -->
 
@@ -98,7 +101,9 @@
       <!--sfondo bianco scritte nere-->
       <a href="pagine/Esercizi.html"><img src="../assets/img/workout/Home2.jpg" class="card-img-top" alt=""></a>
       <div class="card-body">
-        <a href="pagine/Esercizi.html"><h5 class="card-title">Esercizi</h5></a>
+        <a href="pagine/Esercizi.html">
+          <h5 class="card-title">Esercizi</h5>
+        </a>
         <p class="card-text">Stamattina faccio schifo
           La camera da letto pare una distilleria
           La puzza di 'sto whiskey non la copre il dentifricio
@@ -180,6 +185,6 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   -->
 
-  </body>
+</body>
 
 </html>

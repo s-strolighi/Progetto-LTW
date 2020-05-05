@@ -5,9 +5,12 @@ function controllaSessione(){
     }
 }
 
-function eliminaStorage() {
+function logout() {
     localStorage.session = "[]";
-    window.location.href = ("../index.html")
+    if (window.location.href.indexOf("pagine") > -1)
+        window.location.href = ("../../index.html");
+    else
+        window.location.href = ("../index.html");
 }
 
 function getSession() {

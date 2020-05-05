@@ -37,7 +37,7 @@ body {
 /*GRAFICA DEL FILTRO*/
 
 /* Style the buttons */
-.btn {
+#nav-hide .btn {
   border: none;
   outline: none;
   padding: 12px 16px;
@@ -47,12 +47,12 @@ body {
 }
 
 /* Add a light grey background on mouse-over */
-.btn:hover {
+#nav-hide .btn:hover {
   background-color: #ddd;
 }
 
 /* Add a dark background to the active button */
-.btn.active {
+#nav-hide .btn.active {
   background-color: #666;
   color: white;
 }

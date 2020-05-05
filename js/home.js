@@ -216,7 +216,7 @@ function validaPsw2() {
         alert.classList.add("alert-success");
         alert.innerHTML = "Passwords match!"
     }
-}ù
+}
 
 function changeModal(title, body1, body2){
     var modal = document.getElementById("messageModal");

@@ -1,7 +1,7 @@
 //filterSelection("all")
 function filterSelection(c) {
 
-  buttons = document.getElementsByClassName("btn"); //elenco dei bottoni
+  buttons = document.getElemetById("nav-hide").getElementsByClassName("btn"); //elenco dei bottoni
   filters = []; //elenco dei filtri attualmente attivi
 
   if (c == "tutti") c = '';
