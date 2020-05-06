@@ -12,7 +12,7 @@
 
 }
 
-h1, h3 {
+.card h1, .card h3 {
     text-shadow: 1px 1px rgb(122, 122, 122);
 }
 

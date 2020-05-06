@@ -1,3 +1,4 @@
+// controlla se esiste la sessione, se non esiste reindirizzo alla home
 function controllaSessione(){
     inizializzaStorage();
     if(getSession() == null){
@@ -5,6 +6,7 @@ function controllaSessione(){
     }
 }
 
+// funzione che viene chiamata da ogni tasto logout nel sito, controllo per reindirizzamento verso path corretto della home
 function logout() {
     localStorage.session = "[]";
     if (window.location.href.indexOf("pagine") > -1)
@@ -13,6 +15,7 @@ function logout() {
         window.location.href = ("../index.html");
 }
 
+// ritorna null se la sessione non esiste o il numero della sessione, se esiste
 function getSession() {
     var sessione = JSON.parse(localStorage.session)[0];
     if (sessione == null) {
@@ -22,6 +25,7 @@ function getSession() {
     return sessione.session_id;
 }
 
+// inizializza localStorage
 function inizializzaStorage() {
     if (typeof (localStorage.session) == "undefined") {
         localStorage.session = "[]";
