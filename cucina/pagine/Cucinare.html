@@ -1,13 +1,4 @@
 
-    <!--esadecimale di combo colori:
-
-    4CB5F5 + B7B8B6 + 34675C + B3C100
-    
-    626D71 + CDCDC0 + DDBC95 + B38867
-    
-    
-    -->
-    
     <html>
         <head>
             <title> Cucinare</title>
@@ -39,7 +30,7 @@
 
   <!--css di bootstrap e mio css-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/HomeCucina.css"/>       
+      
 
   <!--includo il mio javascript-->
   <script type="text/javascript" lang="javascript" src="../../js/Cucinare.js"></script>
@@ -52,7 +43,7 @@
         <body>
 
  <!-- navbar-->
- <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-3 rounded" style="width:100%;"> <!--Inserisci stile in file css-->
+ <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-0 rounded" style="width:100%;"> <!--Inserisci stile in file css-->
     <!--Logo-->
     <a class="navbar-brand" href="../index.html"><img src="../../assets/img/logo.png" width="50" height="50" alt=""/></a> <!--Immagine da cambiare-->
     
@@ -88,10 +79,6 @@
 
 
 <div id="titolo"> Cucina </div>
-
-
-<hr color="yellow">
-
 
 
 
@@ -190,36 +177,47 @@
         
         </div> <!-- chiudo il container delle portate-->
       
-<hr color="grey">     <!--divisorio delle portate-->
+
 
          
     <!--deve essere separato per portate in modo tale che nel container portate posso mettere link 
     a sezioni di questa stessa pagina-->
 
 
-<div class="container-ricette"> <!--INIZIO container con tutte le ricette-->
-    <h2 name="antipasti"> Antipasti: </h2> <!-- titolo portata successina-->
 
+ <!--metto l'ancora sul divisorio per una questione di visualizzazione-->   
+<hr color="greenyellow"></hr> <a name="antipasti"></a>    <!--divisorio delle portate-->
+<div class="container-ricette"> <!--INIZIO container con tutte le ricette-->
+    
+
+<h2> Antipasti:</h2> <!-- titolo portata successina-->
 
 <!-- RICETTA 1-->
-
-
     <div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+        <!--prima colonna-->
         <div class="img-ricetta">
             <img src="../../assets/img/cucina/CucinareGallery1.jpg">
         </div>
-        <div class="bt-ricetta"> <!--sara la seconda riga e conterra i bottoni che faranno vedere le info-->
-        
-            <button id="p1" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s1" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t1" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+      
+            
 
-        </div>    
+       <!--la seconda colonna divisa a sua volta in 2 righe-->
+        <div class="info-ricetta">
 
-        <div class="info-ricetta"><!--la sezione che conterrà le info-->
+            <!--prima riga-->
+            <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+                <button id="p1" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
+                <button id="s1" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
+                <button id="t1" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+            </div>    
 
-        <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
-        <div class="tab" name="p1" id="tab-ingredienti">
+
+        <!--seconda riga-->
+        <div class="tabelle">
+
+        <div class="tab" name="p1" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
             <h4> Ingredienti </h4>
             <ul>
                 <li>ingrediente 1</li>
@@ -254,316 +252,526 @@
             </ul>
         </div>
         
-        </div>
-        
+        </div> <!--fine seconda riga tabelle-->
+     </div> <!--fine seconda colonna ricette-->
         
     </div> <!--FINE SINGOLA RICETTA-->
 
-    
-    <!-- RICETTA 2-->
+
+<!-- RICETTA 2-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
 
 
-    <div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
-        <div class="img-ricetta">
-            <img src="../../assets/img/cucina/CucinareGallery2.jpg">
-        </div>
-        <div id="btn-r" class="bt-ricetta"> <!--sara la seconda riga e conterra i bottoni che faranno vedere le info-->
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery2.jpg">
+    </div>
+  
         
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p2" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s2" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t2" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
-
         </div>    
 
-        <div class="info-ricetta"><!--la sezione che conterrà le info-->
 
-        <div class="tab" name="p2" id="tab-ingredienti">
-            <h4> Ingredienti </h4>
-            <ul>
-                <li>ingrediente 1</li>
-                <li>ingrediente 2</li>
-                <li>ingrediente 3</li>
-                <li>ingrediente 4</li>
-                <li>ingrediente 5</li>
-                <li>ingrediente 6</li>
-            </ul>
+    <!--seconda riga-->
+    <div class="tabelle">
 
-        </div>
-        <div class="tab" name="s2" id="tab-procedimento">
-            <ol >
-                <li>passo 1</li>
-                <li>passo 2</li>
-                <li>passo 3</li>
-                <li>passo 4</li>
-                <li>passo 5</li>
-                <li>passo 6</li>
-            </ol>
-        </div>
-        <div class="tab" name="t2" id="tab-info"> <!--id per il js e per il css-->
-            <ul>
-                <li>difficolta: facile</li>
-                <li>tempo: 30min</li>
-                <li>costi: bassi</li>
-            </ul>
-            <ul>
-                <li>cottura: 45 min</li>
-                <li>porzioni: 6</li>
-                <li>senza glutine</li>
-            </ul>
-        </div>
+    <div class="tab" name="p2" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s2" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t2" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
+
+
+
+
+    
+<hr color="greenyellow"></hr> <a name="primi"></a> 
+<h2> Primi:</h2> <!-- titolo portata successina-->
+
+
+<!-- RICETTA 3-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery3.jpg">
+    </div>
+  
         
-        </div>
-        
-        
-    </div> <!--FINE SINGOLA RICETTA-->
 
-<hr color="grey">     <!--divisorio delle portate-->
-<h2 name="primi"> Primi: </h2> <!-- titolo portata successina-->
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
 
-    <!-- RICETTA 3-->
-
-    <div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
-        <div class="img-ricetta">
-            <img src="../../assets/img/cucina/CucinareGallery3.jpg">
-        </div>
-        <div id="btn-r" class="bt-ricetta"> <!--sara la seconda riga e conterra i bottoni che faranno vedere le info-->
-        
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p3" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s3" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t3" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
-
         </div>    
 
-        <div class="info-ricetta"><!--la sezione che conterrà le info-->
 
-        <div class="tab" name="p3" id="tab-ingredienti">
-            <h4> Ingredienti </h4>
-            <ul>
-                <li>ingrediente 1</li>
-                <li>ingrediente 2</li>
-                <li>ingrediente 3</li>
-                <li>ingrediente 4</li>
-                <li>ingrediente 5</li>
-                <li>ingrediente 6</li>
-            </ul>
+    <!--seconda riga-->
+    <div class="tabelle">
 
-        </div>
-        <div class="tab" name="s3" id="tab-procedimento">
-            <ol type="1">
-                <li>passo 1</li>
-                <li>passo 2</li>
-                <li>passo 3</li>
-                <li>passo 4</li>
-                <li>passo 5</li>
-                <li>passo 6</li>
-            </ol>
-        </div>
-        <div class="tab" name="t3" id="tab-info"> <!--id per il js e per il css-->
-            <ul>
-                <li>difficolta: facile</li>
-                <li>tempo: 30min</li>
-                <li>costi: bassi</li>
-            </ul>
-            <ul>
-                <li>cottura: 45 min</li>
-                <li>porzioni: 6</li>
-                <li>senza glutine</li>
-            </ul>
-        </div>
-        
-        </div>
-        
-        
-    </div> <!--FINE SINGOLA RICETTA-->
+    <div class="tab" name="p3" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
 
-    <!-- RICETTA 4-->
+    </div>
+    <div class="tab" name="s3" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t3" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
 
-    <div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
-        <div class="img-ricetta">
-            <img src="../../assets/img/cucina/CucinareGallery4.jpg">
-        </div>
-        <div id="btn-r" class="bt-ricetta"> <!--sara la seconda riga e conterra i bottoni che faranno vedere le info-->
+
+
+
+
+
+<!-- RICETTA 4-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery4.jpg">
+    </div>
+  
         
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p4" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s4" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t4" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
-
         </div>    
 
-        <div class="info-ricetta"><!--la sezione che conterrà le info-->
 
-        <div class="tab" name="p4" id="tab-ingredienti">
-            <h4> Ingredienti </h4>
-            <ul>
-                <li>ingrediente 1</li>
-                <li>ingrediente 2</li>
-                <li>ingrediente 3</li>
-                <li>ingrediente 4</li>
-                <li>ingrediente 5</li>
-                <li>ingrediente 6</li>
-            </ul>
+    <!--seconda riga-->
+    <div class="tabelle">
 
-        </div>
-        <div class="tab" name="s4" id="tab-procedimento">
-            <ol type="1">
-                <li>passo 1</li>
-                <li>passo 2</li>
-                <li>passo 3</li>
-                <li>passo 4</li>
-                <li>passo 5</li>
-                <li>passo 6</li>
-            </ol>
-        </div>
-        <div class="tab" name="t4" id="tab-info"> <!--id per il js e per il css-->
-            <ul>
-                <li>difficolta: facile</li>
-                <li>tempo: 30min</li>
-                <li>costi: bassi</li>
-            </ul>
-            <ul>
-                <li>cottura: 45 min</li>
-                <li>porzioni: 6</li>
-                <li>senza glutine</li>
-            </ul>
-        </div>
+    <div class="tab" name="p4" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s4" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t4" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
+
+
+
+    
+<hr color="greenyellow"></hr> <a name="secondi"></a> 
+<h2> Secondi:</h2> <!-- titolo portata successina-->
+
+
+<!-- RICETTA 5-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery5.jpg">
+    </div>
+  
         
-        </div>
-        
-        
-    </div> <!--FINE SINGOLA RICETTA-->
 
-<hr color="grey">     <!--divisorio delle portate-->
-<h2 name="secondi"> Secondi: </h2> <!-- titolo portata successina-->
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
 
-
-    <!-- RICETTA 5-->
-    <div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
-        <div class="img-ricetta">
-            <img src="../../assets/img/cucina/CucinareGallery5.jpg">
-        </div>
-        <div id="btn-r" class="bt-ricetta"> <!--sara la seconda riga e conterra i bottoni che faranno vedere le info-->
-        
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p5" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s5" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t5" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
-
         </div>    
 
-        <div class="info-ricetta"><!--la sezione che conterrà le info-->
 
-        <div class="tab" name="p5" id="tab-ingredienti">
-            <h4> Ingredienti </h4>
-            <ul>
-                <li>ingrediente 1</li>
-                <li>ingrediente 2</li>
-                <li>ingrediente 3</li>
-                <li>ingrediente 4</li>
-                <li>ingrediente 5</li>
-                <li>ingrediente 6</li>
-            </ul>
+    <!--seconda riga-->
+    <div class="tabelle">
 
-        </div>
-        <div class="tab" name="s5" id="tab-procedimento">
-            <ol type="1">
-                <li>passo 1</li>
-                <li>passo 2</li>
-                <li>passo 3</li>
-                <li>passo 4</li>
-                <li>passo 5</li>
-                <li>passo 6</li>
-            </ol>
-        </div>
-        <div class="tab" name="t5" id="tab-info"> <!--id per il js e per il css-->
-            <ul>
-                <li>difficolta: facile</li>
-                <li>tempo: 30min</li>
-                <li>costi: bassi</li>
-            </ul>
-            <ul>
-                <li>cottura: 45 min</li>
-                <li>porzioni: 6</li>
-                <li>senza glutine</li>
-            </ul>
-        </div>
-        
-        </div>
-        
-        
-    </div> <!--FINE SINGOLA RICETTA-->
+    <div class="tab" name="p5" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s5" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t5" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
     
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
 
-      <!-- RICETTA 6-->
-      <div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
-        <div class="img-ricetta">
-            <img src="../../assets/img/cucina/CucinareGallery6.jpg">
-        </div>
-        <div id="btn-r" class="bt-ricetta"> <!--sara la seconda riga e conterra i bottoni che faranno vedere le info-->
+
+
+
+
+<!-- RICETTA 6-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery6.jpg">
+    </div>
+  
         
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p6" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s6" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t6" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
-
         </div>    
 
-        <div class="info-ricetta"><!--la sezione che conterrà le info-->
 
-        <div class="tab" name="p6" id="tab-ingredienti">
-            <h4> Ingredienti </h4>
-            <ul>
-                <li>ingrediente 1</li>
-                <li>ingrediente 2</li>
-                <li>ingrediente 3</li>
-                <li>ingrediente 4</li>
-                <li>ingrediente 5</li>
-                <li>ingrediente 6</li>
-            </ul>
+    <!--seconda riga-->
+    <div class="tabelle">
 
-        </div>
-        <div class="tab" name="s6" id="tab-procedimento">
-            <ol type="1">
-                <li>passo 1</li>
-                <li>passo 2</li>
-                <li>passo 3</li>
-                <li>passo 4</li>
-                <li>passo 5</li>
-                <li>passo 6</li>
-            </ol>
-        </div>
-        <div class="tab" name="t6" id="tab-info"> <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
-            <ul>
-                <li>difficolta: facile</li>
-                <li>tempo: 30min</li>
-                <li>costi: bassi</li>
-            </ul>
-            <ul>
-                <li>cottura: 45 min</li>
-                <li>porzioni: 6</li>
-                <li>senza glutine</li>
-            </ul>
-        </div>
+    <div class="tab" name="p6" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s6" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t6" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
+
+
+
+    
+<hr color="greenyellow"></hr> <a name="contorni"></a> 
+<h2> Contorni:</h2> <!-- titolo portata successina-->
+
+
+<!-- RICETTA 7-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery6.jpg">
+    </div>
+  
         
-        </div>
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+            <button id="p7" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
+            <button id="s7" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
+            <button id="t7" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        </div>    
+
+
+    <!--seconda riga-->
+    <div class="tabelle">
+
+    <div class="tab" name="p7" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s7" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t7" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
+
+
+
+
+
+<!-- RICETTA 8-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery6.jpg">
+    </div>
+  
         
-        
-    </div> <!--FINE SINGOLA RICETTA-->
-   
-        
-<hr color="grey">     <!--divisorio delle portate-->
-<h2 name="dolci"> Dolci: </h2> <!-- titolo portata successina-->
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+            <button id="p8" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
+            <button id="s8" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
+            <button id="t8" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        </div>    
 
 
-   
+    <!--seconda riga-->
+    <div class="tabelle">
+
+    <div class="tab" name="p8" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>ingrediente 1</li>
+            <li>ingrediente 2</li>
+            <li>ingrediente 3</li>
+            <li>ingrediente 4</li>
+            <li>ingrediente 5</li>
+            <li>ingrediente 6</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s8" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <ol>
+            <li>passo 1</li>
+            <li>passo 2</li>
+            <li>passo 3</li>
+            <li>passo 4</li>
+            <li>passo 5</li>
+            <li>passo 6</li>
+        </ol>
+    </div>
+    <div class="tab" name="t8" id="tab-info"> <!--id per il js e per il css-->
+        <ul>
+            <li>difficolta: facile</li>
+            <li>tempo: 30min</li>
+            <li>costi: bassi</li>
+        </ul>
+        <ul>
+            <li>cottura: 45 min</li>
+            <li>porzioni: 6</li>
+            <li>senza glutine</li>
+        </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
 
 
 
-</div> <!--chiuso container per la sezione ricette-->
-      
-
-</div> <!--chiuso container principale-->
 
 
 
 
+    
+<hr color="greenyellow"></hr> <a name="dolci"></a> 
+<h2> Dolci:</h2> <!-- titolo portata successina-->
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!--fine container ricette-->
+
+</div> <!--fine container principale-->
 
 
 
@@ -591,7 +799,7 @@ $('.owl-carousel').owlCarousel({  //tutte le OPTIONS descritte sul sito riportat
     loop:true,                    //rende possibile scorrere all'infinito senza inizio o fine del "nastro"
     margin:10,                    //margine destro di ogni item                 
     nav:true,                     //mostra bottoni precedente e successivo
-    navText: ["PREV","<img style='width:50px; height:50px;' src='../../assets/img/cucina/freccia1.png'>"],     //con navtext posso decidere la sintassi dei bottoni avanti e indietro. sintassi array in javascript.
+    navText: ["<img style='width:50px; height:50px;' src='../../assets/img/cucina/frecciasinistra.png'>","<img style='width:50px; height:50px;' src='../../assets/img/cucina/frecciadestra.png'>"],     //con navtext posso decidere la sintassi dei bottoni avanti e indietro. sintassi array in javascript.
                                   //posso inserire anche codice html, per esempio per metterci gif o immagini o bottoni
     autoplay:true,                //con questo settato a true il carousel si muove da solo
     autoplayTimeout:"3500",       //settiamo ogni quanto deve muoversi da solo
