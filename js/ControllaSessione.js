@@ -2,7 +2,10 @@
 function controllaSessione(){
     inizializzaStorage();
     if(getSession() == null){
-        window.location.href = ("../index.html?login=false&error=needLogin")
+        if (window.location.href.indexOf("pagine") > -1)
+            window.location.href = ("../../index.html?login=false&error=needLogin")
+        else
+            window.location.href = ("../index.html?login=false&error=needLogin")
     }
 }
 

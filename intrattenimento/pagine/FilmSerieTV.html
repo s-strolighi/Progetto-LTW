@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!--pagina responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../../js/CucinaImparare.js"></script>
+    <link rel="stylesheet" href="../../css/IntrattenimentoFilmSerie.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script type="text/javascript" src="../../js/IntrattenimentoFilmSerie.js"></script>
+
+    <script type="text/javascript" src="../../js/ControllaSessione.js"></script>
+    <script>controllaSessione()</script>
+
+
+    <!--titolo-->
+    <title>Film/Serie TV</title>
+</head>
+
+<body onload="assegnaEventi();">
+    <!-- navbar-->
+    <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-3">
+        <!--Inserisci stile in file css-->
+        <!--Logo-->
+        <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="60" height="60"></a>
+        <!--Immagine da cambiare-->
+
+        <!--bottone che apre la Nvbar ridimensionata-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--Elementi navbar-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
+            <ul class="navbar-nav mr-auto text-center">
+                <!--Home-->
+                <li class="nav-item">
+                    <a class="nav-link" href="../HomeIntrattenimento.html">Home</a>
+                </li>
+                <!--Imparare-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="FilmSerieTV.html">Film e SerieTV</a>
+                </li>
+                <!--Cucinare-->
+                <li class="nav-item">
+                    <a class="nav-link" href="Musica.html">Musica</a>
+                </li>
+                <!--Dieta-->
+                <li class="nav-item">
+                    <a class="nav-link" href="Videogiochi.html">Videogame</a>
+                </li>
+            </ul>
+            <!-- Tasto Logout -->
+            <div class="text-center">
+                <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TITOLO -->
+    <h1 class="text-center text-light">Film e serie TV</h1>
+
+
+    <!-- CONTENUTO PAGINA -->
+    <div class="accordion" id="accordionServices">
+
+        <!-- Netflix card (active) -->
+        <div class="row">
+            <div class="card">
+                <div class="card-header text-center" id="netflix-heading" data-toggle="collapse" data-target="#netflix"
+                    aria-expanded="true" aria-controls="netflix">
+                    <img class="logo logo-active" src="../../assets/img/intrattenimento/FilmSerieNetflixLogo.png">
+                    <h4 class="title-fade title-fade-active">Netflix</h4>
+                </div>
+
+                <div id="netflix" class="collapse show" aria-labelledby="netflix-heading"
+                    data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            Netflix è un <b>servizio di streaming</b> che offre una varietà di serie TV, film, documentari pluripremiati e tanto altro con la 
+                            <b class="extra">possibilità di guardare su molteplici dispositivi</b>, senza pubblicità!
+                        </p>
+                        <p>
+                            Il servizio ha un <b>costo mensile</b> a partire <span class="costo">da 7.99€/mese</span>.
+                            E' possibile usufruire del servizio tramite sito web, app per telefono e anche attraverso SmartTV.
+                        </p>
+                        <p>
+                            Netflix presenta <b class="esclusive">film e serie tv esclusive</b> di successo come <b>Stranger Things</b>,
+                            <b>La casa di carta</b>, <b>Orange is the new black</b> e tante altre che non troverai nelle altre piattaforme!
+                        </p>
+                        <p>
+                            Supporta il formato <b><span class="formato">UltraHD (piani da 13.99€)</span></b>, ma non per tutti i piani tariffari.
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.netflix.com/it/" target="_blank">pagina ufficiale di Netflix</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button side-button-active">Compara</button>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Prime video card -->
+            <div class="card">
+                <div class="card-header text-center" id="primevideo-heading" data-toggle="collapse"
+                    data-target="#primevideo" aria-expanded="true" aria-controls="primevideo">
+                    <img class="logo" src="../../assets/img/intrattenimento/FilmSeriePrimeVideoLogo.png">
+                    <h4 class="title-fade">Prime Video</h4>
+                </div>
+
+                <div id="primevideo" class="collapse" aria-labelledby="primevideo-heading"
+                    data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            Prime Video è la <b>piattaforma streaming</b> di Amazon per vedere film e serie TV in tutta comodità, è <b>incluso 
+                            con il servizio Amazon Prime</b>, altrimenti ha un costo di <span class="costo">7.99€/mese</span>
+                        </p>
+                        <p>
+                            Prime video presenta <b class="esclusive">film e serie tv esclusive</b> targate Amazon Original, come <b>Jack Ryan</b>, 
+                            <b>Vikings</b>, <b>The grand Tour</b> e molti altri.
+                        </p>
+                        <p>
+                            Supporta il formato <b><span class="formato">UltraHD</span></b> e non avendo diversi piani tariffari, sarà disponibile a 
+                            tutti gli utenti. I contenuti presentano <b class="extra">info su attori e cast</b> per un'interfaccia ancora più completa
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.primevideo.com/" target="_blank">pagina ufficiale di Prime Video</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button">Compara</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Infinity card -->
+            <div class="card">
+                <div class="card-header text-center" id="infinity-heading" data-toggle="collapse"
+                    data-target="#infinity" aria-expanded="true" aria-controls="infinity">
+                    <img class="logo" src="../../assets/img/intrattenimento/FilmSerieInfinityLogo.png">
+                    <h4 class="title-fade">Infinity</h4>
+                </div>
+
+                <div id="infinity" class="collapse" aria-labelledby="infinity-heading" data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            Infinity è il servizio video streaming offerto da <b>Mediaset</b> che mette a disposizione un ricco 
+                            catalogo di film, cartoni, serie tv, programmi e fiction da guardare <b class="extra">senza pubblicità</b>
+                        </p>
+                        <p>
+                            Il servizio presenta <b class="esclusive">anteprime film in esclusiva</b> settimanalmente per gli abbonati, da poter vedere nel  
+                            formato <span class="formato">UltraHD solo su TV</span>
+                        </p>
+                        <p>
+                            Infinity propone un'offerta di <span class="costo">7.99€/mese - 69€/anno</span> ed inoltre fornisce la possibilità di 
+                            <b class="extra">download dei contenuti su pc</b>
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.infinitytv.it/" target="_blank">pagina ufficiale di Infinity</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button">Compara</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Vvvvid card -->
+            <div class="card">
+                <div class="card-header text-center" id="vvvvid-heading" data-toggle="collapse" data-target="#vvvvid"
+                    aria-expanded="true" aria-controls="vvvvid">
+                    <img class="logo" src="../../assets/img/intrattenimento/FilmSerieVvvvidLogo.png">
+                    <h4 class="title-fade">Vvvvid</h4>
+                </div>
+
+                <div id="vvvvid" class="collapse" aria-labelledby="vvvvid-heading" data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            Vvvvid è un servizio video streaming completamente <span class="costo">gratuito</span>, famoso per il 
+                            suo <b class="extra">ampio catalogo di anime</b> giapponesi e film di altro genere
+                        </p>
+                        <p>
+                            Il servizio <b class="esclusive">non presenta esclusive</b> ma propone la qualità <span class="formato">HD</span> 
+                            su tutto il suo catalogo
+                        </p>
+                        <p>
+                            Il catalogo include numerosi contenuti da film a serie TV in streaming a cui si aggiungono
+                            programmi per ragazzi, trailer e video dedicati ai videogiochi e veri e propri show.
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.vvvvid.it/" target="_blank">pagina ufficiale di Vvvvid</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button">Compara</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Now TV card -->
+            <div class="card">
+                <div class="card-header text-center" id="nowtv-heading" data-toggle="collapse" data-target="#nowtv"
+                    aria-expanded="true" aria-controls="nowtv">
+                    <img class="logo" src="../../assets/img/intrattenimento/FilmSerieNowTVLogo.png">
+                    <h4 class="title-fade">Now TV</h4>
+                </div>
+
+                <div id="nowtv" class="collapse" aria-labelledby="nowtv-heading" data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            Now TV è il servizio streaming di Sky, contenente oltre ai contenuti multimediali come serie TV e film,
+                            anche la <b class="extra">possibilità di vedere canali televisivi</b>, con pacchetti  
+                            <span class="costo">da 9.99€/mese</span>
+                            
+                        </p>
+                        <p>
+                            Il servizio <b class="esclusive">presenta le esclusive Sky</b> e propone i contenuti in qualità 
+                            <span class="formato">HD</span> 
+                        </p>
+                        <p>
+                            Now TV è disponibile su dispositivi mobili, su smartTV e su pc. Al catalogo di film e serie TV si aggiungono 
+                            gli imperdibili documentari di <b>National Geographic</b>, <b>History Channel</b> e Sky Arte e tanti programmi per bambini.
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.nowtv.it/" target="_blank">pagina ufficiale di Now TV</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button">Compara</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Disney Plus card -->
+            <div class="card">
+                <div class="card-header text-center" id="disneyplus-heading" data-toggle="collapse"
+                    data-target="#disneyplus" aria-expanded="true" aria-controls="disneyplus">
+                    <img class="logo" src="../../assets/img/intrattenimento/FilmSerieDisneyPlusLogo.png">
+                    <h4 class="title-fade">Disney Plus</h4>
+                </div>
+
+                <div id="disneyplus" class="collapse" aria-labelledby="disneyplus-heading"
+                    data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            Disney Plus offre l'intero catalogo <b>Disney</b>, <b>National Geographic</b>, <b>Marvel</b> 
+                            e molti altri, ad un prezzo di <span class="costo">6.99€/mese - 69.99€/anno</span>
+                        </p>
+                        <p>
+                            Il servizio offre le <b class="esclusive">esclusive Disney, Marvel ed altri</b>, con la 
+                            <b class="extra">possibilità di download dei contenuti</b>
+                        </p>
+                        <p>
+                            Supporta il formato <b><span class="formato">UltraHD</span></b> su ben 4 dispositivi contemporaneamente!
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.disneyplus.com/it-it/" target="_blank">pagina ufficiale di Disney Plus</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button">Compara</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Rai Play card -->
+            <div class="card">
+                <div class="card-header text-center" id="raiplay-heading" data-toggle="collapse"
+                    data-target="#raiplay" aria-expanded="true" aria-controls="raiplay">
+                    <img class="logo" src="../../assets/img/intrattenimento/FilmSerieRaiPlayLogo.gif">
+                    <h4 class="title-fade">RaiPlay</h4>
+                </div>
+
+                <div id="raiplay" class="collapse" aria-labelledby="raiplay-heading"
+                    data-parent="#accordionServices">
+                    <div class="card-body">
+                        <p>
+                            RaiPlay è una piattaforma dove è possibile guardare <b>film e serie TV del grande schermo</b>. 
+                            E' possibile guardare i canali TV in diretta, o rivedere programmi di giornate precedenti
+                            
+                        </p>
+                        <p>
+                            L'intero servizio è <span class="costo">gratuito</span> e dove possibile, erogato in formato
+                            <b><span class="formato">UltraHD</span></b>
+                        </p>
+                        <p>
+                            RaiPlay offre <b class="esclusive">esclusive dei canali TV Rai</b>. Potrai seguire <b class="extra">tutti i canali Rai in diretta</b> 
+                            (tra cui Sport, Storia, Movie ecc..) o rivederli nei giorni seguenti.
+                        </p>
+                        <p>
+                            Per saperne di più, visita la <a class="link" href="https://www.raiplay.it/" target="_blank">pagina ufficiale di RaiPlay</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="button" class="btn btn-outline-light side-button">Compara</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ZONA COMPARAZIONE riempita dinamicamente da javascript-->
+    <h2 class="m-2 mt-3 text-light text-center">Compara i nostri servizi per scegliere il più adatto a te!</h2>
+    <div id="confronto" class="m-2">
+
+
+    </div>
+
+</body>
+
+</html>

@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="../css/HomeIntrattenimento.css" />
     <script type="text/javascript" src="../js/ControllaSessione.js"></script>
     <script>controllaSessione();</script>
+
+    <script>
+        function smooth(){
+            document.getElementById("sezioni").scrollIntoView({ behavior: "smooth"});
+        }
+    </script>
     <!--css-->
     <title>Home Intrattenimento </title>
     <!--titolo-->
@@ -74,10 +80,13 @@
 
     <div class="centrale">
         <h1 class="stile-testo-centrale text-light">Intrattenimento</h1>
+        <section id="scroll" onclick="smooth();">
+            <a><span></span><span></span><span></span></a>
+        </section>
     </div>
 
     <!--Card delle sottosezioni-->
-    <div class="card-group">
+    <div id="sezioni" class="card-group">
         <!--Prima card (Film e serie)-->
         <div class="card">
             <a href="pagine/FilmSerieTV.html"><img src="../assets/img/intrattenimento/Home2.jpg" class="card-img-top"

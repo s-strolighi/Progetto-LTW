@@ -30,6 +30,11 @@
   <script type="text/javascript" src="../js/ControllaSessione.js"></script>
   <script>controllaSessione();</script>
 
+  <script>
+    function smooth() {
+      document.getElementById("sezioni").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 
   <title> Home Workout</title>
 
@@ -88,6 +93,9 @@
 
   <div class="centrale">
     <h1 class="stile-testo-centrale text-light">Home Workout</h1>
+    <section id="scroll" onclick="smooth();">
+      <a><span></span><span></span><span></span></a>
+    </section>
   </div>
 
 
@@ -96,7 +104,7 @@
 
 
   <!-- card groub mi permette di ordinare le carte in moodo compatto, margin top = 0-->
-  <div class=" card-group">
+  <div id="sezioni" class=" card-group">
     <div class="card bg-light text-dark text-center">
       <!--sfondo bianco scritte nere-->
       <a href="pagine/Esercizi.html"><img src="../assets/img/workout/Home2.jpg" class="card-img-top" alt=""></a>

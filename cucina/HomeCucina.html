@@ -25,6 +25,12 @@
         <link rel="stylesheet" href="../css/HomeCucina.css"/>                                   <!--css-->
         <script type="text/javascript" src="../js/ControllaSessione.js"></script>
         <script>controllaSessione();</script>
+
+        <script>
+          function smooth() {
+            document.getElementById("sezioni").scrollIntoView({ behavior: "smooth" });
+          }
+        </script>
         
         <title>Home cucina </title>                                                         <!--titolo-->  
     </head>
@@ -67,14 +73,15 @@
             </div>
         </nav>
 
-        <!--Sfondo-->
-        <div class="principale"></div>
         <div class="centrale">
             <h1 class="stile-testo-centrale text-light">Cucina</h1>
+            <section id="scroll" onclick="smooth();">
+              <a><span></span><span></span><span></span></a>
+            </section>
         </div>
 
         <!--Card delle sottosezioni-->
-        <div class="card-group">
+        <div id="sezioni" class="card-group">
             <!--Prima card (Imparare)-->
             <div class="card">
               <a href="pagine/Imparare.html"><img src="../assets/img/cucina/Home2.jpg" class="card-img-top" alt="cucina,sezione imparare"></a>
