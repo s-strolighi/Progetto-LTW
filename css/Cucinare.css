@@ -1,0 +1,439 @@
+
+
+
+a { text-decoration: none; font-weight: bold; color: #0000FF } 
+a:hover { color: #0080FF; }
+*{
+    margin:0;
+    padding:0;
+}
+
+.tab ul {
+    
+    padding: 0;
+    margin-left: auto;
+  }
+
+.tab li,
+h4{        /*le liste e i titoli all'interno della terza riga delle ricette*/
+text-align: center;
+}
+
+
+#titolo{
+    text-align: center;
+    font-weight: 400;
+    font-size: xx-large;
+    color: black;
+    margin-bottom: 2%;
+}
+
+
+.container-principale /*quello che contiene tutti gli altri elementi e rispetto al quale si posizionano*/
+{
+    width:100%;
+    height: auto;
+    
+}
+
+
+
+/*settando qui nel css l'altezza di tutte le immagini del carousel mi assicuro
+che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimensioni. 
+è comunque consigliabile prendere immagini delle dimensioni giuste perche si vedano bene*/
+.item img{                   
+    height: 180px;
+}
+
+.container-carousel{  /*contiene l'owl carousel*/
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0%;    /*attaccato al titolo*/
+    display: flex; /* or inline-flex */
+    flex-direction: row; /*ordina gli item da sinistra a destra*/
+    flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
+}
+
+.item .content    /*contenuto del box di testo dentro le immagini del carousel*/
+{
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 80%; /* Full width - il margin lasciato agli item */
+    padding: 20px; /* Some padding */
+
+    transition: 200ms all ease-in-out;
+  }
+
+  .item:hover .content   /*comportamento del box  di testo content quando sto sopra un immagine*/
+{
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width*/
+    padding: 30px; /* Some padding */
+    overflow: hidden;  
+  }
+
+  .content p{           /*all'inizio vedo solo i titoli*/
+      display: none;
+      transition: 200ms all ease-in-out;
+  }
+  .item:hover .content p /*quando passo sopra alle immagini vedo anche le descrizioni*/
+  {
+  display: inline;
+  }
+
+  /*FINE comportamento container del carousel*/
+  /*INIZIO comportamento container delle sezioni per portata*/
+
+  .container-portate
+  {
+    width:100%;   /*prende tutta la larghezza della pagina*/
+    margin-left: 0; /*non c'è bisogno di mettere margini a dx e sx visto che uso justify-content*/
+    margin-right: 0;
+    margin-top: 5%;    /*un po stacato dal titolo*/
+
+    display: flex; /* or inline-flex.  rende flessibile il container*/
+    flex-direction: row; /*ordina gli item da sinistra a destra*/
+    flex-wrap: wrap;   /*significa che se la pagina diventa troppo stretta gli elementi di questo container vanno a capo*/
+    justify-content: center; /*tutti gli elementi sono centrati, anche quando vanno a capo per il ridimensionamento*/
+  }
+  /*per tutte le informazioni su come gestire i container fluidi: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background*/
+
+.item-portate h1{          /*stile dei titoli per le portate*/
+    text-align: center;
+    font-size: x-large;
+    font-style: oblique;
+}
+
+.item-portate img           /*immagini delle portate arrotondate*/
+{                   
+    height: 150px;
+    width:  200px;
+    margin:5;              /*le stacco tra di loro*/
+    border: solid 1px;
+    border-radius:200px; /*dopo un certo valore non arrotonda piu*/
+
+    transition: 300ms all ease-in-out; /*i cambiamenti nell'hover ci metteranno 300ms a completarsi*/
+}
+
+.item-portate:hover img  /*quando passo sopra le immagini la ingradisco e/o levo l'arrotondamento delle stesse*/
+{
+    border: solid 1px;
+   /* border-radius: 0px; */ 
+    height: 170px;
+    width: 230px;
+}
+
+/*FINE CONTAINER PORTATE*/
+
+
+
+
+
+
+
+/*INIZIO CONTAINER RICETTE*/
+
+.container-ricette{     /*contiene tutte le div ricetta, che a loro volta sono divisa in due colonne tra immagine e sezione info*/
+
+    width:100%;
+    margin-left: 0%;
+    margin-right: 0;
+    margin-top: 0%;    /*attaccato al titolo*/
+    display: flex; /* or inline-flex */
+    flex-direction: column; /*ordina gli item in colonna, in quanto voglio una ricetta per riga*/
+    /*flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
+
+}
+
+
+.ricetta{      /*la prima meta immaine, la seconda meta la sezione info*/
+    width:97.5%; /*ogni ricetta deve prendersi tutta la larghezza del container-ricette meno il margin left*/
+    margin-left:2.5%;
+    height: 300px;   /*altezza di tutte e tre le colonne*/
+    border: 1px solid grey;
+    flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
+    display: flex;
+    flex-direction: row;
+    margin-bottom:5%;
+}
+
+/*PRIMA COLONNA*/
+
+.img-ricetta{    /*prima delle tre sezioni in cui è diviso il container ricette*/
+    width: 30%;
+}
+
+.ricetta img{
+    height: 100%; /*voglio che prenda tutta l'altezza che ho dato alla ricetta*/
+    width: 100%; /*voglio che sia larga il 100% del container img-ricette che è il 30% del container ricette, l'altro 70% lo voglio lasciare ai bottoni e alla sezione info*/
+}
+
+/*SECONDA COLONNA*/
+
+.bt-ricetta{
+    width:3%; /*il 3% del container di tutta la ricetta lo lascio alla sezione bottoni*/
+    transition: all 200ms;
+}
+
+
+
+.openbtn{
+    width:100%;  /*potevo anche non metterlo, comunque prendono tutta la seconda colonna del container ricetta*/
+    height:33.3333%; /*cio esattamente l'altezza dell'immagine nella prima colonna diviso 3*/
+                    /*cosi divido tutta l'altezza per i tre bottoni*/
+    background-color: skyblue ;
+    border:0px;
+    color: black;       
+    border-radius: 6px;
+    transition: 0.3s;  
+    
+}
+
+
+
+
+/*il testo all'interno dei tre bottoni*/
+.openbtn p{
+    writing-mode: tb-rl; /*per far scrivere in verticale nei bottoni*/
+    margin-left:15%;
+    font-weight: 500;
+    text-align: center;
+    font-size: 100%;
+    transition: all ease-in-out 200ms;
+}
+
+
+
+
+
+.openbtn:hover p {    /*cosa fa il testo nei bottoni quando passo sopra i bottoni*/
+    margin-left: 10%; 
+    z-index: 3;/*li metto a un livello sopra le tabelle cosi si vedono quando ci vado sopra anche se ci sta una tabella visulizzata*/
+
+}
+
+
+
+/*TERZA COLONNA*/
+
+.info-ricetta{  /*la terza parte del container ricetta sara quello delle info, a cui assegnero la larghezza rimanente*/
+    width:67%; /*tutta quella del container ricette meno quella delle altre due colonne*/
+    
+}
+
+
+
+
+
+ /*all'inizio tutte le tre tabelle avranno larghezza pari a zero. quando premero il pulsante corrispondente
+ a una tabella verra trigerata una funzione javascript che cambiera la larghezza facendogli prendere tutta la terza colona*/
+
+#tab-ingredienti{
+
+    height: 0; /*all'inizio visualizzo la tabella degli ingredienti*/
+    width: 0; 
+    top: 0;
+    left: 0;
+    background-color: lightgrey; /* il colore deve combaciare con quello dei bottoni*/
+    overflow: auto;
+    
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+ 
+}
+
+
+#tab-procedimento{
+
+    height: 0; /*all'inizio altezza e larghezza sono zero li cambiamo con la funzione javascript*/
+    width: 0; 
+    top: 0;
+    left: 0;
+    background-color: lightgrey; /* Black*/
+    overflow: auto; /* scroll */
+   
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    z-index: 1;
+}
+
+
+
+#tab-info{
+
+    height: 100%; /*all'inizio altezza e larghezza sono zero li cambiamo con la funzione javascript*/
+    width: 100%; 
+    top: 0;
+    left: 0;
+    background-color: rgb(211, 211, 211); /* Black*/
+    overflow: auto; /* scroll */
+    
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    z-index: 1;
+}
+
+
+
+
+
+/*quando lo schermo diventa piu piccolo devo aumentare la larghezza delle 
+prime due colonne e diminuire la terza di ogni ricetta. devo anche diminuire 
+l'altezza di tutto se lo schermo diventa piu piccolo*/
+
+
+/*COSE DA VEDERE*/
+/*si potrebbero anche rimpicciolire le immagini della sezione portate cosi da non far venire una colonna sola*/
+/*e si dovrebbe ingrandire il font delle tabelle in alcuni device e nello schermo intero,. questo pero dipende anche da
+come decido di strutturare il contenuto, da rivedere quando riempiamo il sito*/
+
+@media(max-width:411px)
+{
+     /*modifico le dimensioni delle tre colonne*/
+     /*tutto il resto sta dentro una delle tre righe ed'è impostato in percentuale percio si adattera da solo*/
+
+     .ricetta{      
+        width:97.5%; 
+        margin-left:2.5%;
+        height: 150px;            /*modificata*/
+        border: 1px solid grey;
+        flex-wrap: nowrap;  
+        display: flex;
+        flex-direction: row;
+        margin-bottom:5%;
+    }
+
+    
+    .info-ricetta{  
+        width:62%;       /*modificata*/
+        
+    }
+
+    .bt-ricetta{
+        width:5%;         /*modificata*/
+        transition: all 200ms;
+    }
+
+    /*testo troppo piccolo per i cellulari lo devo modificare*/
+
+    /*potrei teoricamente fare in modo che siano orizzontali nei device e metterli in un menu collapsed.
+    in modo che se voglio vedere i bottoni questi sono visibili, se invece voglio vedere una info della
+    ricetta li posso far sparirire con un bottone e farli riapparire con quello stesso bottone.*/
+    .openbtn p{
+        writing-mode: tb-rl; 
+        margin-left:10%;       /*modificata*/
+        font-weight: 500;
+        text-align: center;
+        font-size:50%;        /*modificata*/
+        transition: all ease-in-out 200ms;
+    }
+
+    
+    .img-ricetta{    
+        width: 33%;   /*modificata*/
+    }
+
+    
+
+
+}
+
+
+@media(max-width:414px) and (max-height:823px)
+{
+    
+
+     .ricetta{      
+        width:97.5%; 
+        margin-left:2.5%;
+        height: 200px;            /*m*/
+        border: 1px solid grey;
+        flex-wrap: nowrap;  
+        display: flex;
+        flex-direction: row;
+        margin-bottom:5%;
+    }
+
+    
+    .info-ricetta{  
+        width:54%;           /*m*/
+        
+    }
+
+    .bt-ricetta{
+        width:6%;               /*m*/
+        transition: all 200ms;
+    }
+
+    
+    .openbtn p{
+        writing-mode: tb-rl; 
+        margin-left:10%;
+        font-weight: 500;
+        text-align: center;
+        font-size:70%;
+        transition: all ease-in-out 200ms;
+    }
+
+    
+    .img-ricetta{    
+        width: 40%;                /*m*/
+    }
+
+    
+
+}
+
+
+
+@media(max-width:1024px)
+{
+    
+
+     .ricetta{      
+        width:97.5%; 
+        margin-left:2.5%;
+        height: 350px;            /*m*/
+        border: 1px solid grey;
+        flex-wrap: nowrap;  
+        display: flex;
+        flex-direction: row;
+        margin-bottom:5%;
+    }
+
+    
+    .info-ricetta{  
+        width:51%;           /*m*/
+        
+    }
+
+    .bt-ricetta{
+        width:4%;               /*m*/
+        transition: all 200ms;
+    }
+
+    
+    .openbtn p{
+        writing-mode: tb-rl; 
+        margin-left:10%;
+        font-weight: 500;
+        text-align: center;
+        font-size:110%;
+        transition: all ease-in-out 200ms;
+    }
+
+    
+    .img-ricetta{    
+        width: 45%;                /*m*/
+    }
+
+    
+
+}
+
+
