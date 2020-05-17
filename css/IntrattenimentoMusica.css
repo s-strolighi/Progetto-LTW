@@ -1,0 +1,161 @@
+body{
+    background-image: url("../../assets/img/Intrattenimento/pattern.png");
+}
+/*altezza della sezione dedicata a youtube*/
+.youtube{
+    height:50vh;
+}
+/*dimensionamento input type=text*/
+input[type=text]{
+    margin-top:2vh;
+    height:5vh;
+    margin-bottom:2vh;
+    width:calc(40vw - 5vw - 6px);
+    transition-duration:width 1s;
+}
+/*dimensionamento del bottone cerca*/
+input[type=submit]{
+    height:5vh;
+    width:5vw;
+    min-width:52px;
+}
+/*dimensionamento immagine iniziale (che verrà sostituita dal frame)*/
+.youtubeLogo{
+    height:40vh;
+    width:40vw;
+    margin-left:30vw;
+}
+/*allineamento centrale dell'input type text e del bottone cerca*/
+.ricerca{
+    margin-left:30vw;
+}
+/*dimensionamento iframe*/
+iframe{
+    margin-left:30vw;
+    width:40vw;
+}
+/*dimensionamento icone contenute nella nav*/
+.img-reduced{
+    width:8vw;
+    height:8vw;
+}
+/*margini della nav*/
+.nav{
+    margin-left:10vw;
+    margin-right:10vw;
+}
+/*margine del primo elemento della nav rispetto alla nav*/
+.nav-first{
+    margin-left:5vw;
+}
+/*margine della descrizione dell'icona attualmente selezionata*/
+.descrizione{
+    margin-left:15vw;
+    margin-right:15vw;
+    z-index:2;
+}
+.titolo{
+    z-index:2;
+}
+/*dimensionamento, scroll e sfondo di ognuno dei documenti caricati con ajax*/
+.youtube-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(255, 0, 0),rgb(252, 252, 252));
+}
+.spotify-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(28, 199, 79),rgb(252, 252, 252));
+}
+.deezer-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(46, 46, 46),rgb(252, 252, 252));
+}
+.applemusic-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(162, 0, 255),rgb(255, 241, 251));
+}
+.amazonmusic-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(25, 0, 255),rgb(255, 244, 252));
+}
+.soundcloud-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(255, 102, 0),rgb(255, 244, 252));
+}
+.tunein-div{
+    overflow:auto;
+    overflow-x:hidden;
+    height:calc(29vh + 2px);
+    background-image: linear-gradient(to top,rgb(0, 255, 234),rgb(255, 244, 252));
+}
+
+/*vari ridimensionamenti per non creare una doppia fila di icone*/
+@media (max-width:1343px){
+    .img-reduced{
+        width:7vw;
+        height:7vw;
+    }
+    .youtube-div, .spotify-div, .deezer-div, .applemusic-div,
+    .amazonmusic-div, .soundcloud-div, .tunein-div {
+        height:32vh;
+    }
+}
+@media (max-width: 1050px){
+    input[type=text]{
+        width:calc(40vw - 58px);
+    }
+    .youtube-div, .spotify-div, .deezer-div, .applemusic-div,
+    .amazonmusic-div, .soundcloud-div, .tunein-div {
+        height:35vh;
+    }
+    .img-reduced{
+        width:6vw;
+        height:6vw;
+    }
+}
+
+@media (max-width:916px){
+    .nav{
+        margin-left:5vw;
+        margin-right:0vw;
+    }
+    .nav-first{
+        margin-left:5vw;
+    }
+}
+
+@media (max-width:535px){
+    .nav{
+        margin-left:2vw;
+    }
+    .nav-first{
+        margin-left:0vw;
+    }
+    .img-reduced{
+        width:calc(5vw - 3px);
+        height:calc(5vw - 3px);
+    }
+}
+
+@media (max-width:400px){
+    .youtubeLogo{
+        margin-left:15vw;
+        width:70vw;
+    }
+    iframe{
+        margin-left:15vw;
+        width:70vw;
+    }
+}
