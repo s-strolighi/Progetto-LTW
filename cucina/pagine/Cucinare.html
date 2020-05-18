@@ -35,6 +35,8 @@
   <!--includo il mio javascript-->
   <script type="text/javascript" lang="javascript" src="../../js/Cucinare.js"></script>
 
+  <script type="text/javascript" src="../../js/ControllaSessione.js"></script>
+  <script>controllaSessione();</script>
 
         </head>
 
@@ -45,7 +47,7 @@
  <!-- navbar-->
  <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-0 rounded" style="width:100%;"> <!--Inserisci stile in file css-->
     <!--Logo-->
-    <a class="navbar-brand" href="../index.html"><img src="../../assets/img/logo.png" width="50" height="50" alt=""/></a> <!--Immagine da cambiare-->
+    <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="50" height="50" alt=""/></a> <!--Immagine da cambiare-->
     
     <!--bottone che apre la Navbar ridimensionata-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -72,7 +74,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="DietaENutrizione.html">Dieta</a>    <!--Link mancante-->
             </li>
+            
         </ul>
+         <!-- Tasto Logout -->
+         <div class="text-center">
+            <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+          </div>
     </div>
 </nav>
 
@@ -206,7 +213,7 @@
        <!--la seconda colonna divisa a sua volta in 2 righe-->
         <div class="info-ricetta">
 
-            <!--prima riga-->
+            <!--prima riga della seconda colonna-->
             <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
                 <button id="p1" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
                 <button id="s1" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>

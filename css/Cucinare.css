@@ -24,14 +24,15 @@ h2{
 }
 
 h1 a{
-    color:rgb(130, 221, 18);
+    color: white;
    
     
 }
 
 h1 a:hover{
     text-decoration: none;
-    color:rgb(174, 245, 9);
+
+    color: black;
    
 }
 *{
@@ -63,7 +64,7 @@ text-align: center;
     font-size: xx-large;
     color: white;
     margin-bottom: 0;
-    background-image: url("../assets/img/cucina/sfondo4.jpg");
+    background-image: url("../assets/img/cucina/pattern.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,7 +77,7 @@ text-align: center;
 .container-principale /*quello che contiene tutti gli altri elementi e rispetto al quale si posizionano*/
 {
     padding-top: 5%;
-    background-image: url("../assets/img/cucina/sfondo4.jpg");
+    background-image: url("../assets/img/cucina/pattern.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,7 +94,9 @@ text-align: center;
 che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimensioni. 
 è comunque consigliabile prendere immagini delle dimensioni giuste perche si vedano bene*/
 .item img{                   
-    height: 180px;
+    height: 20vw;
+    width:20vw;
+    object-fit: cover;
 }
 
 .container-carousel{  /*contiene l'owl carousel*/
@@ -200,7 +203,7 @@ che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimens
 
 .container-ricette{     /*contiene tutte le div ricetta, che a loro volta sono divisa in due colonne tra immagine e sezione info*/
 
-
+    
     width:80%;
     margin-left: 10%;
     margin-right: 0;
@@ -221,17 +224,30 @@ che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimens
     display: flex;
     flex-direction: row;
     margin-bottom:5%;
+
+    
+    border-bottom-left-radius: 2.5% !important;   /*arrotondo tutti i botdi della ricetta poi i c ontenuti interni devono seguire questo arrotondamento*/
+    border-top-left-radius: 2.5% !important;
+    border-bottom-right-radius: 2.5% !important;
+    border-top-right-radius: 2.5% !important;
+
+   
 }
 
 /*PRIMA COLONNA*/
 
 .img-ricetta{    /*prima delle tre sezioni in cui è diviso il container ricette*/
     width: 30%;
+    
+   
 }
 
 .ricetta img{
     height: 100%; /*voglio che prenda tutta l'altezza che ho dato alla ricetta*/
     width: 100%; /*voglio che sia larga il 100% del container img-ricette che è il 30% del container ricette, l'altro 70% lo voglio lasciare ai bottoni e alla sezione info*/
+
+    border-bottom-left-radius: 2.5% !important; /*per arrotontare la parte sinistra della ricetta*/
+    border-top-left-radius: 2.5% !important;
 }
 
 /*SECONDA COLONNA*/
@@ -241,29 +257,19 @@ che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimens
 
 
 
-
-
-
-
-
-
-
-
-
-
 .info-ricetta{  /*la terza parte del container ricetta sara quello delle info, a cui assegnero la larghezza rimanente*/
     width:70%; /*tutta quella del container ricette meno quella delle altre due colonne*/
+   
     
 }
 
 .bt-ricetta{
 width:100%;
 height: 10%;
-
-
 }
 
 .openbtn{
+   
     width:33.3%;  /*potevo anche non metterlo, comunque prendono tutta la seconda colonna del container ricetta*/
     height:100%;
     margin:0;
@@ -271,12 +277,12 @@ height: 10%;
     background: transparent;
     border:0px;
     color: white;       
-    border-radius: 7px;
+    border-radius: 2.5%;
     transition: 0.3s;  
     float: left;       /*da mettere per posizionare bene i bottoni, senza questi la posizione si distorce*/
    
-   background-color: sandybrown;
-   background-image: url("../assets/img/cucina/pattern.png");
+    background-color: sandybrown;
+   /*background-image: url("../assets/img/cucina/pattern.png");*/
     
 }
 
@@ -317,10 +323,7 @@ height: 10%;
     width: 100%; 
     background-color: whitesmoke; 
     overflow: auto;
-    
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-    
- 
 }
 
 
@@ -347,6 +350,8 @@ height: 10%;
     
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
     z-index: 1;
+   
+
     
 }
 
@@ -403,7 +408,7 @@ come decido di strutturare il contenuto, da rivedere quando riempiamo il sito*/
         border-radius: 3px;
         transition: 0.3s;  
         background-color: sandybrown;
-        background-image: url("../assets/img/cucina/pattern.png");
+       /* background-image: url("../assets/img/cucina/pattern.png");*/
     }
 
     
@@ -482,7 +487,7 @@ come decido di strutturare il contenuto, da rivedere quando riempiamo il sito*/
         border-radius: 3px;
         transition: 0.3s;  
         background-color: sandybrown;
-        background-image: url("../assets/img/cucina/pattern.png");
+       /* background-image: url("../assets/img/cucina/pattern.png");*/
     }
 
     
@@ -561,7 +566,7 @@ come decido di strutturare il contenuto, da rivedere quando riempiamo il sito*/
             border-radius: 3px;
             transition: 0.3s;  
             background-color: sandybrown;
-            background-image: url("../assets/img/cucina/pattern.png");
+           /* background-image: url("../assets/img/cucina/pattern.png");*/
         }
     
         
