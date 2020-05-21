@@ -1,169 +1,112 @@
-
-
-
-/*per nascondere la navbar mentre si naviga*/
-#nav-hide {
-    background-color: #333;
-    position: fixed;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
-    z-index: 1;
-  }
-
-
-h2{
+/*stili dei vari testi della pagina*/
+body{
+    background-image: url("../assets/img/cucina/pattern.png");  
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2{                         /*titoli delle portate nella sezione delle ricette*/
     text-decoration: none;
     font-size: xx-large;
     font-weight: 200;
-  
     font-style: oblique;
     margin-left:0%;
     color: #FCFDFE;
-   
 }
-
-h1 a{
+h1 a{                     /*stile dei link ancora*/
     color: white;
-   
-    
 }
-
-h1 a:hover{
-    text-decoration: none;
-
-    color: black;
-   
+h1 a:hover{               
+    text-decoration: none; 
+    color: black;  
 }
-*{
-    margin:0;
-    padding:0;
+.tab h4{                     /*titoli nelle tabelle di info*/
+color:orangered;
+font-size: 120%;
+text-align: center;
 }
-
-.tab ul {
+.tab ul {               /*stile degli elenchi nelle tabelle di info*/
     margin-top: 5%;
     padding: 0;
-    margin-left: auto;
-    
+    text-align: left;
+    padding-left: 45%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
   }
-
-.tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
-text-align: center;
-margin-top: 5%;
+li span{                  /* i nomi delle voci nella tabella dellle info generali*/
+    font-style: italic;
+    font-weight: bold;
 }
-h4{
-    color:orangered;
-font-size: 15;
-text-align: center;
-}
-
-
-#titolo{
+h3{                     /*stile del titolo*/          
     text-align: center;
-    font-weight: 400;
-    font-size: xx-large;
     color: white;
-    margin-bottom: 0;
-    background-image: url("../assets/img/cucina/pattern.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    padding-right: 5;
-
+    padding-bottom: 1vw;
+    padding-top: 1vw;
 }
-
-
-.container-principale /*quello che contiene tutti gli altri elementi e rispetto al quale si posizionano*/
-{
-    padding-top: 5%;
-    background-image: url("../assets/img/cucina/pattern.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width:100%;
-    height: auto;
-    
-    
-}
-
-
-
-/*settando qui nel css l'altezza di tutte le immagini del carousel mi assicuro
-che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimensioni. 
-è comunque consigliabile prendere immagini delle dimensioni giuste perche si vedano bene*/
-.item img{                   
-    height: 20vw;
-    width:20vw;
-    object-fit: cover;
-}
-
-.container-carousel{  /*contiene l'owl carousel*/
-    
-    
-    
+/*l'unica cosa che cambia è che mettendo questo lascio margini a destra e sinistra del carousel 
+.container-carousel{  /*contiene l'owl carousel
     width:80%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 0%;    /*attaccato al titolo*/
-    display: flex; /* or inline-flex */
-    flex-direction: row; /*ordina gli item da sinistra a destra*/
-    flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
+    margin-top: 0%;       /*attaccato al titolo
 }
-
-.item .content    /*contenuto del box di testo dentro le immagini del carousel*/
+*/
+/*setto le dimensioni delle slide del carousel*/
+.carousel-item img{                   
+    height:89%;
+    object-fit: cover;
+}
+.carousel-item .content    /*contenuto del box di testo dentro le immagini del carousel*/
 {
-    position: absolute; /* Position the background text */
-    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1; /* Grey text */
-    width: 80%; /* Full width - il margin lasciato agli item */
-    padding: 20px; /* Some padding */
-
+    position: absolute;                 /* Position the background text */
+    bottom: 0;                          /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0);         /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);   /* Black background with 0.5 opacity */
+    color: #f1f1f1;                   /* Grey text */
+    width: 80%;                         /*  non prende tutta la larghezza inizialmente */
+    padding: 5%;                      /* Some padding */
     transition: 200ms all ease-in-out;
   }
-
-  .item:hover .content   /*comportamento del box  di testo content quando sto sopra un immagine*/
+.carousel-item:hover .content   /*comportamento del box di testo content quando sto sopra un immagine*/
 {
-    position: absolute; /* Position the background text */
-    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1; /* Grey text */
-    width: 100%; /* Full width*/
-    padding: 30px; /* Some padding */
+    width: 100%;      /* Full width*/
+    padding: 10%;     /*aumento un po anche il padding*/
     overflow: hidden;  
-  }
-
-  .content p{           /*all'inizio vedo solo i titoli*/
-      display: none;
+}
+  .content p   /*testo all'interno del box*/
+  {           
+      display: none;/*all'inizio vedo solo i titoli*/
       transition: 200ms all ease-in-out;
   }
-  .item:hover .content p /*quando passo sopra alle immagini vedo anche le descrizioni*/
+  .carousel-item:hover .content p /*quando passo sopra alle immagini vedo anche i paragrafi*/
   {
   display: inline;
   }
 
   /*FINE comportamento container del carousel*/
+
+
+
+
+
+
+
+
+
   /*INIZIO comportamento container delle sezioni per portata*/
 
-  .container-portate
+ /* questo container mi serve per gestire il comportamento degli oggetti al suo interno. in particolare volevo che le immagini delle portate
+ non si rimpicciolissero al ridimensionarsi della tabella come di solito ma che rimanessero delle stesse dimensioni 
+ andando a capo se non entravano*/
+  .container-portate   
   {
- 
-
-    
-    width:80%;   /*prende tutta la larghezza della pagina*/
-    margin-left: 10%; /*non c'è bisogno di mettere margini a dx e sx visto che uso justify-content*/
-    margin-right: 10%;
-    margin-top: 2.5%;    /*un po stacato dal titolo*/
-
-    display: flex; /* or inline-flex.  rende flessibile il container*/
-    flex-direction: row; /*ordina gli item da sinistra a destra*/
-    flex-wrap: wrap;   /*significa che se la pagina diventa troppo stretta gli elementi di questo container vanno a capo*/
+    width:80%;               /*non lo faccio largo tutta la pagina cosi lascio dei margini*/
+    margin-left: 10%;        /*decido quanto lasciare a destra e sinistra*/
+    margin-top: 2.5%;        /*un po staccato dal titolo*/
+    display: flex;           /*rende flessibile il container, in questo modo posso gestire meglio il comportamento degli elementi al suo interno*/
+    flex-direction: row;     /*ordina gli item da sinistra a destra*/
+    flex-wrap: wrap;         /*significa che se la pagina diventa troppo stretta gli elementi di questo container vanno a capo*/
     justify-content: center; /*tutti gli elementi sono centrati, anche quando vanno a capo per il ridimensionamento*/
-  }
+    background: transparent;  
+}
   /*per tutte le informazioni su come gestire i container fluidi: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background*/
 
 .item-portate h1{          /*stile dei titoli per le portate*/
@@ -171,27 +114,27 @@ che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimens
     font-size: x-large;
     font-style: oblique;
 }
-
-.item-portate img           /*immagini delle portate arrotondate*/
+.item-portate img                        /*immagini delle portate arrotondate*/
 {                   
-    height: 150px;
-    width:  200px;
-    margin:5;              /*le stacco tra di loro*/
+    height: 175px;                      /*in questo unico caso imposto le dimensioni in pixel perche al ridimensionamento della pagina non voglio che questo elemento si adatti 
+                                          ma voglio che i vari elementi vadano a capo mantenendo la propria grandezza, per questo ho importato nowrap nel container*/
+    width:  175px;
+    margin:5;                             /*le spazio tra le foto*/
     border: solid 1px;
-    border-radius:200px; /*dopo un certo valore non arrotonda piu*/
-
-    transition: 300ms all ease-in-out; /*i cambiamenti nell'hover ci metteranno 300ms a completarsi*/
+    border-radius:50%;                    /*massimo arrotondamento possibile*/
+    transition: 300ms all ease-in-out;    /*i cambiamenti nell'hover ci metteranno 300ms a completarsi*/
 }
-
 .item-portate:hover img  /*quando passo sopra le immagini la ingradisco e/o levo l'arrotondamento delle stesse*/
 {
-    border: solid 1px;
-   /* border-radius: 0px; */ 
-    height: 160px;
-    width: 220px;
+   
+    height: 200px;
+    width: 200px;
 }
-
 /*FINE CONTAINER PORTATE*/
+
+
+
+
 
 
 
@@ -201,98 +144,64 @@ che siano tutte allineate alla stessa altezza indipendentemente dalle oro dimens
 
 /*INIZIO CONTAINER RICETTE*/
 
-.container-ricette{     /*contiene tutte le div ricetta, che a loro volta sono divisa in due colonne tra immagine e sezione info*/
-
-    
+.container-ricette{     /*contiene le ricette e mi serve per riuscire a lasciare i margini a destra e sinistra*/
     width:80%;
     margin-left: 10%;
-    margin-right: 0;
-    margin-top: 0%;    /*attaccato al titolo*/
-    display: flex; /* or inline-flex */
-    flex-direction: column; /*ordina gli item in colonna, in quanto voglio una ricetta per riga*/
-    /*flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
-
 }
 
-
-.ricetta{      /*la prima meta immaine, la seconda meta la sezione info*/
-    width:100%; /*ogni ricetta lascia dei margini ai lati*/
+.ricetta      /*container che forma la ricetta fatto di 1 colonna con 1 riga e una seconda colonna divisa in 2 righe*/
+{      
+    width:100%;    /*tutta la larghezza del container*/
     margin-left:0%;
-    height: 300px;   /*altezza di tutte e tre le colonne*/
+    height: 20vw;   /*altezza di tutte e tre le colonne*/
     border: 1px solid grey;
     flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
     display: flex;
     flex-direction: row;
     margin-bottom:5%;
 
-    
-    border-bottom-left-radius: 2.5% !important;   /*arrotondo tutti i botdi della ricetta poi i c ontenuti interni devono seguire questo arrotondamento*/
-    border-top-left-radius: 2.5% !important;
-    border-bottom-right-radius: 2.5% !important;
-    border-top-right-radius: 2.5% !important;
-
-   
-}
-
-/*PRIMA COLONNA*/
-
-.img-ricetta{    /*prima delle tre sezioni in cui è diviso il container ricette*/
-    width: 30%;
-    
-   
-}
-
-.ricetta img{
-    height: 100%; /*voglio che prenda tutta l'altezza che ho dato alla ricetta*/
-    width: 100%; /*voglio che sia larga il 100% del container img-ricette che è il 30% del container ricette, l'altro 70% lo voglio lasciare ai bottoni e alla sezione info*/
-
     border-bottom-left-radius: 2.5% !important; /*per arrotontare la parte sinistra della ricetta*/
     border-top-left-radius: 2.5% !important;
 }
 
-/*SECONDA COLONNA*/
-
-
-
-
-
-
-.info-ricetta{  /*la terza parte del container ricetta sara quello delle info, a cui assegnero la larghezza rimanente*/
-    width:70%; /*tutta quella del container ricette meno quella delle altre due colonne*/
-   
-    
+/*PRIMA COLONNA*/
+.img-ricetta{    /*prima colonna del container delle ricette singole*/
+    width: 30%;  /*prende il 30% della ricetta*/
 }
 
-.bt-ricetta{
+.ricetta img{
+    height: 100%;      /*voglio che prenda tutta l'altezza che ho dato alla ricetta*/
+    width: 100%;        /*voglio che sia larga il 100% del container img-ricette che è il 30% del container ricette, l'altro 70% lo voglio lasciare ai bottoni e alla sezione info*/
+
+    border-bottom-left-radius: 2.5% !important; /*per arrotontare la parte sinistra della ricetta*/
+    border-top-left-radius: 2.5% !important;
+}
+/*SECONDA COLONNA*/
+
+/*PRIMA RIGA DELLA SECONDA COLONNA*/
+.info-ricetta{  /*la terza parte del container ricetta sara quello delle info, a cui assegnero la larghezza rimanente*/
+    width:70%; /*tutta quella del container ricette meno quella delle altre due colonne*/
+}
+
+.bt-ricetta{    /*i bottoni prenderanno tutta la larghezza della seconda colonna e si fermeranno in alto*/
 width:100%;
 height: 10%;
 }
 
 .openbtn{
    
-    width:33.3%;  /*potevo anche non metterlo, comunque prendono tutta la seconda colonna del container ricetta*/
+    width:33.3%;
     height:100%;
+    color: white;   
     margin:0;
-    padding:0;
-    background: transparent;
+    padding:0;    
     border:0px;
-    color: white;       
-    border-radius: 2.5%;
     transition: 0.3s;  
+    border-radius: 3px;
     float: left;       /*da mettere per posizionare bene i bottoni, senza questi la posizione si distorce*/
-   
     background-color: sandybrown;
-   /*background-image: url("../assets/img/cucina/pattern.png");*/
-    
+
 }
-
-.openbtn:hover{
-    border-radius: 0px;
-}
-
-
-
-
 /*il testo all'interno dei tre bottoni*/
 .openbtn p{
    
@@ -301,12 +210,10 @@ height: 10%;
     font-weight: 500;
     text-align: center;
     font-size: 20;
-    transition: all ease-in-out 200ms;
-   
+    transition: all ease-in-out 200ms;  
 }
 
- /*seconda riga della seconda colonna*/
-
+ /*SECONDA RIGA  DELLA SECONDA COLONNA*/
  .tabelle{
      width:100%;
      height: 90%;
@@ -315,10 +222,7 @@ height: 10%;
  /*all'inizio tutte le tre tabelle avranno larghezza pari a zero. quando premero il pulsante corrispondente
  a una tabella verra trigerata una funzione javascript che cambiera la larghezza facendogli prendere tutta la terza colona*/
 
-
-
 #tab-ingredienti{
-   
     height: 0; /*all'inizio visualizzo la tabella degli ingredienti*/
     width: 100%; 
     background-color: whitesmoke; 
@@ -326,284 +230,143 @@ height: 10%;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
 }
 
-
 #tab-procedimento{
-
     height: 0; /*all'inizio altezza e larghezza sono zero li cambiamo con la funzione javascript*/
-    width: 100%; 
-    
+    width: 100%;  
     background-color: whitesmoke;
     overflow: auto; /* scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-    z-index: 1;
-   
 }
-
-
 #tab-info{
-
     height: 100%; /*all'inizio altezza e larghezza sono zero li cambiamo con la funzione javascript*/
     width: 100%; 
-    
     background-color: whitesmoke;
     overflow: auto; /* scroll */
-    
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-    z-index: 1;
-   
-
-    
 }
 
 
-
-
-
-/*quando lo schermo diventa piu piccolo devo aumentare la larghezza delle 
-prime due colonne e diminuire la terza di ogni ricetta. devo anche diminuire 
-l'altezza di tutto se lo schermo diventa piu piccolo*/
-
-
-/*COSE DA VEDERE*/
-/*si potrebbero anche rimpicciolire le immagini della sezione portate cosi da non far venire una colonna sola*/
-/*e si dovrebbe ingrandire il font delle tabelle in alcuni device e nello schermo intero,. questo pero dipende anche da
-come decido di strutturare il contenuto, da rivedere quando riempiamo il sito*/
-
-
-
-@media(max-width:411px)
-{
-     /*modifico le dimensioni delle tre colonne*/
-     /*tutto il resto sta dentro una delle tre righe ed'è impostato in percentuale percio si adattera da solo*/
-
-
-    
-.ricetta{      /*la prima meta immaine, la seconda meta la sezione info*/
-    width:100%; /*ogni ricetta lascia dei margini ai lati*/
-    margin-left:0%;
-    height: 100px;   /*altezza di tutte e tre le colonne*/
-    border: 1px solid grey;
-    flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
-    display: flex;
-    flex-direction: row;
-    margin-bottom:5%;
-}
-
-
-.bt-ricetta{
-    width:100%;
-    height: 20%;
-    
-    
+@media(max-width:461px)
+{   
+    .container-ricette{   /*lascio meno margine alle ricette*/
+        width:98%;
+        margin-left:1%;
     }
-    
-    .openbtn{
-        width:33.3%;  /*potevo anche non metterlo, comunque prendono tutta la seconda colonna del container ricetta*/
-        height:100%;
-        margin:0;
-        padding:0;
-      
-        border:0px;
-        color: white;       
-        border-radius: 3px;
-        transition: 0.3s;  
-        background-color: sandybrown;
-       /* background-image: url("../assets/img/cucina/pattern.png");*/
+    .ricetta      /*aumento un po il valore dell'altezza della ricetta*/
+    {      
+        height: 35vw;   /*altezza di tutte e tre le colonne*/
     }
-
-    
+   .bt-ricetta{
+         height: 20%;  /*aumento l'altezza*/
+    }
     .openbtn p{
-   
-        height: 100%;
-        width: 100%;
-        font-weight: 500;
-        text-align: center;
-        font-size: 10;
-        transition: all ease-in-out 200ms;
-       
+        font-size: 3.5vw;
     }
-    
-    
-    .tabelle{
-        width:100%;
+    .tabelle{     /*diminuisco un po l'altezza*/
         height: 80%;
     }
-
-    .tab ul {
-        margin-top: 2%;
-        padding: 0;
-        margin-left: auto;
-        font-size: 10;
-        
+    .tab ul {               /*stile degli elenchi nelle tabelle di info*/
+        text-align: left;
+        padding-left: 10%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
       }
-    
     .tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
-    text-align: center;
     margin-top: 2%;
-    font-size: 10;
+    font-size: 3vw;
+    align-items: center;
     }
-
     .tab h4{
-    color:orangered;
-    font-size: 12;
-    text-align: center;
-    }
-   
-}
-
-
-@media(min-width:414px) 
-{
-    
-
-    
-.ricetta{      /*la prima meta immaine, la seconda meta la sezione info*/
-    width:100%; /*ogni ricetta lascia dei margini ai lati*/
-    margin-left:0%;
-    height: 100px;   /*altezza di tutte e tre le colonne*/
-    border: 1px solid grey;
-    flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
-    display: flex;
-    flex-direction: row;
-    margin-bottom:5%;
-}
-
-
-.bt-ricetta{
-    width:100%;
-    height: 20%;
-    
-    
-    }
-    
-    .openbtn{
-        width:33.3%;  /*potevo anche non metterlo, comunque prendono tutta la seconda colonna del container ricetta*/
-        height:100%;
-        margin:0;
-        padding:0;
-      
-        border:0px;
-        color: white;       
-        border-radius: 3px;
-        transition: 0.3s;  
-        background-color: sandybrown;
-       /* background-image: url("../assets/img/cucina/pattern.png");*/
-    }
-
-    
-    .openbtn p{
-   
-        height: 100%;
-        width: 100%;
-        font-weight: 500;
-        text-align: center;
-        font-size: 10;
-        transition: all ease-in-out 200ms;
-       
-    }
-    
-    
-    .tabelle{
-        width:100%;
-        height: 80%;
-    }
-
-    .tab ul {
-        margin-top: 2%;
-        padding: 0;
-        margin-left: auto;
-        font-size: 10;
-        
-      }
-    
-    .tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
-    text-align: center;
-    margin-top: 2%;
-    font-size: 10;
-    }
-
-    .tab h4{
-    color:orangered;
-    font-size: 12;
-    text-align: center;
+    font-size:80%;
+    text-align: left;
     }
 }
-
-@media(min-width:768px)
-{
-
-
-   
-
-    
-    .ricetta{      /*la prima meta immaine, la seconda meta la sezione info*/
-        width:100%; /*ogni ricetta lascia dei margini ai lati*/
-        margin-left:0%;
-        height: 250px;   /*altezza di tutte e tre le colonne*/
-        border: 1px solid grey;
-        flex-wrap: nowrap;   /*tutti gli elementi di questo container stanno su una riga*/
-        display: flex;
-        flex-direction: row;
-        margin-bottom:5%;
+@media(min-width:462px) and (max-width:770px)
+{   
+    .container-ricette{     /*contiene le ricette e mi serve per riuscire a lasciare i margini a destra e sinistra*/
+        width:94%;
+        margin-left:3%;
     }
-    
-    
+    .ricetta{      /*container che forma la ricetta fatto di 1 colonna con 1 riga e una seconda colonna divisa in 2 righe*/      
+        height: 40vw;   /*altezza di tutte e tre le colonne*/
+    }    
     .bt-ricetta{
-        width:100%;
-        height: 10%;
-        
-        
-        }
-        
-        .openbtn{
-            width:33.3%;  /*potevo anche non metterlo, comunque prendono tutta la seconda colonna del container ricetta*/
-            height:100%;
-            margin:0;
-            padding:0;
-          
-            border:0px;
-            color: white;       
-            border-radius: 3px;
-            transition: 0.3s;  
-            background-color: sandybrown;
-           /* background-image: url("../assets/img/cucina/pattern.png");*/
-        }
-    
-        
-        .openbtn p{
-       
-            height: 100%;
-            width: 100%;
-            font-weight: 500;
-            text-align: center;
-            font-size: 18;
-            transition: all ease-in-out 200ms;
-           
-        }
-        
-        
-        .tabelle{
-            width:100%;
-            height: 90%;
-        }
-    
-        .tab ul {
-            margin-top: 4%;
-            padding: 0;
-            margin-left: auto;
-            font-size: 15;
-            
-          }
-        
-        .tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
-        text-align: center;
-        margin-top: 4%;
-        font-size: 15;
-        }
-    
-        .tab h4{
-        color:orangered;
-        font-size: 18;
-        text-align: center;
-        }
+    height: 20%;  /*aumento l'altezza*/
     }
+    .openbtn p{
+        font-size: 3.5vw;
+    }
+    .tabelle{
+        width:100%;
+        height: 80%;
+    }
+    .tab ul {               /*stile degli elenchi nelle tabelle di info*/
+        text-align: left;
+        padding-left: 0%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
+    }
+    .tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
+    margin-top: 2%;
+    font-size: 3vw;
+    align-items: center;
+    }
+    .tab h4{
+    font-size:4vw;
+    text-align: left;
+    }  
+}
+@media(min-width:771px) and (max-width:1023px)
+{
+    .container-ricette{     /*contiene le ricette e mi serve per riuscire a lasciare i margini a destra e sinistra*/
+        width:90%;
+        margin-left:5%;
+    }
+    .ricetta{      /*container che forma la ricetta fatto di 1 colonna con 1 riga e una seconda colonna divisa in 2 righe*/      
+        height: 30vw;   /*altezza di tutte e tre le colonne*/
+    }    
+    .bt-ricetta{
+    height: 20%;  /*aumento l'altezza*/
+    }
+    .openbtn p{
+        font-size: 3.5vw;
+    }   
+    .tabelle{
+        width:100%;
+        height: 80%;
+    }
+    .tab ul {               /*stile degli elenchi nelle tabelle di info*/
+        text-align: left;
+        padding-left: 0%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
+    }
+    .tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
+    margin-top: 2%;
+    font-size: 3.5vw;
+    align-items: center;
+    }
+    .tab h4{
+    font-size:4vw;
+    text-align: left;
+    }
+}
+@media(min-width:1024px) and (max-width:1100px)
+{         
+.bt-ricetta{
+    height: 20%;  /*aumento l'altezza*/
+    }
+    .openbtn p{
+        font-size: 2.5vw;
+    }
+    .tabelle{   
+        height: 80%;
+    }
+    .tab ul {               /*stile degli elenchi nelle tabelle di info*/
+        text-align: left;
+        padding-left: 0%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
+    }
+    .tab li{        /*le liste e i titoli all'interno della terza riga delle ricette*/
+    margin-top: 2%;
+    font-size: 2vw;
+    align-items: center;
+    }
+    .tab h4{
+    font-size:3vw;
+    text-align: left;
+    }
+}
