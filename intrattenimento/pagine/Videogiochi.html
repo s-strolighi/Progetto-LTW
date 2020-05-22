@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!--pagina responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="../../css/IntrattenimentoVideogiochi.css">
+    <script type="text/javascript" src="../../js/IntrattenimentoVideogiochi.js"></script>
+
+    <script type="text/javascript" src="../../js/ControllaSessione.js"></script>
+    <script>controllaSessione()</script>
+
+    <!--titolo-->
+    <title>Film/Serie TV</title>
+</head>
+
+<body>
+    <!-- navbar-->
+    <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark">
+        <!--Inserisci stile in file css-->
+        <!--Logo-->
+        <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="60" height="60"></a>
+        <!--Immagine da cambiare-->
+
+        <!--bottone che apre la Nvbar ridimensionata-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--Elementi navbar-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
+            <ul class="navbar-nav mr-auto text-center">
+                <!--Home-->
+                <li class="nav-item">
+                    <a class="nav-link" href="../HomeIntrattenimento.html">Home</a>
+                </li>
+                <!--Film e serie-->
+                <li class="nav-item">
+                    <a class="nav-link" href="FilmSerieTV.html">Film e SerieTV</a>
+                </li>
+                <!--Musica-->
+                <li class="nav-item">
+                    <a class="nav-link" href="Musica.html">Musica</a>
+                </li>
+                <!--Videogame-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="Videogiochi.html">Videogame</a>
+                </li>
+            </ul>
+            <!-- Tasto Logout -->
+            <div class="text-center">
+                <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CONTENUTO PAGINA -->
+    <div id="my-container">
+
+        <!-- CONTENUTO DI PRESENTAZIONE -->
+        <div id="first-container" class="videogame-container"> <!-- oggetto "videogame" -->
+            <div class="videogame-media"> <!-- parte superiore, con foto e video youtube -->
+                <img src="../../assets/img/intrattenimento/VideogiochiFirst.jpg">
+            </div>
+            <div class="videogame-title text-light"> <!-- parte inferiore con titolo e descrizione (accordion) -->
+                <div class="accordion" id="accordionPresentazione"> <!-- oggetto "accordion" -->
+                    <div class="card"> <!-- Intestazione accordion (titolo grande) -->
+                        <div class="videogame-title text-light"> 
+                            <h1 id="Presentazione-heading" data-toggle="collapse" data-target="#Presentazione"
+                                aria-expanded="false" aria-controls="Presentazione"><img src="../../assets/img/intrattenimento/VideogiochiClick.gif"> 
+                                Scopri i giochi!
+                            </h1> <!-- testo h1 del titolo -->
+                            <div class="next"><span></span></div> <!-- freccia "next" -->
+                        </div>
+                        <div id="Presentazione" class="collapse" aria-labelledby="Presentazione-heading"
+                            data-parent="#accordionPresentazione"> <!-- contenuto nascosto (descrizione) -->
+                            <div class="card-body text-dark">
+                                <h4>
+                                    Funzionalità della pagina:
+                                </h4>
+                                <p>
+                                    Clicca <b>sul titolo</b> del gioco per ottenere maggiori informazioni
+                                </p>
+                                <p>
+                                    Clicca <b>sulle frecce</b> laterali per scorrere i giochi
+                                </p>
+                                <p>
+                                    Clicca <b>sulla foto</b> per vedere un video di presentazione del gioco!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="videogame-container">
+            <div class="videogame-media">
+                <img src="../../assets/img/intrattenimento/VideogiochiRocketLeague.jpg">
+                <iframe src="https://www.youtube.com/embed/MwD2O_jrYwY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="videogame-title text-light">
+                <div class="accordion" id="accordionRocketLeague">
+                    <div class="card">
+                        <div class="videogame-title text-light">
+                            <div class="prev"><span></span></div>
+                            <h1 id="RocketLeague-heading" data-toggle="collapse" data-target="#RocketLeague" aria-expanded="false"
+                                aria-controls="RocketLeague">Rocket League</h1>
+                            <div class="next"><span></span></div>
+                        </div>
+                        <div id="RocketLeague" class="collapse" aria-labelledby="RocketLeague-heading"
+                            data-parent="#accordionRocketLeague">
+                            <div class="card-body text-dark">
+                                <p>
+                                    Il giocatore controllerà un'auto, detta Battle-Car, in un campo rettangolare con due porte ai lati più piccoli. Sono
+                                    presenti due squadre (Arancione e Blu) da 1 a 4 giocatori. Lo scopo del gioco è di mandare il maggior numero di palle
+                                    nella porta avversaria
+                                </p>
+                                <p>
+                                    Il gioco è molto <b>veloce</b>, le partite durano 5 minuti
+                                </p>
+                                <p>
+                                    <b>Cross platform</b> per un'ampia compatibilità di gioco tra diverse console. E' possibile creare gruppi e 
+                                    clan per le squadre di giocatori.
+                                </p>
+                                <p>
+                                    Gioco ricco di <b>eventi bonus e ricompense</b> per i giocatori, si possono ottenere parti per personalizzare le auto e molto altro!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div class="videogame-container">
+            <div class="videogame-media">
+                <img src="../../assets/img/intrattenimento/VideogiochiWarzone.jpg">
+                <iframe src="https://www.youtube.com/embed/TUHJ3ofLDs8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="videogame-title text-light">
+                <div class="accordion" id="accordionWarzone">
+                    <div class="card">
+                        <div class="videogame-title text-light">
+                            <div class="prev"><span></span></div>
+                            <h1 id="Warzone-heading" data-toggle="collapse" data-target="#Warzone"
+                                aria-expanded="false" aria-controls="Warzone">COD: Warzone</h1>
+                            <div class="next"><span></span></div>
+                        </div>
+                        <div id="Warzone" class="collapse" aria-labelledby="Warzone-heading"
+                            data-parent="#accordionWarzone">
+                            <div class="card-body text-dark">
+                                <p>
+                                    Warzone offre due modalità di gioco principali: Battle Royale e Plunder.
+                                    La prima modalità è simile ad altri titoli del genere con alcune particolarità come la presenza di 150 giocatori in
+                                    partita. A differenza di altri Battle Royale come Fortnite e Apex Legends, dove i giocatori dopo la morte possono
+                                    essere rianimati attraverso delle piattaforme, in Warzone dopo la morte i giocatori uccisi vengono portati nel gulag
+                                    dove combattono uno contro uno con un altro giocatore sconfitto, entrambi dotati delle stesse armi, al fine di essere
+                                    riportato in gioco.
+                                    Nella seconda modalità, Plunder, i team devono cercare pile di denaro sparse sulla mappa, senza dover interrompere la partita
+                                    una volta uccisi.
+                                </p>
+                                <p>
+                                    Warzone è <b>completamente gratuito</b> ed il gioco è <b>cross-platform</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="videogame-container">
+            <div class="videogame-media">
+                <img src="../../assets/img/intrattenimento/VideogiochiBrawlhalla.jpg">
+                <iframe src="https://www.youtube.com/embed/baixpNzE9es" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="videogame-title text-light">
+                <div class="accordion" id="accordionbrawlhalla">
+                    <div class="card">
+                        <div class="videogame-title text-light">
+                            <div class="prev"><span></span></div>
+                            <h1 id="brawlhalla-heading" data-toggle="collapse" data-target="#brawlhalla" aria-expanded="false"
+                                aria-controls="brawlhalla">Brawlhalla</h1>
+                            <div class="next"><span></span></div>
+                        </div>
+                        <div id="brawlhalla" class="collapse" aria-labelledby="brawlhalla-heading" data-parent="#accordionbrawlhalla">
+                            <div class="card-body text-dark">
+                                <p>
+                                    Brawlhalla è un videogioco picchiaduro sviluppato dalla Blue Mammouth Games. Il gameplay del gioco può essere
+                                    paragonato a quello del popolare Super Smash Bros. L'obiettivo è quello di lanciare gli avversari fuori dal campo in
+                                    cui si combatte.
+                                </p>
+                                <p>
+                                    Su Brawlhalla si può scegliere attualmente tra molteplici personaggi ognuno con mosse uniche e animazioni che
+                                    rispecchiano la storia di ognuno di essi. Il numero di Legends è in costante crescita ed è in programma di aggiungere un
+                                    personaggio ogni 1-2 mesi.
+                                </p>
+                                <p>
+                                    Ogni personaggio ha a disposizione <b>diverse armi</b> e <b>diversi tipi di attacco</b> (pesante, leggero, ecc..) per battere il nemico
+                                </p>
+                                <p>
+                                    Il gioco è distribuito dalla piattaforma Steam, è <b>gratuito</b> e <b>cross-platfrom</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="videogame-container">
+            <div class="videogame-media">
+                <img src="../../assets/img/intrattenimento/VideogiochiLol.jpg">
+                <iframe src="https://www.youtube.com/embed/BGtROJeMPeE" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="videogame-title text-light">
+                <div class="accordion" id="accordionLoL">
+                    <div class="card">
+                        <div class="videogame-title text-light">
+                            <div class="prev"><span></span></div>
+                            <h1 id="LoL-heading" data-toggle="collapse" data-target="#LoL" aria-expanded="false"
+                                aria-controls="LoL">League of Legends</h1>
+                            <div class="next"><span></span></div>
+                        </div>
+                        <div id="LoL" class="collapse" aria-labelledby="LoL-heading" data-parent="#accordionLoL">
+                            <div class="card-body text-dark">
+                                <p>
+                                    League of Legends (abbreviato con la sigla LoL) è un videogioco online del genere MOBA sviluppato e pubblicato da Riot
+                                    Games per Microsoft Windows e macOS. Detiene da ben 8 anni la leadership per il <b>gioco più giocato al mondo</b>
+                                </p>
+                                <p>
+                                    I giocatori sono divisi in <b>2 team composti da 5 campioni</b>. Ogni team inizia ai lati opposti di una mappa, vicino a quello
+                                    che è chiamato Nexus. Una partita è vinta quando il Nexus degli avversari è distrutto o quando il team avversario si
+                                    arrende. Per <b>distruggere un Nexus</b> ogni team deve farsi strada distruggendo una serie di torri, le quali sono posizionate
+                                    lungo le corsie principali che collegano i due Nexus (dette Lane) in modo da rallentare l'avanzata dei Minion e dei
+                                    campioni avversari.
+                                </p>
+                                <p>
+                                    Un Campione è l'unità eroica che guadagna i livelli nella durata di un match. Ogni Campione ha delle abilità speciali ed
+                                    è caratterizzato da ruoli es. "Combattente", "Supporto" o "Tiratore" per descrivere il loro stile di gioco e le
+                                    caratteristiche delle loro abilità. Attualmente il gioco conta quasi 150 campioni differenti.
+                                </p>
+                                <p>
+                                    Il gioco è in continua evoluzione: introduce regolarmente nuovi campioni, presenta particolari modalità
+                                    di gioco a tempo limitato (modalità evento) e prevede ricompense per i giocatori meritevoli (skin gratuite ad altri
+                                    oggetti utilizzabili in gioco)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="videogame-container">
+            <div class="videogame-media">
+                <img src="../../assets/img/intrattenimento/VideogiochiCivilization.jpg">
+                <iframe src="https://www.youtube.com/embed/xOYBWAJ_Eeo" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="videogame-title text-light">
+                <div class="accordion" id="accordioncivilization">
+                    <div class="card">
+                        <div class="videogame-title text-light">
+                            <div class="prev"><span></span></div>
+                            <h1 id="civilization-heading" data-toggle="collapse" data-target="#civilization" aria-expanded="false"
+                                aria-controls="civilization">Civilization VI</h1>
+                        </div>
+                        <div id="civilization" class="collapse" aria-labelledby="civilization-heading" data-parent="#accordioncivilization">
+                            <div class="card-body text-dark">
+                                <p>
+                                    Civilization VI è un videogioco strategico a turni, appartenente alla serie Civilization di Sid Meier
+                                </p>
+                                <p>
+                                    Civilization VI offre nuovi modi per interagire con il mondo, espandere il proprio impero sulla mappa, sviluppare la
+                                    propria cultura e competere con i più grandi leader della storia per plasmare una civiltà in grado di superare la prova
+                                    del tempo. Osserva le meraviglie del tuo impero dispiegarsi grandiosamente sulla mappa. Ogni città occupa più caselle ed è
+                                    possibile personalizzarne lo sviluppo per sfruttare al meglio le caratteristiche del territorio.
+                                </p>
+                                <p>
+                                    Le interazioni con le altre civiltà evolvono nel corso del gioco, dai primi rapporti primitivi, quando la guerra fa
+                                    parte integrante della vita, alle complesse alleanze e ai negoziati verso la fine della partita
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-space">
+            <!-- div per lo spazio a fondo pagina (impostato da jquery) -->
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>

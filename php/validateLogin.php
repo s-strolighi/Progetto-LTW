@@ -1,7 +1,18 @@
 <html>
 
 <head>
-    <script type="text/javascript" lang="javascript" src="../js/storage.js"></script>
+    <script type="text/javascript" lang="javascript">
+        function salvaStorage(id) { //l'id della sessione viene passato dal file PHP, nel momento in cui l'utente esegue la registrazione o il login
+            var obj = {
+                session_id: id
+            };
+
+            var storage = JSON.parse(localStorage.session);
+            storage[0] = obj; //se gia esistesse la sessione la sessione, la sovrascrivo (impossibile)
+            localStorage.session = JSON.stringify(storage); //salvo nel localStorage il numero di sessione                                       
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -23,7 +34,7 @@
             if (!($line = pg_fetch_array($data, null, PGSQL_ASSOC))) {
                 header('Location: ../index.html?login=false&error=password');
             } else {
-                $code = (int)time();
+                $code = (int) time();
                 echo "<script>
                         salvaStorage($code);
                         window.location.href = '../index.html';

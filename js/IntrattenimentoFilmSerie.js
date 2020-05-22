@@ -67,7 +67,7 @@ function toggleTable(current){
             resizeTable(); //funzione per allineamento figli in base alla quantità
             
             if(table.children.length > 1){ //se c'è più di un figlio scorro per far vedere all'utente la tabella
-                table.scrollIntoView({behavior: "smooth"});
+                table.scrollIntoView({behavior: "smooth"}); //behavior:smooth rende lo scorrimento "lento" e non istantaneo
             }
             return;
         }

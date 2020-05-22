@@ -9,7 +9,7 @@ body {
 .centrale{                 
     position:absolute;
     top: 30%;
-    left: 40%;
+    left: 41%;
 
 }
 
@@ -37,7 +37,7 @@ body {
 
 #scroll a span {
     position: absolute;
-    left: 8.5vw;
+    left: 8vw;
     width: 46px;
     height: 46px;
     border-left: 2px solid white;

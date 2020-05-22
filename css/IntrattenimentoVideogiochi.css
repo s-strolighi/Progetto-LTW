@@ -1,0 +1,153 @@
+body {
+    min-height: 100vh;
+    background-image: url("../assets/img/intrattenimento/pattern.png");
+    background-attachment: fixed;
+    
+}
+
+.videogame-title img{
+    height: 8vh;
+    width: 8vh;
+    margin-top: -2vh;
+}
+
+.videogame-container {
+    height: calc(100vh - 88px);
+    padding-top: 86px;
+    margin-top: 86px;
+}
+
+#first-container{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.videogame-title {
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    height: 10vh;
+}
+.videogame-title h1{
+    display: inline-block;
+    font-size: 8vh;
+    margin: 0 auto;
+    
+}
+
+
+.prev span, .next span{
+    position: absolute;
+    width: 2.5vh;
+    height: 2.5vh;
+    box-sizing: border-box;
+}
+
+.prev span {
+    margin-left: -1vh;
+    border-right: 3px solid #fff;
+    border-top: 3px solid #fff;
+    transform: rotate(-45deg);
+    animation: scroll_up 1.5s infinite;
+}
+
+.next span {
+    margin-left: -1.5vh;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(-45deg);
+    animation: scroll_down 1.5s infinite;
+}
+
+@keyframes scroll_up {
+    0% {
+        transform: rotate(-45deg) translate(-35px, 35px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-45deg) translate(2px, -2px);
+        opacity: 0;
+    }
+}
+
+@keyframes scroll_down {
+    0% {
+        transform: rotate(-45deg) translate(2px, -2px);
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        transform: rotate(-45deg) translate(-25px, 25px);
+        opacity: 0;
+    }
+}
+
+.prev, .next {
+    padding-top: 2vh;
+    font-size: 0px;
+    width: 3vw;
+    color: white;
+    height: 10vh;
+    transition: 0.8s ease !important;
+}
+
+.prev {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+iframe {
+    z-index: -1;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(90vh - 88px);
+    transition: opacity 0.5s ease !important;
+}
+
+.active{
+    z-index: 1;
+    opacity: 1;
+}
+
+.videogame-media img{
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: calc(90vh - 88px);
+}
+
+@media (max-width: 800px){
+    .videogame-title h1 {
+        font-size: 9vw;
+        margin-top: 2vh;
+
+    }
+
+
+    .prev span,
+    .next span {
+        width: 4.5vw;
+        height: 4.5vw;
+    }
+
+    .prev span {
+        margin-left: -0.2vw;
+    }
+
+    .next span {
+        margin-left: -5vw;
+    }
+}

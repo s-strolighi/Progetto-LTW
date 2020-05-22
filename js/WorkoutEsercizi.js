@@ -88,7 +88,7 @@ window.onscroll = function () {
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("nav-hide").style.top = position+"px";
   } else {
-    document.getElementById("nav-hide").style.top = "-"+position+"86px";
+    document.getElementById("nav-hide").style.top = "-"+position+"px";
   }
   prevScrollpos = currentScrollPos;
 }
