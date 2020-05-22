@@ -4,23 +4,20 @@ body {
     background-size: cover;
     background-position: center;
 }
-
 /*Testo al centro del body*/
 .centrale{                 
     position:absolute;
     top: 30%;
-    left: 41%;
-
+    margin-left: calc(50vw - max(8vw,46px) - 20px - 3px);
 }
 
 /*Stile del testo al centro della home*/
 .stile-testo-centrale{
-    font-size:5vw;
+    font-size:max(5vw,30px);
     z-index:2;
     border: 3px solid #f1f1f1;
     padding: 20px;
     text-shadow: 1px 1px rgb(82, 82, 82);
-
 }
 /*Dimensione immagine della card*/
 .card-img-top {
@@ -30,14 +27,14 @@ body {
 }
 /*Margine del card-group*/
 .card-group {
-    margin-top:100vh;
+    margin-top: calc(100vh - 86px);
 }
 
 /*scroll down icon */
 
 #scroll a span {
     position: absolute;
-    left: 8vw;
+    left: max(7vw + 5px,49px);
     width: 46px;
     height: 46px;
     border-left: 2px solid white;
@@ -53,17 +50,14 @@ body {
     top: 100%;
     animation-delay: 0s;
 }
-
 #scroll a span:nth-of-type(2) {
     top: 120%;
     animation-delay: .15s;
 }
-
 #scroll a span:nth-of-type(3) {
     top: 140%;
     animation-delay: .3s;
 }
-
 @keyframes arrow-animation {
     0% {
         opacity: 0;
@@ -77,6 +71,7 @@ body {
         opacity: 0;
     }
 }
+/*fine scroll down icon*/
 
 
 @media (max-width:800px) {
@@ -87,15 +82,10 @@ body {
     }
 
     body {
-        background: url("../assets/img/cucina/Home1Mobile.jpg");
+        background: url("../assets/img/cucina/Home1.jpg");
         background-attachment: fixed;
         background-size: cover;
         background-position: top;
-    }
-
-    .stile-testo-centrale {
-        font-size: 5vw;
-
     }
 
     #scroll a span {
