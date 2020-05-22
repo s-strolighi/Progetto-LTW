@@ -10,7 +10,7 @@ input[type=text]{
     margin-top:2vh;
     height:5vh;
     margin-bottom:2vh;
-    width:calc(40vw - 5vw - 6px);
+    width:calc(40vw - 5vw - 6px); /*5vw = larghezza bottone "cerca" 6px = spazio tra casella inserimento testo e bottone*/
     transition-duration:width 1s;
 }
 /*dimensionamento del bottone cerca*/
@@ -158,5 +158,11 @@ iframe{
     iframe{
         margin-left:15vw;
         width:70vw;
+    }
+    input[type=text]{
+        width: calc(70vw - 52px - 6px);
+    }
+    .ricerca{
+        margin-left:15vw;
     }
 }

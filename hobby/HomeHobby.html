@@ -1,0 +1,100 @@
+<!-- Home della sezione Progetti-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/> <!--pagina responsive-->
+       
+        <!--link a fogli JQuery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <!--link per ajax-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <!--link per js di bootstrap-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <!--link per css di bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <!--miei css e js-->
+        <link rel="stylesheet" href="../css/HomeHobby.css"/>                                   <!--css-->
+        <script type="text/javascript" src="../js/ControllaSessione.js"></script>
+        <script>controllaSessione();</script>
+
+        <script>
+          function smooth() {
+            document.getElementById("sezioni").scrollIntoView({ behavior: "smooth" });
+          }
+        </script>
+        
+        <title>Home Hobby</title>                                                         <!--titolo-->  
+    </head>
+    <body>
+        <!-- navbar-->
+        <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-3"> <!--Inserisci stile in file css-->
+            <!--Logo-->
+            <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" width="60" height="60"/></a> <!--Immagine da cambiare-->
+            
+            <!--bottone che apre la Nvbar ridimensionata-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Elementi navbar-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">  <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
+                <ul class="navbar-nav mr-auto text-center">
+                    <!--Home-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="HomeProgetti.html">Home</a>
+                    </li>
+                    <!--Progetti-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagine/Faidate.html">Fai da te</a>        
+                    </li>
+                    <!--Passatempo-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagine/Passatempo.html">Passatempo</a>
+                    </li>
+                </ul>
+                <!-- Tasto Logout -->
+                <div class="text-center">
+                  <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+                </div>
+            </div>
+        </nav>
+        <!--Titolo al centro della pagina-->
+        <div class="centrale">
+            <h1 class="stile-testo-centrale text-light">Hobby</h1>
+            <section id="scroll" onclick="smooth();">
+              <a><span></span><span></span><span></span></a>
+            </section>
+        </div>
+
+        <!--Card delle sottosezioni-->
+        <div id="sezioni" class="card-group">
+            <!--Prima card-->
+            <div class="card">
+              <a href="pagine/FaiDaTe.html"><img src="../assets/img/hobby/Home2.jpg" class="card-img-top"></a>
+              <div class="card-body">
+                <a href="pagine/Progetti.html"><h5 class="card-title text-center">Fai da te</h5></a>
+                <p class="card-text">Realizza subito dei progetti seguendo le nostre guide!
+                </p>
+              </div>
+            </div>
+            <!--Seconda card-->
+            <div class="card">
+              <a href="pagine/Passatempo.html"><img src="../assets/img/hobby/Home3.jpg" class="card-img-top"></a>
+              <div class="card-body">
+                <a href="pagine/Passatempo.html"><h5 class="card-title text-center">Passatempo</h5></a>
+                <p class="card-text">Qui troverai moltissime idee per impiegare il tuo tempo libero.</p>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>
