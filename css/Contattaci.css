@@ -12,8 +12,9 @@
   background-repeat: no-repeat;
   background-size: cover;
  
+  
  
-  padding-top: 10%;
+  padding-top: 15%;
   padding-bottom: 15%;
 }
 
@@ -117,7 +118,7 @@
     margin:0;
     padding-top:3%;
     padding-bottom:3%;
-    width:33.3%;
+    width:50%;
   }
   /* Add a hover effect if you want */
 .fa:hover {
