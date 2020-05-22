@@ -1,0 +1,146 @@
+
+/*primo parallax*/
+.parallax1{
+  background-image: url("../assets/img/contattaci/parallax1.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+ 
+  padding-top: 10%;
+  padding-bottom: 15%;
+}
+
+.parallax1 h1{
+    text-align: center;
+    margin-left: 37.5%;   /*larghezza e margine devono essere bilanciati*/
+    width:25%;
+    font-size: 200%;
+    color:white;
+    background-color: brown;
+}
+
+.parallax1 .text-block p{
+    color:white;
+    text-align: left;
+}
+
+
+.text-block {
+  opacity: 0.7;
+  background-color: black;
+  color: white;
+  margin-left: 10%;
+  width:80%
+}
+
+
+/*secondo parallax*/
+.parallax2{
+    background-image: url("../assets/img/contattaci/parallax2.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    padding-top: 0%;    /*cosi separo i due sfondi con il testo*/
+    padding-bottom: 10%;
+  }
+
+  .parallax2 h1{
+    text-align: center;
+    margin-left: 0%;   /*larghezza e margine devono essere bilanciati*/
+    width:100%;
+    color:black;
+    background-color: white;
+    margin-top: 0; /*cosi attaco i due parallax*/
+    padding-top:5%;
+    padding-bottom:5%; 
+}
+.parallax2 p{
+    color:white;
+    text-align: center;
+}
+
+
+
+/*FINE STILE PARALLAX*/
+
+
+.card-deck{
+  margin-top:10%;
+}
+
+.card-body p{
+  color: black;
+}
+
+.card-body .button {
+  border: none;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  width: 100%;
+}
+.card-body .button a{
+    text-decoration: none;   /*per togliere la sottolineatura del link*/
+    color: ivory;
+}
+.card-body .button:hover {
+  background-color: #555;
+}
+
+
+/*uso display flex per gestire meglio il comportamento delle icone*/
+.icone{              
+  width:100%;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/*stile delle icone*/
+.fa{ 
+    text-align: center;
+    margin:0;
+    padding-top:3%;
+    padding-bottom:3%;
+    width:33.3%;
+  }
+  /* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+  }
+  /* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  /* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+.fa-instagram {
+    background-color: #DD2A7B;
+    color: white;
+  }
+
+@media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }

@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Contattaci</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="../css/Contattaci.css" />
+
+<!--per le icone dei social netowrk-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+
+ <!--css di bootstrap-->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  
+
+
+</head>
+<body>
+
+<!---  Navbar  -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <!-- Logo -->
+  <a class="navbar-brand" href="../index.html">
+      <img src="../assets/img/logo.png" width="60" height="60" alt="">
+  </a>
+  <!-- Icona per aprire la nav da mobile -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <!-- Sezioni della navbar -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto text-center">
+              <li class="nav-item active">
+                  <a class="nav-link" href="Contattaci.html">Contatti</a>
+              </li>
+          </ul>
+          <!-- Tasto Login/Registrazione -->
+          <div class="text-center">
+              <!-- id preso da funzione javascript -->
+              <button id="nav-button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#loginModal" onclick="logout();">Login</button>
+          </div>
+      </div>
+</nav>
+
+
+
+
+<div class="parallax1">
+    
+    <h1> About the Website </h1>
+
+    <div class="text-block">
+      <p>Quando abbiamo cominciato a lavorare al nostro progetto eravamo in pieno lockdown, da questa situazione &egrave nata la nostra idea di racchiudere in un sito web informazioni e consigli su come poter impiegare il tempo stando a casa. <br>
+         Parlando dell'implementazione, per la parte riguardante lo stile abbiamo usato componenti della libreria css di Bootstrap, oltre a fogli di stile css da noi sviluppati. <br>
+         Per l'interazione con la pagina abbiamo utilizzato file javascript, contenentii anche codice JQuery, da noi implementati e personalizzati.  <br>
+         Abbiamo inoltre utilizzato Ajax per effettuare chiamate al server  esterno per implementare alcune funzionalita del sito. <br>
+          Infine sono presenti due file php usati per l'interazione con il database sql, anch'esso da noi implementato usando PostgreSQL, allo scopo di integrare nel sito servizi di registrazione e log-in. </p>
+    </div>
+</div>
+
+<div class="parallax2">
+<h1> About the Team: </h1>
+
+
+
+<div class="card-deck">
+  <div class="card">
+    
+    <div class="card-body">
+      <h5 class="card-title">Christian Grifoni</h5>
+      <p class="card-text">Sviluppatore</p>
+      <button class="button"><a href="mailto:chri.grifoni@gmail.com">Send me an e-mail</a></button>
+    </div>
+    <div class="card-footer">
+      <div class="icone"> 
+        <div class="fa fa-facebook"></div>
+        <div class="fa fa-instagram"></div>
+        <div class="fa fa-twitter"></div>
+    </div>
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      <h5 class="card-title">Sandro Strolighi</h5>
+      <p class="card-text">Sviluppatore</p>
+      <button class="button"><a href="mailto:chri.grifoni@gmail.com">Send me an e-mail</a></button>
+    </div>
+    <div class="card-footer">
+      <div class="icone"> 
+        <div class="fa fa-facebook"></div>
+        <div class="fa fa-instagram"></div>
+        <div class="fa fa-twitter"></div>
+    </div>
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      <h5 class="card-title">Lorenzo Capobianchi</h5>
+      <p class="card-text">Sviluppatore</p>
+      <button class="button"><a href="mailto:chri.grifoni@gmail.com">Send me an e-mail</a></button>
+    </div>
+    <div class="card-footer">
+      <div class="icone"> 
+        <div class="fa fa-facebook"></div>
+        <div class="fa fa-instagram"></div>
+        <div class="fa fa-twitter"></div>
+    </div>
+    </div>
+  </div>
+</div>   <!--fine deck-->
+
+
+
+</div>  <!--fine parallax-->
+
+</body>
+</html>
