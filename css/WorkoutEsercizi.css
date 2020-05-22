@@ -1,3 +1,10 @@
+
+.card-body p,.card-body li{
+
+  float: left;
+  text-align: left;
+}
+
 body {
   background-image: url(../assets/img/workout/pattern.png);
   background-attachment: fixed;
@@ -75,6 +82,7 @@ body {
 
 .card-body {
   height: 10rem;
+  overflow:auto;
 
 }
 

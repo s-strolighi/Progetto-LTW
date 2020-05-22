@@ -1,3 +1,14 @@
+
+
+.card-text{
+   text-align: left;
+}
+
+li{
+    
+    text-align: left;
+}
+
 body {
     background-image: url("../assets/img/workout/Home1.jpg");
     background-attachment: fixed;

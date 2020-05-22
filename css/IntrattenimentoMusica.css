@@ -33,6 +33,7 @@ input[type=submit]{
 iframe{
     margin-left:30vw;
     width:40vw;
+    height:40vh;
 }
 /*dimensionamento icone contenute nella nav*/
 .img-reduced{

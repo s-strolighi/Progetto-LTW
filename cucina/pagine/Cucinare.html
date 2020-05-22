@@ -1,18 +1,13 @@
 
-    <html>
-        <head>
+<html>
+    <head>
             <title> Cucinare</title>
             <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/> <!--pagina responsive-->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/> <!--pagina responsive-->
   
  <!--includo i miei fogli di stile css-->
   <link rel="stylesheet" href="../../css/Cucinare.css">
 
-
- <!--link esterno alla libreria con l'owl carousel per i css-->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet" type="text/css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet" type="text/css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" type="text/css">
 
 
 <!--jquery per la navbar-->
@@ -35,6 +30,8 @@
   <!--includo il mio javascript-->
   <script type="text/javascript" lang="javascript" src="../../js/Cucinare.js"></script>
 
+  <script type="text/javascript" src="../../js/ControllaSessione.js"></script>
+  <script>controllaSessione();</script>
 
         </head>
 
@@ -45,7 +42,7 @@
  <!-- navbar-->
  <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-0 rounded" style="width:100%;"> <!--Inserisci stile in file css-->
     <!--Logo-->
-    <a class="navbar-brand" href="../index.html"><img src="../../assets/img/logo.png" width="50" height="50" alt=""/></a> <!--Immagine da cambiare-->
+    <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="50" height="50" alt=""/></a> <!--Immagine da cambiare-->
     
     <!--bottone che apre la Navbar ridimensionata-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -72,84 +69,75 @@
             <li class="nav-item">
                 <a class="nav-link" href="DietaENutrizione.html">Dieta</a>    <!--Link mancante-->
             </li>
+            
         </ul>
+         <!-- Tasto Logout -->
+         <div class="text-center">
+            <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+          </div>
     </div>
 </nav>
 
 
+<!--
+<h3> Cucinare </h3>
+-->
+<!-- questo container è da commentare se non si usa la classe nel css. 
+     se lo si decommenta ricordarsi di aggiungere la chiusura del div dov indicato piu avanti 
+<div class="container-carousel"> -->
 
-<div id="titolo"> Cucina </div>
-
-
-
-
-
-
-<div class="container-principale">
-
-
-            <div class="container-carousel">
-            <div class="owl-carousel owl-theme">
-                
-                <div class="item">
-                    <img src="../../assets/img/cucina/CucinareGallery1.jpg">
-                    <div class="content">
-                        <h1> Piatto 1</h1>
-                        <p> breve desrizione del piatto</p>
-
-
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/cucina/CucinareGallery2.jpg">
-                    <div class="content">
-                        <h1> Piatto 1</h1>
-                        <p> breve desrizione del piatto</p>
-
-
-
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="../../assets/img/cucina/CucinareGallery3.jpg">
-                    <div class="content">
-                        <h1> Piatto 1</h1>
-                        <p> breve desrizione del piatto</p>
-
-
-
-                    </div>
-                </div>
-                 <div class="item">
-                    <img src="../../assets/img/cucina/CucinareGallery4.jpg"> <!--immagine-->
-                    <div class="content">                                  <!--box con il testo sopra l'immagine-->
-                        <h1> Piatto 1</h1>
-                        <p> breve desrizione del piatto</p>
-
-
-                    </div>                     
-                </div> 
-                <div class="item">
-                    <img src="../../assets/img/cucina/CucinareGallery5.jpg">
-                    <div class="content">
-                        <h1> Piatto 1</h1>
-                        <p> breve desrizione del piatto</p>
-
-
-                    </div>
-                </div> 
-                <div class="item">
-                    <img src="../../assets/img/cucina/CucinareGallery6.jpg">
-                    <div class="content">
-                        <h1> Piatto 1</h1>
-                        <p> breve desrizione del piatto</p>
-                    </div>
-                </div>    
-                     
-            </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+       
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../../assets/img/cucina/CucinareGallery1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/cucina/CucinareGallery2.jpg" class="d-block w-100" alt="...">
+            
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/cucina/CucinareGallery3.jpg" class="d-block w-100" alt="...">
+           
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/cucina/CucinareGallery4.jpg" class="d-block w-100" alt="...">
+            
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/cucina/CucinareGallery5.jpg" class="d-block w-100" alt="...">
+            
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/cucina/CucinareGallery6.jpg" class="d-block w-100" alt="...">
+            
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/cucina/CucinareGallery7.jpg" class="d-block w-100" alt="...">
+           
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
            
-        </div>
+      <!-- </div>     Chiusura div container-carousel -->
        
   
         <div class="container-portate">
@@ -187,8 +175,9 @@
 
  <!--metto l'ancora sul divisorio per una questione di visualizzazione-->   
 <hr color="greenyellow"></hr> <a name="antipasti"></a>    <!--divisorio delle portate-->
-<div class="container-ricette"> <!--INIZIO container con tutte le ricette-->
-    
+
+<div class="container-ricette"><!-- INIZIO container con tutte le ricette-->
+   
 
 <h2> Antipasti:</h2> <!-- titolo portata successina-->
 
@@ -206,8 +195,8 @@
        <!--la seconda colonna divisa a sua volta in 2 righe-->
         <div class="info-ricetta">
 
-            <!--prima riga-->
-            <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+            <!--prima riga della seconda colonna-->
+            <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
                 <button id="p1" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
                 <button id="s1" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
                 <button id="t1" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -220,35 +209,34 @@
         <div class="tab" name="p1" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
             <h4> Ingredienti </h4>
             <ul>
-                <li>ingrediente 1</li>
-                <li>ingrediente 2</li>
-                <li>ingrediente 3</li>
-                <li>ingrediente 4</li>
-                <li>ingrediente 5</li>
-                <li>ingrediente 6</li>
+                <li>3 melanzane</li>
+                <li>1 confezione di Ciliegie di Mozzarella</li>
+                <li>foglie di basilico</li>
+                <li>sale</li>
+                <li>peperoncino</li>
+                <li>1 spicchio d'aglio</li>
             </ul>
-
         </div>
         <div class="tab" name="s1" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+            <h4> Preparazione </h4>
             <ol>
-                <li>passo 1</li>
-                <li>passo 2</li>
-                <li>passo 3</li>
-                <li>passo 4</li>
-                <li>passo 5</li>
-                <li>passo 6</li>
+                <li>per prima cosa lavate le melanzane e tagliatele nel senso della lunghezza, dopo averle private del picciolo. Fate delle fettine dello spessore di mezzo centimetro.</li>
+                <li>Salatele e poi grigliatele su una piastra ben infuocata per circa 30 secondi a lato</li>
+                <li>A questo punto mettete le melanzane grigliate in una teglia dai bordi alti, bagnatele con abbondante olio extravergine d'oliva e conditele con lo spicchio d'aglio tagliato fine e il peperoncino. Lasciate riposare per almeno 1 ora.</li>
+                <li>Dopodiché arrotolate attorno a ognuna della Ciliegie di Mozzarella Santa Lucia una foglia di basilico e una fetta di melanzana</li>
+                <li>Chiudete i bocconcini di melanzane grigliate con uno stuzzicadenti e serviteli freddi.</li>
+               
             </ol>
         </div>
         <div class="tab" name="t1" id="tab-info"> <!--id per il js e per il css-->
+            <h4> Involtini di melanzane grigliate </h4>
             <ul>
-                <li>difficolta: facile</li>
-                <li>tempo: 30min</li>
-                <li>costi: bassi</li>
-            </ul>
-            <ul>
-                <li>cottura: 45 min</li>
-                <li>porzioni: 6</li>
-                <li>senza glutine</li>
+                <li><span>Difficolta</span>: facile</li>
+                <li><span>Tempo</span>: 80 min</li>
+                <li><span>Costi</span>: bassi</li>
+                <li><span>Cottura</span>: senza cottura</li>
+                <li><span>Porzioni</span>: 4</li>
+                
             </ul>
         </div>
         
@@ -273,7 +261,7 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p2" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s2" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t2" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -286,35 +274,33 @@
     <div class="tab" name="p2" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>Pane casareccio bruschettato</li>
+            <li>2 Mozzarelle da 125 g</li>
+            <li>pomodorini q.b.</li>
+            <li>sale e pepe q.b.</li>
+            <li>olio</li>
+            <li>origano</li>
         </ul>
-
     </div>
     <div class="tab" name="s2" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4> Preparazione </h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li>dovete prima di tutto aver bruschettato il pane. Potete farlo in un tostapane, su una padella rovente e su una griglia con la brace</li>
+            <li>Quindi passateci sopra i pomodori strofinandoli per bene affinché perdano l'acqua</li>
+            <li>Spolverate sopra l'origano e a seguire mettete la Mozzarella che avrete ridotto precedentemente a pezzetti piccoli.</li>
+            <li>Concludete le vostre bruschette al pomodoro irrorandole con un filo d'olio extra vergine d'oliva. Questo passaggio renderà ancora più deliziosa la vostra preparazione.</li>
+
         </ol>
     </div>
     <div class="tab" name="t2" id="tab-info"> <!--id per il js e per il css-->
+        <h4> Bruschette con mozzarella </h4>
         <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
-        </ul>
-        <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
+            <li><span>difficolta</span>: facile</li>
+            <li><span>tempo</span>: 30min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:  senza cottura</li>
+            <li><span>porzioni</span>: 4</li>
+           
         </ul>
     </div>
     
@@ -346,7 +332,7 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p3" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s3" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t3" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -359,35 +345,31 @@
     <div class="tab" name="p3" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>320 g di orecchiette</li>
+            <li>165 g di Certosa</li>
+            <li>250 g di broccoli verdi</li>
+            <li>olio d'oliva</li>
+            <li>aglio</li>
+            <li>sale e pepe</li>
         </ul>
 
     </div>
     <div class="tab" name="s3" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4> Preparazione </h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li>Per preparare le orecchiette con broccoli dovete prima tutto lavare e tagliare gli ortaggi. Quindi, fateli saltare in padella con aglio e olio.</li>
+            <li>Nel frattempo scottate le orecchiette in acqua salata in ebollizione. Una volta che la pasta avrà raggiunto la sua cottura, scolatela. Conditela ora con i broccoli ormai pronti</li>
+            <li>Rimestate il tutto e unite la Certosa Light. Questo formaggio rappresenterà il tocco finale del vostro piatto e darà più cremosità alle vostre orecchiette con broccoli. Mescolate ancora. Conclusa l'operazione, servite la pietanza e se gradite, aggiungete una spolverata di formaggio.</li>
         </ol>
     </div>
     <div class="tab" name="t3" id="tab-info"> <!--id per il js e per il css-->
+        <h4> Orecchiette ai Broccoli </h4>
         <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
-        </ul>
-        <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
+            <li><span>difficolta</span>: facile</li>
+            <li><span>tempo</span>: 15min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:   10min</li>
+            <li><span>porzioni</span>: 4</li>
         </ul>
     </div>
     
@@ -416,7 +398,7 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p4" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s4" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t4" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -429,35 +411,30 @@
     <div class="tab" name="p4" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>380 g Pasta</li>
+            <li>200 g Ricotta o philadelphia o Mascarpone</li>
+            <li>150 g Gherigli di noci</li>
+            <li>50 g Parmigiano reggiano</li>
+            <li>Sale</li>
         </ul>
 
     </div>
     <div class="tab" name="s4" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4> Preparazione </h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li>salare una pila d'acqua e metterla sul fuoco fino a ebollizzione, per poi cuocere la pasta al dente</li>
+            <li>mescolare insieme la ricotta o la philadelphia, le noci sgusciate, il parmigiano e 2 o 3 cucchai di acqua di cottura. Fino ad ottenere una crema omogenea</li>
+            <li>una volta cotta la pasta scolarla direttamente in un recipiente con il condimento e amalgamare bene</li>
         </ol>
     </div>
     <div class="tab" name="t4" id="tab-info"> <!--id per il js e per il css-->
-        <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
-        </ul>
-        <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
+        <h4> Pasta con le noci </h4><ul>
+
+            <li><span>difficolta</span>: molto facile</li>
+            <li><span>tempo</span>: 15min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:   10min</li>
+            <li><span>porzioni</span>: 4</li>
         </ul>
     </div>
     
@@ -501,36 +478,38 @@
     <div class="tab" name="p5" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>125 g Certosa</li>
+            <li>80 g di Bresaola</li>
+            <li>50 g di Insalata </li>
+            <li>40 g di mela renetta</li>
+            <li>Prezzemolo</li>
+            <li>Erba cipollina</li>
+            <li>Olio di oliva</li>
+            <li>Aceto</li>
+            <li>Sale</li>
+            <li>Pepe</li>
         </ul>
 
     </div>
     <div class="tab" name="s5" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4>Preparazione </h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li>Tritare prezzemolo e erba cipollina e mescolarla alla Certosa Light con sale e pepe</li>
+            <li>Allargare le fette di bresaola, distribuirvi al centro la crema di Certosa Light e arrotolare formando degli involtini.</li>
+            <li>Sistemarli sul piatto di portata sopra a un letto di misticanza e cospargere con dei dadini di mela renetta cruda</li>
+            <li>Preparare un’emulsione con olio, aceto, sale e pepe e condire insalata e bresaola al momento di servirla.</li>
         </ol>
     </div>
     <div class="tab" name="t5" id="tab-info"> <!--id per il js e per il css-->
+            <h4> Bresaola alla Valtellinese </h4>
         <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
+            <li><span>difficolta</span>: molto facile</li>
+            <li><span>tempo</span>: 20min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:   senza cottura</li>
+            <li><span>porzioni</span>: 2</li>
         </ul>
-        <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
-        </ul>
+      
     </div>
     
     </div> <!--fine seconda riga tabelle-->
@@ -557,7 +536,7 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p6" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s6" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t6" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -570,35 +549,37 @@
     <div class="tab" name="p6" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>6 Uova grandi</li>
+            <li>1 cucchiaio di olio edo</li>
+            <li>20g di parmigiano</li>
+            <li>250 g di mozzarella</li>
+            <li>500 g di asparagi freschi 5</li>
+            <li>1/2 cipolla rossa di tropea</li>
+            <li>1 scalogno</li>
+            <li>noce moscata</li>
         </ul>
 
     </div>
     <div class="tab" name="s6" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4> Preparazione </h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li>In una ciotola capiente, sbattete le uova con una forchetta e unitevi il parmigiano, la noce moscata, sale e pepe nero</li>
+            <li>Preparate una teglia rettangolare o quadrata (20x30 o 30x30) con carta forno e versatevi dentro il composto della frittata. Mettetela in forno preriscaldato a 180º per 15 minuti</li>
+            <li> Intanto tagliate la mozzarella Light Santa Lucia a sfoglie sottili e mettetela da parte. Lavate e spellate la base degli asparagi; levate loro la parte finale troppo dura e cuoceteli con la punta verso l’alto per 10 minuti o più, a seconda delle loro dimensioni, in acqua bollente</li>
+            <li>In una padella, fate appassire la cipolla di Tropea e lo scalogno tagliati finemente. Aggiungetevi gli asparagi con un cucchiaio di acqua di cottura, sale e pepe nero e fateli cuocere a fuoco medio per 10 minuti</li>
+            <li>A questo punto passateli al frullatore fino ad ottenere un composto denso e cremoso. Levate la frittata dal forno e stendetela su un piano da lavoro</li>
+            <li> Levate la carta forno e disponete le sfoglie di mozzarella in modo uniforme</li>
+            <li>Stendete ora la crema di asparagi anch’essa in maniera da coprire tutta la superficie della frittata. Adesso arrotolatela con cura senza far uscire gli ingredienti dai lati e avvolgetela ben stretta in pellicola alimentare. Lasciatela in frigo per almeno un’ora in modo da farla compattare. Servire fredda.</li>
         </ol>
     </div>
     <div class="tab" name="t6" id="tab-info"> <!--id per il js e per il css-->
+        <h4> Rolle di frittata asparagi e mozzarella</h4>
         <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
-        </ul>
-        <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
+            <li><span>difficolta</span>: Media</li>
+            <li><span>tempo</span>: 115 min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>: 15 min</li>
+            <li><span>porzioni</span>: 4</li>
         </ul>
     </div>
     
@@ -620,7 +601,7 @@
 
     <!--prima colonna-->
     <div class="img-ricetta">
-        <img src="../../assets/img/cucina/CucinareGallery6.jpg">
+        <img src="../../assets/img/cucina/CucinareGallery7.jpg">
     </div>
   
         
@@ -629,7 +610,7 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p7" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s7" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t7" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -642,35 +623,35 @@
     <div class="tab" name="p7" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>1 kg di Patate</li>
+            <li>30 g di Burro</li>
+            <li>Sale fino q.b.</li>
+            <li>200 g di Latte intero</li>
+            <li>Noce Moscata </li>
+            <li>30 g di Parmigiano Reggiano DOP</li>
         </ul>
 
     </div>
     <div class="tab" name="s7" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4> Preparazione </h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li>Per preparare il purè di patate cominciate lessando queste ultime. Quindi versatele in una pentola capiente e coprite con abbondante acqua fredda. Mettete il tegame sul fuoco e, dal momento in cui l’acqua avrà raggiunto il bollore, contate dai 30 ai 50 minuti</li>
+            <li> Scolate e lasciate intiepidire giusto per qualche minuto perché dovrete approfittate che le patate sono ancora molto calde per sbucciarle con semplicità</li>
+            <li>Dopo aver pelato le patate versatele nello schiacciapatate, in alternativa andrà bene un passaverdure o una forchetta (se utilizzerete quest’ultima otterrete una consistenza meno fine), e procedete direttamente nel tegame di cottura</li>
+            <li>Poi regolate con un pizzico di sale e profumate grattugiando un po’ di noce moscata</li>
+            <li>Nel frattempo in un pentolino da parte mettete a scaldare il latte </li>
+            <li>ntanto accendete a fiamma bassa dove c'è la pentola col purè e quando il latte sarà ben caldo versatelo all'interno e mescolate con una frusta finché il non sarà stato completamente assorbito, ci vorranno pochi istanti. Quindi spegnete la fiamma e mantecate aggiungendo il burro ed il parmigiano.</li>
+            <li>Un’ultima mescolata per amalgamare il tutto ed ecco pronto il vostro purè di patate!</li>
         </ol>
     </div>
     <div class="tab" name="t7" id="tab-info"> <!--id per il js e per il css-->
+        <h4>  pur&egrave di patate </h4>
         <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
-        </ul>
-        <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
+            <li><span>difficolta</span>:  facile</li>
+            <li><span>tempo</span>: 80 min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:  60 min</li>
+            <li><span>porzioni</span>: 4</li>
         </ul>
     </div>
     
@@ -689,7 +670,7 @@
 
     <!--prima colonna-->
     <div class="img-ricetta">
-        <img src="../../assets/img/cucina/CucinareGallery6.jpg">
+        <img src="../../assets/img/cucina/CucinareGallery8.jpg">
     </div>
   
         
@@ -698,7 +679,7 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
             <button id="p8" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
             <button id="s8" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
             <button id="t8" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
@@ -711,35 +692,116 @@
     <div class="tab" name="p8" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
         <h4> Ingredienti </h4>
         <ul>
-            <li>ingrediente 1</li>
-            <li>ingrediente 2</li>
-            <li>ingrediente 3</li>
-            <li>ingrediente 4</li>
-            <li>ingrediente 5</li>
-            <li>ingrediente 6</li>
+            <li>6 patate</li>
+            <li>4 cipolle bianche</li>
+            <li>2 zucchine medie (o 4 piccole)</li>
+            <li>250 g di Ricotta</li>
+            <li>1 uovo intero</li>
+            <li>40 g di parmigiano grattugiato</li>
+            <li>pangrattato q.b.</li>
+            <li>olio extravergine d'oliva</li>
+            <li>noce moscata</li>
+            <li>sale</li>
+            <li>pepe</li>
         </ul>
 
     </div>
     <div class="tab" name="s8" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4>Preparazione</h4>
         <ol>
-            <li>passo 1</li>
-            <li>passo 2</li>
-            <li>passo 3</li>
-            <li>passo 4</li>
-            <li>passo 5</li>
-            <li>passo 6</li>
+            <li> dovete prima di tutto sbollentare le verdure in abbondante acqua salata, ricordandovi che le patate dovranno essere ben cotte.</li>
+            <li>Una volta che le verdure risulteranno tutte cotte, con l'ausilio dello schiacciapatate pressate due patate e scavate parzialmente le rimanenti.
+                Poi, dopo averle private della calottina superiore, scavate anche le cipolle ed eliminatene qualche strato interno.
+                A operazione terminata, tagliate le zucchine a metà nel senso della lunghezza. Dunque scavate anche questi ortaggi </li>
+            <li>A questo punto, in una terrina o in una ciotola a parte amalgamate la purea di patate con la Ricotta Santa Lucia, l'uovo, il tuorlo, il parmigiano grattugiato, il sale, il pepe e la noce moscata a piacere</li>
+            <li>Riempite le verdure con questa farcia, spolverizzatele con abbondante pangrattato e gratinatele in forno a 180° per 20 minuti circa. Trascorso il tempo indicato, a cottura raggiunta, lasciate riposare le verdure due minuti in forno con lo sportello aperto. Le gustose verdure ripiene al forno sono pronte!
+            </li>
+        
         </ol>
     </div>
     <div class="tab" name="t8" id="tab-info"> <!--id per il js e per il css-->
+        <h4>Verdure al forno </h4>
         <ul>
-            <li>difficolta: facile</li>
-            <li>tempo: 30min</li>
-            <li>costi: bassi</li>
+            <li><span>difficolta</span>:  facile</li>
+            <li><span>tempo</span>: 40 min</li>
+            <li><span>costi</span>: medi</li>
+            <li><span>cottura</span>:  20  min</li>
+            <li><span>porzioni</span>: 4</li>
         </ul>
+    </div>
+    
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
+
+    
+<hr color="greenyellow"></hr> <a name="dolci"></a> 
+<h2> Dolci:</h2> <!-- titolo portata successina-->
+
+
+
+
+
+
+<!-- RICETTA 9-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+
+
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery9.jpg">
+    </div>
+  
+        
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+            <button id="p9" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
+            <button id="s9" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
+            <button id="t9" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        </div>    
+
+
+    <!--seconda riga-->
+    <div class="tabelle">
+
+    <div class="tab" name="p9" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
         <ul>
-            <li>cottura: 45 min</li>
-            <li>porzioni: 6</li>
-            <li>senza glutine</li>
+            <li>  100 g di albumi</li>
+            <li>125 g di yogurt greco</li>
+            <li>80 g di farina integrale</li>
+            <li>2 cucchiai di miele fluido</li>
+            <li>2 cucchiai di latte scremato</li>
+            <li>1 cucchiaio d'olio di semi</li>
+            <li>1 cucchiaino di lievito in polvere per dolci</li>
+            <li>1/4 di cucchiaino di bicarbonato</li>
+            <li>1/2 bacca di vaniglia</li>
+            <li>miele fluido</li>
+            <li>mirtilli o altra frutta a piacere</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s9" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4> Preparazione </h4>
+        <ol>
+           <li>Per realizzare i pancake light per prima cosa raccogliete gli albumi in una ciotola. Sbatteteli, con una frusta a mano, per 30 secondi. Aggiungete lo yogurt greco, i semi di vaniglia, il miele e l'olio. Lavorate il tutto fino a ottenere una crema omogenea.</li>
+           <li>Aggiungete la farina integrale, setacciata con il lievito e il bicarbonato, e mescolate unendo il latte a filo. Dovrete ottenere una pastella liscia e omogenea, dalla consistenza un po' spessa ma non troppo.</li>
+           <li>Ungete un padellino antiaderente con l'olio di semi e fatelo scaldare per bene, rimuovendo l'eccesso di olio con della carta da cucina. Versate un mestolino di pastella e lasciate che si stenda in un disco. Quando noterete comparire delle grosse bolle sulla superficie, girate il pancake e proseguite la cottura dall'altro lato. A cottura ultimata trasferite su un piatto. Procedete in questa maniera fino ad esaurimento della pastella. Servite i pancake light caldi con miele e mirtilli.</li>
+        </ol>
+    </div>
+    <div class="tab" name="t9" id="tab-info"> <!--id per il js e per il css-->
+        <h4>  Pancake light </h4>
+        <ul>
+            <li><span>difficolta</span>:  facile</li>
+            <li><span>tempo</span>: 30 min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:  20 min</li>
+            <li><span>porzioni</span>: 4</li>
         </ul>
     </div>
     
@@ -752,119 +814,81 @@
 
 
 
+<!-- RICETTA 10-->
+<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
 
 
+    <!--prima colonna-->
+    <div class="img-ricetta">
+        <img src="../../assets/img/cucina/CucinareGallery10.jpg">
+    </div>
+  
+        
+
+   <!--la seconda colonna divisa a sua volta in 2 righe-->
+    <div class="info-ricetta">
+
+        <!--prima riga-->
+        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
+            <button id="p10" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
+            <button id="s10" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
+            <button id="t10" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        </div>    
+
+
+    <!--seconda riga-->
+    <div class="tabelle">
+
+    <div class="tab" name="p10" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <h4> Ingredienti </h4>
+        <ul>
+            <li>225 gr di cioccolato fondente</li>
+            <li>225 gr di burro</li>
+            <li>135 gr di farina 00</li>
+            <li>15 gr di cacao amaro in polvere</li>
+            <li>225 gr di zucchero semolato</li>
+            <li>4 uova grandi (oppure 4 uova + mezzo sbattuto di quelle media dimensione)</li>
+            <li>1/2 cucchiaino di lievito per dolci</li>
+            <li>1 pizzico di sale</li>
+        </ul>
+
+    </div>
+    <div class="tab" name="s10" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+        <h4>Preparazione</h4>
+        <ol>
+            <li>Prima di tutto, sciogliete il cioccolato a bagnomaria insieme al burro, fatelo a fiamma bassa, in modo che non si bruci, fino ad ottenere un composto liquido e liscio. Lasciate raffreddare da parte qualche minuto.</li>
+            <li>Mescolate insieme farina, lievito, sale e cacao a parte.</li>
+            <li>Nel frattempo montate uova e zucchero molto spumose, fino ad ottenere un composto chiaro e triplicato di volume.</li>
+            <li>Versate il composto di cioccolato nelle uova, amalgamando dal basso verso l’alto con una spatola, fino ad ottenere una crema morbida e compatta</li>
+            <li>Aggiungete quindi le farine setacciandole in due riprese e amalgamando sempre con una spatola dal basso verso l’alto.  L’impasto dei brownies è molto denso e deve cadere a nastro pesante
+                Versate quindi in teglia precedentemente foderata di carta da forno.</li>
+            <li>NOTA: Importante per un cuore che resta morbido anche dopo la cottura, è rispettare i tempi in forno sopratutto in relazione alla teglia che state utilizzando. In questo caso 20 X 20 ; se utilizzate una teglia da 22 i tempi si accorciano perchè la torta verrà più sottile! Se volete della stessa dimensione, basta aggiungere metà dose, Per una teglia da 24- 26 cm conviene raddoppiare.
+
+                Preriscaldate il forno a 180° e cuocete nella parte medio alta del forno per 30 minuti senza aprire. Trascorso il tempo indicato si è formata la famosa crosticina, aprite e fate la prova stecchino.</li>
+        
+        </ol>
+    </div>
+    <div class="tab" name="t10" id="tab-info"> <!--id per il js e per il css-->
+        <h4>Brownies al cioccolato fondente</h4>
+        <ul>
+            <li><span>difficolta</span>:  facile</li>
+            <li><span>tempo</span>: 45 min</li>
+            <li><span>costi</span>: bassi</li>
+            <li><span>cottura</span>:  30  min</li>
+            <li><span>porzioni</span>: 16</li>
+        </ul>
+    </div>
     
-<hr color="greenyellow"></hr> <a name="dolci"></a> 
-<h2> Dolci:</h2> <!-- titolo portata successina-->
+    </div> <!--fine seconda riga tabelle-->
+ </div> <!--fine seconda colonna ricette-->
+    
+</div> <!--FINE SINGOLA RICETTA-->
+</div><!--fine container ricette-->
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-</div> <!--fine container ricette-->
-
-</div> <!--fine container principale-->
-
-
-
-
-
-<!--collegamento con link esterni per i file js dell'owl carousel-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/docs/assets/vendors/jquery.min.js" type="text/javascript"></script>
-
-
-
-<!--jquery per il carowsel che funziona solo qui, se lo metto nel file js non funziona-->
-<script>
-//racchiudendo il codice jquery in una funzione document.ready siamo sicuri che il codice 
-//JQuery verrà eseguito solo dopo la fine del caricamento, evitando così possibili malfunzionamenti 
-jQuery(document).ready(function($)
-{
-//selettore agli elementi con la classe owl-carousel
-//gli eventi associabili a oggetti con classe owl-carowsel sono riportati sotto la voce events al sito soto riportato
-//come sono riportate altre cose utili al riguardo come le informazioni passate dall'evento all'event object
-
-//con owlCarousel setto le options sul  carousel ed eventualmente gli eventi associati ad esso(per ora non ho messo eventi)
-$('.owl-carousel').owlCarousel({  //tutte le OPTIONS descritte sul sito riportato in basso
-    loop:true,                    //rende possibile scorrere all'infinito senza inizio o fine del "nastro"
-    margin:10,                    //margine destro di ogni item                 
-    nav:true,                     //mostra bottoni precedente e successivo
-    navText: ["<img style='width:50px; height:50px;' src='../../assets/img/cucina/frecciasinistra.png'>","<img style='width:50px; height:50px;' src='../../assets/img/cucina/frecciadestra.png'>"],     //con navtext posso decidere la sintassi dei bottoni avanti e indietro. sintassi array in javascript.
-                                  //posso inserire anche codice html, per esempio per metterci gif o immagini o bottoni
-    autoplay:true,                //con questo settato a true il carousel si muove da solo
-    autoplayTimeout:"3500",       //settiamo ogni quanto deve muoversi da solo
-    autoplayHoverPause:true,      //l'autoplay si ferma quando il mouse sta sopra il nastro
-    autoplaySpeed:1500,           //velocita con cui slittano le slide automaticamente
-    navSpeed:1500,                //velocita con cui slittano le slide se navigo con i bottoni
-    stagePadding: 50,             //lascia lo spazio per vedere la slide precedente e successiva
-    dotsEach: true,               //di defaoult è false, settato a true mostra tutti i bottoni degli item
-   
-    //mouseDrag: true,            //permette di scorrere il "nastro" trascinandolo a dx o sx
-    //slideBy: 2,                 //setta di quante slide alla volta far scorrere il carousel
-
-    responsive:{                 //mostra un numero iniziale diverso di items a seconda della grandezza devvo schermo 
-                                 //cosi da rendere il carousel responsive
-        0:{
-            items:1   
-        },
-        600:{
-            items:2   
-        },
-        1000:{
-            items:3  
-        }
-    }
-});
-
-
-});//fine ready
-
-/*per le proprieta, classi e eventi del carowsel vedere la documentazione https://owlcarousel2.github.io/OwlCarousel2/docs/api-classes.html*/
-//anche cercando in generale su altri siti si trovano le varie classi options ed eventi per questo oggetto
-</script>
-
-
-<!-- esempio di come è possibile gestire gli eventi collegati all owl carousel
-
-ESEMPIO 1:
-var owl = $('.owl-carousel');
-owl.owlCarousel();
-// Go to the next item
-$('.customNextBtn').click(function() {
-    owl.trigger('next.owl.carousel');
-})
-// Go to the previous item
-$('.customPrevBtn').click(function() {
-    // With optional speed parameter
-    // Parameters has to be in square bracket '[]'
-    owl.trigger('prev.owl.carousel', [300]);
-})
-
-ESEMPIO 2:  attacchiamo una callback a un evento per compattare il codice
-
-$('.owl-carousel').owlCarousel({
-    onDragged: callback
-});
-function callback(event) {
-    ...
-}
--->
-
-
-
-        </body>
-
-    </html>
+</html>
     
     
     

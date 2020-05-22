@@ -9,13 +9,14 @@ function assegnaEventHandler(){
     var arrayCards=[];
     var prezzomax=0;
     for (var i=0;i<cards.length;i++){
-        var prezzoAttuale=parseInt(cards[i].getElementsByClassName("prezzo")[0].innerHTML);
+        var prezzoAttuale=parseInt(Math.ceil(cards[i].getElementsByClassName("prezzo")[0].innerHTML));
         if (prezzoAttuale > prezzomax) prezzomax=prezzoAttuale;   /*cerco il prezzo massimo cosi da inserirlo come valore dell'attributo max dello slider*/
         arrayCards[i]=cards[i];
         arrayCards[i].accettabilePrezzo=true;
         arrayCards[i].accettabileTipo=true;
     }
-    document.getElementById("myRange").setAttribute("max",prezzomax); //inserisco il prezzo massimo come attributo "max" dello slider
+    document.getElementById("myRange").setAttribute("max",prezzomax);   //inserisco il prezzo massimo come attributo "max" dello slider
+    document.getElementById("myRange").setAttribute("value",prezzomax); //inserisco il prezzo massimo come attributo "value" dello slider
     output.innerHTML = prezzomax +"€"; //Printa valore iniziale dello slider onload del body
 
     //Aggiunta event handler allo slider

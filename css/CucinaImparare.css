@@ -29,7 +29,7 @@ body {
 /*ridimensionamento immagine card*/
 .card-img{
     object-fit:cover;
-    height:100%;
+    height:20vw; /*prima era 100% ma una card usciva dai bordi*/
 }
 
 /*ridimensionamento contenuto card*/
@@ -157,8 +157,10 @@ li {
     .card{
         height:30vw;
     }
-
     .card-body{
+        height:30vw;
+    }
+    .card-img{
         height:30vw;
     }
     /*gli elementi della lista non sono più posizionati in verticale ma in orizzontale*/
