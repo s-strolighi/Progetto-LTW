@@ -5,28 +5,35 @@ body {
     
 }
 
+/* l'oggetto videogame è alto come tutta la pagina meno la navbar*/
+.videogame-container {/* */
+    height: calc(100vh - 88px);
+    /* padding e margin servono per distanziare gli oggetti l'uno dall'altro*/
+    padding-top: 86px;
+    margin-top: 86px;
+}
+
+/* annullo bordo superiore sul primo videogioco*/
+#first-container{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+/* grandezza gif "tap here" sulla prima schermata*/
 .videogame-title img{
     height: 8vh;
     width: 8vh;
     margin-top: -2vh;
 }
 
-.videogame-container {
-    height: calc(100vh - 88px);
-    padding-top: 86px;
-    margin-top: 86px;
-}
-
-#first-container{
-    padding-top: 0px;
-    margin-top: 0px;
-}
-
+/* div del titolo del videogioco */
 .videogame-title {
     background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
-    height: 10vh;
+    height: 10vh; 
 }
+
+/* testo del titolo del videogioco */
 .videogame-title h1{
     display: inline-block;
     font-size: 8vh;
@@ -34,7 +41,25 @@ body {
     
 }
 
+/* container frecce */
+.prev, .next {
+    padding-top: 2vh;
+    font-size: 0px;
+    width: 3vw;
+    color: white;
+    height: 10vh;
+    transition: 0.8s ease !important;
+}
 
+.prev {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+/* freccette per scorrere su e giu */
 .prev span, .next span{
     position: absolute;
     width: 2.5vh;
@@ -42,6 +67,7 @@ body {
     box-sizing: border-box;
 }
 
+/* le frecce sono elementi span con due bordi, ruotati*/
 .prev span {
     margin-left: -1vh;
     border-right: 3px solid #fff;
@@ -58,6 +84,7 @@ body {
     animation: scroll_down 1.5s infinite;
 }
 
+/* animazioni per spostare la freccia e trasparenza*/
 @keyframes scroll_up {
     0% {
         transform: rotate(-45deg) translate(-35px, 35px);
@@ -90,26 +117,10 @@ body {
     }
 }
 
-.prev, .next {
-    padding-top: 2vh;
-    font-size: 0px;
-    width: 3vw;
-    color: white;
-    height: 10vh;
-    transition: 0.8s ease !important;
-}
-
-.prev {
-    float: left;
-}
-
-.next {
-    float: right;
-}
-
+/* container video*/
 iframe {
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0; /* per default invisibile*/
     position: absolute;
     left: 0;
     width: 100%;
@@ -117,25 +128,27 @@ iframe {
     transition: opacity 0.5s ease !important;
 }
 
+/* con la classe active diventa visibile e passa in primo piano sopra la foto*/
 .active{
     z-index: 1;
     opacity: 1;
 }
 
+/* posizione e grandezza immagine del gioco*/
 .videogame-media img{
     object-fit: cover;
     object-position: top;
     width: 100%;
-    height: calc(90vh - 88px);
+    height: calc(90vh - 88px); /* altezza = pagina - titolo del gioco - navbar */
 }
 
+/* aggiusto grandezza testo e margine delle frecce per mobile */
 @media (max-width: 800px){
     .videogame-title h1 {
         font-size: 9vw;
         margin-top: 2vh;
 
     }
-
 
     .prev span,
     .next span {
