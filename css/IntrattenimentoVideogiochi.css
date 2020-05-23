@@ -5,6 +5,10 @@ body {
     
 }
 
+.navbar-brand img{
+    border-radius: 50%;
+}
+
 /* l'oggetto videogame è alto come tutta la pagina meno la navbar*/
 .videogame-container {/* */
     height: calc(100vh - 88px);

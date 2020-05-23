@@ -1,4 +1,8 @@
 
+.navbar-brand img{
+  border-radius: 50%;
+}
+
 /*primo parallax*/
 .parallax1{
   background-image: url("../assets/img/contattaci/parallax1.jpg");

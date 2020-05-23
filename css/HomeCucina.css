@@ -4,6 +4,10 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+.navbar-brand img{
+    border-radius: 50%;
+}
 /*Testo al centro del body*/
 .centrale{                 
     position:absolute;
