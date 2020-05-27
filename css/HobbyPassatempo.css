@@ -1,0 +1,51 @@
+body{
+    min-height: 100vh;
+    background-image: url("../assets/img/hobby/pattern.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.content{
+    width: 80vw;
+    margin-left: 10vw;
+    height: calc(100vh - 86px - 38px - 9px); /* tolgo altezza navbar, menu scelta e margine*/
+
+}
+
+.content .dropdown-menu{
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 1px solid #1e2124;
+}
+
+
+.item{
+    width: 99%;
+    color: #1e2124;
+    font-weight: 400;
+}
+
+
+.content iframe{
+    width: 100%;
+    height: calc(100% - 38px);
+    background-color: aliceblue;
+}
+
+@media (max-width:800px) {
+    .content {
+        width: 100vw;
+        margin-left: 0px;
+    }
+
+    .content .dropdown-menu {
+        width: 80%;
+    }
+
+
+    .item {
+        width: 96%;
+    }
+}

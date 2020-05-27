@@ -42,11 +42,6 @@ h3{                     /*stile del titolo*/
     padding-top: 1vw;
 }
 
-
-.navbar-brand img{
-    border-radius: 50%;
-}
-
 /*l'unica cosa che cambia è che mettendo questo lascio margini a destra e sinistra del carousel 
 .container-carousel{  /*contiene il carousel
     width:80%;

@@ -5,10 +5,6 @@ body {
     background-position: right;
 }
 
-.navbar-brand img{
-    border-radius: 50%;
-}
-
 /*Testo al centro del body*/
 .centrale{                 
     position:absolute;

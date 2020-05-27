@@ -5,10 +5,6 @@ body{
    
 }
 
-.navbar-brand img{
-    border-radius: 50%;
-}
-
 .accordion{
     margin-left: 20vw;
     width: 75vw;

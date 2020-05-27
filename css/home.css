@@ -1,9 +1,3 @@
-
-
-.navbar-brand img{
-    border-radius: 50%;
-}
-
 .card-img-top {
     width: 100%;
     height: 25vw;
@@ -29,12 +23,9 @@
          
      }
     .card-img-top {
-        width: 100%;
         height: 70vw;
-        object-fit: cover;
     }
     h1{
-        font-size: 2.2rem;
-        
+        font-size: 2.2rem; 
     }
 }

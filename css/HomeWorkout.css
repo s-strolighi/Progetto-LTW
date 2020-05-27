@@ -36,10 +36,6 @@ body {
 
 /*Dimensione immagine della card*/
 
-.navbar-brand img{
-    border-radius: 50%;
-}
-
 .card-img-top {
     width: 100%;
     height: 25vw;

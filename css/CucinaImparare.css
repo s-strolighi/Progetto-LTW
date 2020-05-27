@@ -2,11 +2,6 @@ body {
     background-image: url("../assets/img/cucina/pattern.png");
 }
 
-
-.navbar-brand img{
-    border-radius: 50%;
-}
-
 /*contenitore carte per gestire i margini*/
 .contenitore-cards{
     height:100%;

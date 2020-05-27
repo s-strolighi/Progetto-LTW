@@ -3,11 +3,6 @@ body{
   background-attachment: fixed;
 }
 
-
-.navbar-brand img{
-  border-radius: 50%;
-}
-
 .table tr:first-child{  /*il primo tr quindi solo la riga dei titoli per ogni tabella overlay*/
 color:red;
 font-size: large;
