@@ -1,0 +1,91 @@
+body{
+    background-image:url("../assets/img/hobby/pattern.png");
+    z-index:-1;
+}
+/*sidebar*/
+.sidebar {
+    margin: 0;
+    top:86px;
+    padding: 0;
+    width: 18vw; /*il restante 82% lo lascia al body*/
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    opacity:0.85;
+}
+
+#primo-link{
+    top:84px;
+}
+
+.sidebar input[type="button"]{
+    width:100%;
+    font-size: calc(1vw + 12px);
+}
+
+.contenitore-sezioni{
+    margin-left:18vw;
+    z-index:2;
+}
+
+.sezione{
+    margin-left:15%;
+    margin-right:15%;
+    background-color: white;
+    padding-left:2vw;
+    padding-right:2vw;
+}
+.img-reduced{
+    width:491px;
+    max-width:100%;
+}
+/*per andare a capo senza usare br*/
+.codice{
+    white-space:pre-line;
+}
+
+.separatore{
+    margin-bottom:0px;
+    border-top:1px solid;
+}
+/*abbasso il titolo "pasta modellabile" dalla linea orizzontale*/
+.title-padding{
+    padding-top:20px;
+}
+.underlined{
+    text-decoration: underline;
+}
+.fadeIn{
+    opacity:0;
+}
+
+
+@media screen and (max-width: 750px) {
+    body{
+        overflow:hidden;
+    }
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;  /*deve stare ferma anche quando va su*/
+      z-index: 2;       /*titolo e zona dinamica devono passargli dietro on davanti*/
+    }
+    .sidebar input[type="button"]{
+        width:30vw;
+    }
+    /*elimina distanziamento tra gli elementi*/
+    .sidebar ul{
+        display:flex;
+    }
+    .contenitore-sezioni{
+        margin-left:0vw;
+        margin-top:87px;
+        height:calc(100vh - 84px);
+        overflow:auto;
+    }
+    .sezione{
+        margin-left:0vw;
+        margin-right:0vw;
+    }
+}

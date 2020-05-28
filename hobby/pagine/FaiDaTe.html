@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <!--pagina responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" language="javascript" src="../../js/HobbyFaiDaTe.js"></script>
+  <!--js-->
+  <link rel="stylesheet" href="../../css/HobbyFaiDaTe.css">
+  <!--css-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> <!--Momentaneo per provare la funzione fadeTo-->
+  <script type="text/javascript" src="../../js/ControllaSessione.js"></script>
+  <script>controllaSessione();</script>
+
+  <!--titolo-->
+  <title>Fai da te</title>
+</head>
+
+<body>
+  <!-- navbar-->
+  <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark">
+    <!--Logo-->
+    <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="60" height="60" /></a>
+    <!--Immagine da cambiare-->
+
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--Elementi navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
+      <ul class="navbar-nav mr-auto text-center">
+        <!--Home-->
+        <li class="nav-item">
+          <a class="nav-link" href="../HomeHobby.html">Home</a>
+        </li>
+        <!--Fai da te-->
+        <li class="nav-item active">
+          <a class="nav-link" href="FaiDaTe.html">Fai da te</a>
+        </li>
+        <!--Passatempo-->
+        <li class="nav-item">
+          <a class="nav-link" href="Passatempo.html">Passatempo</a>
+        </li>
+      </ul>
+      <!-- Tasto Logout -->
+      <div class="text-center">
+        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+      </div>
+    </div>
+  </nav>
+  <!--Sidebar-->
+  <div class="sidebar text-center">
+    <a class="side-link"><input id="primo-link" class="sidebar-button underlined" type="button" value="Semaforo"></a>
+    <a class="side-link" href="#sezione2"><input class="sidebar-button" type="button" value="Gel mani"></a>
+    <a class="side-link" href="#sezione3"><input class="sidebar-button" type="button" value="Didò"></a>
+    <a class="side-link" href="#sezione4"><input class="sidebar-button" type="button" value="Antizanzare"></a>
+    <a class="side-link" href="#sezione5"><input class="sidebar-button" type="button" value="Colla"></a>
+    <a class="side-link" href="#sezione6"><input class="sidebar-button" type="button" value="Sapone"></a>
+    <a class="side-link" href="#sezione7"><input class="sidebar-button" type="button" value="Portavasi"></a>
+    <a class="side-link" href="#sezione8"><input class="sidebar-button" type="button" value="Crema viso"></a>
+  </div>
+
+  <!--Sezioni-->
+  <div class="contenitore-sezioni">
+    <!--Semaforo con arduino-->
+    <div class="sezione fadeIn" id="prima-sezione">
+      <h1 class="text-center">Semaforo con Arduino</h1>
+      <span>Un progetto molto semplice da realizzare, che però serve come lezione per introdurre due componenti
+        fondamentali in elettronica, i led e le resistenze.
+        Per la realizzazione del semaforo ci occoreranno i seguenti elementi:
+        <ul>
+          <li>Arduino Uno</li>
+          <li>Breadboard</li>
+          <li>6 Diodi Led (2 rossi, 2 verdi, 2 gialli)</li>
+          <li>6 resistenze da 220 ohm</li>
+          <li>Cavetti di collegamento</li>
+        </ul>
+        <hr>
+        Ora bisogna creare il circuito seguendo lo schema di collegamento mostrato in figura.
+        <div class="text-center">
+          <h4>Schema di collegamento</h4>
+          <img class="img-reduced" src="../../assets/img/hobby/Sezione1.png">
+        </div>
+        <hr>
+        Dopo aver costruito il circuito bisogna scrivere lo sketch sull'IDE di arduino.Più precisamente
+        creiamo il file "semaforo.ino" e inseriamo all'interno questo codice:<br>
+        <span class="codice">
+          1:&emsp; int rosso1 = 2;
+          2:&emsp; int giallo1 = 3;
+          3:&emsp; int verde1 = 4;
+          4:&emsp; int rosso2 = 5;
+          5:&emsp; int giallo2 = 6;
+          6:&emsp; int verde2 = 7;
+          7:&emsp; void setup ()
+          8:&emsp; {
+          9:&emsp;&ensp;&nbsp; pinMode(rosso1, OUTPUT);
+          10:&emsp;&ensp;pinMode(giallo1, OUTPUT);
+          11:&emsp;&ensp;pinMode(verde1, OUTPUT);
+          12:&emsp;&ensp;pinMode(rosso2, OUTPUT);
+          13:&emsp;&ensp;pinMode(giallo2, OUTPUT);
+          14:&emsp;&ensp;pinMode(verde2, OUTPUT);
+          15:&emsp;}
+          16:&emsp;void loop ()
+          17:&emsp;{
+          18:&emsp;&ensp;digitalWrite (rosso1, HIGH);
+          19:&emsp;&ensp;digitalWrite (verde2, HIGH);
+          20:&emsp;&ensp;digitalWrite (rosso2, LOW);
+          21:&emsp;&ensp;delay (5000);
+          22:&emsp;&ensp;digitalWrite (giallo2, HIGH);
+          23:&emsp;&ensp;delay (5000);
+          24:&emsp;&ensp;digitalWrite (rosso1, LOW);
+          25:&emsp;&ensp;digitalWrite (verde1, HIGH);
+          26:&emsp;&ensp;digitalWrite (verde2, LOW);
+          27:&emsp;&ensp;digitalWrite (giallo2, LOW);
+          28:&emsp;&ensp;digitalWrite (rosso2, HIGH);
+          29:&emsp;&ensp;delay (5000);
+          30:&emsp;&ensp;digitalWrite (giallo1, HIGH);
+          31:&emsp;&ensp;delay (5000);
+          32:&emsp;&ensp;digitalWrite (verde1, LOW);
+          33:&emsp;&ensp;digitalWrite (giallo1, LOW);
+          34:&emsp;}
+          <div id="sezione2"><br></div>
+          <hr class="separatore">
+        </span>
+      </span>
+    </div>
+    <!--Gel igienizzante-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center">Gel igienizzante mani</h1>
+      <span>
+        Fuori casa o in molte situazioni il gel igienizzante per le mani può tornare molto comodo se non
+        abbiamo a disposizione acqua e sapone. Tutti i giorni impugniamo maniglie toccate da mille altre
+        persone, premiamo tasti, tocchiamo superfici, ci sfioriamo il viso. Conviviamo continuamente con
+        germi e batteri e la loro presenza nell’ambiente e sulle persone è praticamente inevitabile.<br>
+        I gel igienizzanti del supermercato contengono però conservanti, profumi ed emollienti di sintesi
+        che possono risultare aggressivi sulla pelle. In alternativa è possibile usare un gel igienizzante
+        fatto in casa prodotto con pochi ingredienti facilmente reperibili.
+        <br><br>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione2.jpg" /></div>
+        <br>
+        Per 1 litro di prodotto è necessario il seguente dosaggio:
+        <ul>
+          <li>833 ml alcol etilico al 96%</li>
+          <li>42 ml di acqua ossigenata al 3%</li>
+          <li>15 ml glicerina (glicerolo) al 98%</li>
+          <li>acqua distillata (oppure bollita e raffreddata): quanto basta per arrivare a 1 litro</li>
+        </ul>
+        Sulla base delle indicazioni dell'Organizzazione Mondiale della Sanità questa è la ricetta dell'igienizzante
+        efficace contro il Coronavirus.
+        <div id="sezione3"><br><br></div>
+        <hr class="separatore">
+      </span>
+    </div>
+    <!--Pasta modellabile-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center title-padding">Pasta modellabile</h1>
+      <span>
+        Possiamo creare in casa una pasta modellabile che non ha nulla da invidiare a quella che si trova nei
+        negozi e che i bambini usano in grande quantità. Fare in casa questa pasta è più semplice di quanto si
+        pensi.<br>
+        I vantaggi nel farlo in casa sono principalmente 3:
+        <ul>
+          <li>è semplicissimo</li>
+          <li>può essere colorato e aromatizzato in modo naturale</li>
+          <li>è molto economico</li>
+        </ul>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione3.jpg"></div>
+        <br>
+        <h3>Ingredienti</h3>
+        <ul>
+          <li>2 tazze di farina comune</li>
+          <li>mezza tazza di sale fino</li>
+          <li>2 tazze d’acqua bollente</li>
+          <li>2 cucchiai di succo di limone filtrato</li>
+          <li>1 cucchiaio colmo di olio (di oliva, di mais o di girasole)</li>
+        </ul>
+        Mettete gli ingredienti secchi in una ciotola abbastanza grande, mescolate bene e aggiungete l’acqua
+        bollente. Amalgamate bene il composto e impastate finché il tutto non raggiunge in qualche minuto una
+        consistenza morbida e uniforme.<br>
+        Possiamo renderlo più durevole “cuocendolo” brevemente: in questo caso basta versare gli ingredienti
+        secchi in un pentolino, unire quelli liquidi mescolando accuratamente e cuocere per un paio di minuti
+        a fuoco dolce continuando a mescolare bene. Una volta raffreddato l’impasto è pronto.<br>
+        <div id="sezione4"><br><br></div>
+        <hr class="separatore">
+      </span>
+    </div>
+    <!--Spray antizanzare-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center title-padding">Spray antizanzare</h1>
+      <span>
+        Per evitare di essere punti dalle zanzare basta confonderle facendo leva sull'olfatto, infatti è tramite
+        l'olfatto che riescono a trovare le "prede" nelle loro vicinanze.
+        <br>
+        <br>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione4.jpg" /></div>
+        <br>
+        <h3>Ingredienti e preparazione</h3>
+        Per preparare un semplice spray antizanzare fai da te occorrono:
+        <ul>
+          <li>85 ml. di acqua minerale non gasata</li>
+          <li>15 ml. di vodka (o alcol per uso alimentare)</li>
+          <li>5 gocce di olio essenziale di citronella</li>
+          <li>3 gocce di olio essenziale di lavanda</li>
+          <li>uno spruzzino da 100 ml</li>
+        </ul>
+        Se si dispone di uno solo dei due oli essenziali si può preparare lo spray usando soltanto uno dei due oli.
+        Ad esempio usando 8 gocce di olio essenziale di citronella.
+        Ecco il procedimento per preparare lo spray fai da te:
+        <ul>
+          <li>facciamo bollire l’acqua in un pentolino per alcuni minuti</li>
+          <li>lasciamo raffreddare l’acqua</li>
+          <li>in un bicchierino mescoliamo vodka e oli essenziali</li>
+          <li>versiamo il liquido nell’acqua minerale ormai raffreddata</li>
+          <li>trasferiamo il tutto nello spruzzino pulito</li>
+        </ul>
+        Lo spray antizanzare è ora pronto per essere spruzzato sulla pelle esposta alle punture e sui vestiti.
+        Agitare lo spray prima dell'uso ne migliora l'efficacia, inoltre è importante riapplicarlo nuovamente
+        quando il profumo tende a svanire (lo spray antizanzare fai da te non contiene sostanze di sintesi,
+        più persistenti rispetto agli oli essenziali naturali).<br>
+        <div id="sezione5"><br><br></div>
+        <hr class="separatore">
+      </span>
+    </div>
+    <!--Colla-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center title-padding">Colla</h1>
+      <span>
+        La colla può risultare sempre utile per fare qualche lavoretto, quindi vi proponiamo un metodo
+        veloce per farla in casa.<br>
+        <br>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione5.jpg" /></div>
+        <br>
+        <h3>Ingredienti e preparazione</h3>
+        Per fare la colla bastano:
+        <ul>
+          <li>320 ml. di acqua</li>
+          <li>2 cucchiai di amido di mais </li>
+          <li>2 cucchiai di zucchero</li>
+          <li>1 cucchiaio di aceto</li>
+        </ul>
+        Nella ricetta l’amido di mais serve da addensante e dà alla colla una consistenza gelatinosa,
+        mentre lo zucchero fa in modo che la colla diventi appiccicosa.<br>
+        Mettete metà acqua (160 ml.), lo zucchero e l’aceto in un pentolino e scaldate finché il tutto
+        non inizia quasi a sobbollire. In un altro contenitore unite la restante acqua fredda (160 ml.)
+        con l’amido di mais, mescolate accuratamente e versate gradualmente questo composto nel pentolino.
+        Fate bollire a fiamma moderata per un minuto continuando a mescolare. Eventuali grumi possono essere
+        eliminati frullando il composto a freddo per pochissimi istanti.<br>
+        A questo punto la colla è praticamente pronta. Fatela raffreddare, versatela in contenitori con
+        coperchio e conservatela in frigorifero. La durata è indicativa, se il barattolo viene chiuso
+        ermeticamente la colla può durare per diversi giorni.<br>
+        <div id="sezione6"><br><br></div>
+        <hr class="separatore">
+      </span>
+    </div>
+    <!--Sapone liquido-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center title-padding">Sapone liquido</h1>
+      <span>
+        Questa è una ricetta davvero semplice per creare un ottimo sapone liquido per le mani in pochi minuti
+        e con meno di 1 euro. Questo sapone liquido è un ottimo sostituto della classica saponetta solida.<br>
+        <br>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione6.jpg" /></div>
+        <br>
+        <h3>Ingredienti e procedimento</h3>
+        <ul>
+          <li>75 grammi di sapone solido di Marsiglia in scaglie</li>
+          <li>1 litro di acqua</li>
+        </ul>
+        Facoltativi:<br>
+        <ul>
+          <li>10 gocce di olio essenziale di lavanda o altro olio essenziale</li>
+          <li>2 cucchiai olio extra vergine di oliva</li>
+          <li>2 cucchiai olio di mandorle dolci</li>
+        </ul>
+        E ora passiamo alla preparazione del sapone:<br>
+        <ul>
+          <li>con un coltello tagliare il sapone in scaglie piccole</li>
+          <li>in un pentolino di acciaio far sciogliere il sapone in 1 litro di acqua, mescolando ogni tanto</li>
+          <li>quando è sciolto lasciarlo ancora sul fuoco basso per circa 15 minuti mentre sobbolle: dobbiamo ottenere
+            un composto molto liquido, che raffreddandosi si addenserà molto</li>
+          <li>spegnere il fuoco</li>
+          <li>aggiungere gli ingredienti facoltativi, mescolare e lasciare raffreddare nel pentolino</li>
+          <li>mentre il composto si sta raffreddando e addensando, mescolarlo con il minipimer per renderlo più omogeneo
+          </li>
+        </ul>
+        Quando il sapone è completamente raffreddato e addensato bisogna verificare la solidità: se è troppo solido
+        possiamo riscaldarlo e aggiungere altra acqua per ammorbidirlo.<br>
+        <div id="sezione7"><br><br></div>
+        <hr class="separatore">
+      </span>
+    </div>
+    <!--Vasi per piante-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center title-padding">Portavasi</h1>
+      <span>
+        Vi proponiamo di realizzare dei portavasi con barattoli o vecchi vasi rivestendoli con corde e spaghi. In questo
+        modo, possiamo recuperare grandi barattoli di latta che andrebbero buttati abbellendo vecchi vasi di plastica o
+        terracotta rovinati dal sole o dall'umidità.<br>
+        Per la realizzazione abbiamo scelto corde in colori naturali e per questo i portavasi che otterremo sono adatti
+        all'interno o ad ambienti esterni riparati dalla pioggia.<br>
+        <br>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione7.jpg" /></div>
+        <br>
+        <h3>Materiali occorrenti</h3>
+        <ul>
+          <li>Barattoli di latta di recupero di diverse misure</li>
+          <li>Colla a caldo</li>
+          <li>Corde e spaghi di vari tipi</li>
+          <li>Forbici e matita</li>
+          <li>Cartoncino nero</li>
+          <li>Piante grasse o aromatiche</li>
+          <li>Colore a matita bianco</li>
+        </ul>
+        <h3>Passaggi</h3>
+        <ul>
+          <li>Recuperate dei barattoli di latta di pomodori o legumi di diverse misure</li>
+          <li>Staccate le etichette e sgrassate bene i barattoli con acqua e sapone. Asciugate bene.</li>
+          <li>Rivestite tutto il barattolo con la corda, attaccandola con la colla a caldo</li>
+          <li>Procedete allo stesso modo con gli altri barattoli cambiando il tipo di corda</li>
+          <li>Le etichette non sono indispensabili ma, se vi piacciono, realizzatele con il cartoncino nero</li>
+          <li>Scrivete sulle etichette i nomi delle piante aromatiche e attaccatele con la colla a caldo</li>
+        </ul>
+        <div id="sezione8"><br><br></div>
+        <hr class="separatore">
+      </span>
+    </div>
+    <!--Crema viso-->
+    <div class="sezione fadeIn">
+      <h1 class="text-center title-padding">Crema per il viso</h1>
+      <span>
+        Una crema per il viso nutriente e idratante aiuta notevolmente a mantenere la pelle in salute, per questo vi
+        proponiamo questa soluzione fai da te per crearne una con pochi ingredienti.<br>
+        <br>
+        <div class="text-center"><img class="img-reduced" src="../../assets/img/hobby/sezione8.jpg" /></div>
+        <br>
+        <h3>Ingredienti</h3>
+        <ul>
+          <li>30 g di olio di mandorle</li>
+          <li>30 g di acqua distillata</li>
+          <li>1 cucchiaino circa di cera d’api</li>
+          <li>4/6 gocce di olio essenziale a scelta</li>
+        </ul>
+        <h3>Preparazione</h3>
+        <ul>
+          <li>pesare l’olio ed aggiungere la cera: mettere a bagnomaria e fare sciogliere la cera</li>
+          <li>separatamente scaldare l’acqua </li>
+          <li>unire l’acqua all’olio e alla cera sciolta e frullare con le fruste elettriche da cucina</li>
+          <li>otterremo a poco a poco un’emulsione omogenea: a questo punto la crema è pronta</li>
+          <li>aggiungete l’olio essenziale e mescolare</li>
+          <li>versate in un recipiente di vetro con coperchio</li>
+        </ul>
+        <h3>Conservazione</h3>
+        La crema si conserva in frigorifero anche per un paio di mesi. Se si preferisce tenerla fuori dal frigorifero
+        il consiglio è di aggiungere 5/7 gocce di semi di pompelmo.<br>
+        <br><br><br><br>
+      </span>
+    </div>
+  </div>
+
+</body>
