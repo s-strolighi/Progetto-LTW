@@ -14,21 +14,17 @@ body{
     overflow: auto;
     opacity:0.85;
 }
-
-#primo-link{
-    top:84px;
-}
-
+/*ridimensionamento bottoni*/
 .sidebar input[type="button"]{
     width:100%;
     font-size: calc(1vw + 12px);
 }
-
+/*margine della parte col contenuto (presente solo per la versione per pc)*/
 .contenitore-sezioni{
     margin-left:18vw;
     z-index:2;
 }
-
+/*ridimensionamento delle singole sezioni*/
 .sezione{
     margin-left:15%;
     margin-right:15%;
@@ -36,6 +32,7 @@ body{
     padding-left:2vw;
     padding-right:2vw;
 }
+/*dimensionamento immagini*/
 .img-reduced{
     width:491px;
     max-width:100%;
@@ -44,46 +41,50 @@ body{
 .codice{
     white-space:pre-line;
 }
-
+/*linea nera che separa le varie sezioni (stile dell'elemento hr)*/
 .separatore{
     margin-bottom:0px;
     border-top:1px solid;
 }
-/*abbasso il titolo "pasta modellabile" dalla linea orizzontale*/
+/*abbasso il titolo delle sezioni dalla linea orizzontale*/
 .title-padding{
     padding-top:20px;
 }
+/*sottolineatura della scritta del bottone attualmente visualizzato*/
 .underlined{
     text-decoration: underline;
 }
+/*trasparenza elementi "sezione"*/
 .fadeIn{
     opacity:0;
 }
 
 
 @media screen and (max-width: 750px) {
+    /*levo scroll del body dal telefono (perchè scorrera la div "contenitore-sezioni")*/
     body{
         overflow:hidden;
     }
+    /*sidebar diventa navbar*/
     .sidebar {
       width: 100%;
       height: auto;
       position: fixed;  /*deve stare ferma anche quando va su*/
       z-index: 2;       /*titolo e zona dinamica devono passargli dietro on davanti*/
     }
+    /*grandezza bottoni della sidebar*/
     .sidebar input[type="button"]{
         width:30vw;
     }
-    /*elimina distanziamento tra gli elementi*/
-    .sidebar ul{
-        display:flex;
-    }
+    /*il contenitore delle sezioni ora occupa tutto lo schermo orizzontalmente e lo sposto
+    di 87px dall'alto per mettere l'inizio della prima sezione sotto la sidebar (altrimenti sarebbero sovrapposte)*/
     .contenitore-sezioni{
         margin-left:0vw;
         margin-top:87px;
         height:calc(100vh - 84px);
         overflow:auto;
     }
+    /*elimino il margine laterale delle sezioni*/
     .sezione{
         margin-left:0vw;
         margin-right:0vw;
