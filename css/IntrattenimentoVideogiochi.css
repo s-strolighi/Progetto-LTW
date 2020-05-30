@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     background-image: url("../assets/img/intrattenimento/pattern.png");
     background-attachment: fixed;
-    
+   
 }
 
 /* l'oggetto videogame è alto come tutta la pagina meno la navbar*/
@@ -39,6 +39,10 @@ body {
     font-size: 8vh;
     margin: 0 auto;
     
+}
+
+.videogame-title h1:hover, .prev:hover, .next:hover{
+    cursor: pointer;
 }
 
 /* container frecce */

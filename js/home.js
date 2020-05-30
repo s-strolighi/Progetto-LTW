@@ -342,7 +342,7 @@ function controllaLogin() {
         $("#messageModal").modal("show"); //mostro il modal
         mostra_registrazione();           //mostro la registrazione invece del login come primo form
         console.log("Errore registrazione: " + error) //debug
-    } 
+    }
 }
 
 //funzione che esegue il logout dell'utente

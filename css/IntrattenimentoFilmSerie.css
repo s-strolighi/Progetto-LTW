@@ -78,8 +78,18 @@ body{
 }
 
 .table-title{
-    font-size: 30px;
+    font-size: 25px;
+    transition: 0.4s ease;
 }
+
+.table-title:hover{
+    font-size: 35px;
+}
+
+#confronto a{
+    text-decoration: none;
+}
+
 
 @media(max-width: 1230px) {
     .columns-4 {

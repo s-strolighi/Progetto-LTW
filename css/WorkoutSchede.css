@@ -28,43 +28,42 @@ font-size: large;
 }
   
 .title{
-
-    margin-top: 4rem;
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1.2;
-    text-shadow: 0px 0px black;
+  margin-top: 4rem;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-shadow: 0px 0px black;
  
-  }
+}
 
 
  /*stile della casella di ricerca*/
-  #myInput {
-    background-image: url('../assets/gif/search.gif'); /* Add a search icon to input */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    background-clip: border-box;
-    background-size: 3rem;
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    color: black;
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    /*margin-bottom: ; /* Add some space below the input */
-  }
-  
-  /*in questo modo gli stili gia esistenti di elenchi puntato sono tolti(senza questo verrebbe il classico elenco con il pallino a sinistra di tutte le voci*/
-  #myUL {
-    /* Remove default list styling */
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .card-img{
-      width: 100%;
-      height: auto;
-      display: block;
-  }
+#myInput {
+  background-image: url('../assets/gif/search.gif'); /* Add a search icon to input */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-clip: border-box;
+  background-size: 3rem;
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  color: black;
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  /*margin-bottom: ; /* Add some space below the input */
+}
+
+/*in questo modo gli stili gia esistenti di elenchi puntato sono tolti(senza questo verrebbe il classico elenco con il pallino a sinistra di tutte le voci*/
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 
 
