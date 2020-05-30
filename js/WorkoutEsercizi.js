@@ -10,9 +10,9 @@ function filterSelection(c) {
   for (var i = 0; i < buttons.length; i++) {
     if (buttons[i].className.indexOf(c) > -1) {
       if (buttons[i].className.indexOf('active') > -1 || c == '') { //attivo bottone se ha quel filtro o se "tutti" è attivo
-        RemoveClass(buttons[i], "active");
+        buttons[i].classList.remove("active");
       } else {
-        AddClass(buttons[i], "active");
+        buttons[i].classList.add("active");
       }
 
     }
@@ -25,9 +25,9 @@ function filterSelection(c) {
 
   //se non ho filtri attivi (tutte le schede), attivo il primo bottone
   if (filters.length == 0) {
-    AddClass(buttons[0], 'active');
+    buttons[0].classList.add("active");
   } else {
-    RemoveClass(buttons[0], 'active');
+    buttons[0].classList.remove("active");
   }
 
   cards = document.getElementsByClassName("filterDiv"); //x = array degli oggetti che hanno la classe filterDiv (tutti quelli che possono essere filtrati)
@@ -39,9 +39,9 @@ function filterSelection(c) {
     // !IMPORTANTE! every controlla che TUTTE le occorrenze matchano, SOME controlla che almeno una matcha
     if (filters.some(filtro => card_class.indexOf(filtro) > -1) || filters.length == 0) { //controllo che i filtri selezionati nei bottoni sono presenti all'interno delle calssi della cards
       //se la card deve essere vista
-      AddClass(cards[i], "show");
+      cards[i].classList.add("show");
     } else {
-      RemoveClass(cards[i], "show");
+      cards[i].classList.remove("show");
     }
   }
 
@@ -52,31 +52,6 @@ function getFilter(c) {
   classes = c.className.split(' ');
   classes = classes.filter(e => e !== 'btn').filter(e => e !== 'active');
   return (classes[0]);
-}
-
-// Show filtered elements
-function AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) < 0) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
-
-// Hide elements that are not selected
-function RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
 }
 
 // movimento navbar del filtra
