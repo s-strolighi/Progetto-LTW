@@ -3,22 +3,21 @@
 .parallax1{
   background-image: url("../assets/img/contattaci/parallax1.jpg");
 
-  /* Full height */
+  
   height: 100%; 
 
-  /* Create the parallax scrolling effect */
+  /* impostando lo sfondo fisso creo l'effetto parallax */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
  
-  
- 
   padding-top: 15%;
   padding-bottom: 15%;
 }
 
-.parallax1 h1{
+.parallax1 h1
+{
     text-align: center;
     margin-left: 37.5%;   /*larghezza e margine devono essere bilanciati*/
     width:25%;
@@ -27,13 +26,14 @@
     background-color: brown;
 }
 
-.parallax1 .text-block p{
+.parallax1 .text-block p 
+{
     color:white;
     text-align: left;
 }
 
-
-.text-block {
+.text-block 
+{
   opacity: 0.7;
   background-color: black;
   color: white;
@@ -104,7 +104,7 @@
 }
 
 
-/*uso display flex per gestire meglio il comportamento delle icone*/
+/*uso display flex per gestire meglio il comportamento delle icone, in modo che stiano su una riga e che non vadano a capo neanche se si ridimensiona la finestra*/
 .icone{              
   width:100%;
   display: inline-flex;
@@ -113,12 +113,13 @@
 }
 
 /*stile delle icone*/
-.fa{ 
+.fa,div a{ 
     text-align: center;
-    margin:0;
+   
     padding-top:3%;
     padding-bottom:3%;
-    width:50%;
+    width:100%;
+    
   }
   /* Add a hover effect if you want */
 .fa:hover {
@@ -139,9 +140,22 @@
     color: white;
   }
 
-@media screen and (max-width: 650px) {
+@media (min-width: 502px) and (max-width: 650px) {
     .column {
       width: 100%;
       display: block;
     }
+  }
+
+  @media (max-width: 501px) {
+
+    .parallax1 h1
+    {
+        text-align: center;
+        margin-left: 37.5%;   /*larghezza e margine devono essere bilanciati*/
+        width:25%;
+        font-size: 100%;
+        
+    }
+
   }
