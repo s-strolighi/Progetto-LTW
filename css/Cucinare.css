@@ -42,14 +42,7 @@ h3{                     /*stile del titolo*/
     padding-top: 1vw;
 }
 
-/*l'unica cosa che cambia è che mettendo questo lascio margini a destra e sinistra del carousel 
-.container-carousel{  /*contiene il carousel
-    width:80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 0%;       /*attaccato al titolo
-}
-*/
+
 /*setto le dimensioni delle slide del carousel*/
 .carousel-item img{                   
     height: calc(100vh - 86px);
