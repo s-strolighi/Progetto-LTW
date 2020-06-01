@@ -26,7 +26,7 @@
   <!--css di bootstrap e mio css-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       
-
+ 
   <!--includo il mio javascript-->
   <script type="text/javascript" lang="javascript" src="../../js/Cucinare.js"></script>
 
@@ -75,6 +75,7 @@
 </nav>
 
 
+<!-- indici del carousel-->
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -84,8 +85,13 @@
           <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="7"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="8"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="9"></li>
        
         </ol>
+
+        <!-- immagini nelle slide del carousel-->
         <div class="carousel-inner">
 
           <div class="carousel-item active">
@@ -129,6 +135,8 @@
           </div>
 
         </div>
+
+        <!-- i bottoni next e prev del carousel-->
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -142,8 +150,8 @@
            
     
        
-  
-        <div class="container-portate">
+        <!-- in questo container metto le 4 immagini arrotondate-->
+        <div class="container-portate"> 
         
         <div class="item-portate">
             <img  src="../../assets/img/cucina/antipasto.jpg">
@@ -170,14 +178,10 @@
       
 
 
-         
-    <!--deve essere separato per portate in modo tale che nel container portate posso mettere link 
-    a sezioni di questa stessa pagina-->
 
 
-
- <!--metto l'ancora sul divisorio per una questione di visualizzazione-->   
-<hr color="greenyellow"></hr> <a name="antipasti"></a>    <!--divisorio delle portate-->
+ <!--divisorio delle portate-->
+<hr color="greenyellow"></hr> <a name="antipasti"></a>    <!-- metto l'ancora in modo che il link nelle portate agli antipasti porti a questa porzione di pagina-->
 
 <div class="container-ricette"><!-- INIZIO container con tutte le ricette-->
    
@@ -200,16 +204,15 @@
 
             <!--prima riga della seconda colonna-->
             <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-                <button id="p1" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-                <button id="s1" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-                <button id="t1" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
-            </div>    
-
+                <button id="p1" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+                <button id="s1" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+                <button id="t1" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
+            </div>    <!-- il bottone premuto triggera una funzione javascript a cui passo il bottone stesso. tramite questo parametro dalla funzione navigo nel DOM per capire ogni volta quale tabella far apparire-->
 
         <!--seconda riga-->
         <div class="tabelle">
 
-        <div class="tab" name="p1" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+        <div class="tab" name="p1" id="tab-ingredienti">  <!--nel javascript uso la classe per riconoscere che fa parte dell'insieme delle tabelle e nome per riconoscere la specifica tabella. nel css uso l'id per lo stile-->
             <h4> Ingredienti </h4>
             <ul>
                 <li>3 melanzane</li>
@@ -231,7 +234,7 @@
                
             </ol>
         </div>
-        <div class="tab" name="t1" id="tab-info"> <!--id per il js e per il css-->
+        <div class="tab" name="t1" id="tab-info"> 
             <h4> Involtini di melanzane grigliate </h4>
             <ul>
                 <li><span>Difficolta</span>: facile</li>
@@ -250,7 +253,7 @@
 
 
 <!-- RICETTA 2-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -265,16 +268,16 @@
 
         <!--prima riga-->
         <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p2" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s2" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t2" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+            <button id="p2" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s2" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t2" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p2" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p2" id="tab-ingredienti">
         <h4> Ingredienti </h4>
         <ul>
             <li>Pane casareccio bruschettato</li>
@@ -285,7 +288,7 @@
             <li>origano</li>
         </ul>
     </div>
-    <div class="tab" name="s2" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s2" id="tab-procedimento"> 
         <h4> Preparazione </h4>
         <ol>
             <li>dovete prima di tutto aver bruschettato il pane. Potete farlo in un tostapane, su una padella rovente e su una griglia con la brace</li>
@@ -295,7 +298,7 @@
 
         </ol>
     </div>
-    <div class="tab" name="t2" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t2" id="tab-info"> 
         <h4> Bruschette con mozzarella </h4>
         <ul>
             <li><span>difficolta</span>: facile</li>
@@ -321,7 +324,7 @@
 
 
 <!-- RICETTA 3-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -335,17 +338,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p3" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s3" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t3" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p3" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s3" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t3" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p3" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p3" id="tab-ingredienti">  
         <h4> Ingredienti </h4>
         <ul>
             <li>320 g di orecchiette</li>
@@ -357,7 +360,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s3" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s3" id="tab-procedimento"> 
         <h4> Preparazione </h4>
         <ol>
             <li>Per preparare le orecchiette con broccoli dovete prima tutto lavare e tagliare gli ortaggi. Quindi, fateli saltare in padella con aglio e olio.</li>
@@ -365,7 +368,7 @@
             <li>Rimestate il tutto e unite la Certosa Light. Questo formaggio rappresenterà il tocco finale del vostro piatto e darà più cremosità alle vostre orecchiette con broccoli. Mescolate ancora. Conclusa l'operazione, servite la pietanza e se gradite, aggiungete una spolverata di formaggio.</li>
         </ol>
     </div>
-    <div class="tab" name="t3" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t3" id="tab-info">
         <h4> Orecchiette ai Broccoli </h4>
         <ul>
             <li><span>difficolta</span>: facile</li>
@@ -387,7 +390,7 @@
 
 
 <!-- RICETTA 4-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -401,17 +404,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p4" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s4" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t4" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p4" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s4" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t4" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p4" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p4" id="tab-ingredienti">  
         <h4> Ingredienti </h4>
         <ul>
             <li>380 g Pasta</li>
@@ -422,7 +425,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s4" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s4" id="tab-procedimento"> 
         <h4> Preparazione </h4>
         <ol>
             <li>salare una pila d'acqua e metterla sul fuoco fino a ebollizzione, per poi cuocere la pasta al dente</li>
@@ -430,7 +433,7 @@
             <li>una volta cotta la pasta scolarla direttamente in un recipiente con il condimento e amalgamare bene</li>
         </ol>
     </div>
-    <div class="tab" name="t4" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t4" id="tab-info"> 
         <h4> Pasta con le noci </h4><ul>
 
             <li><span>difficolta</span>: molto facile</li>
@@ -454,7 +457,7 @@
 
 
 <!-- RICETTA 5-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -468,17 +471,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div id="btn-r" class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p5" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s5" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t5" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div id="btn-r" class="bt-ricetta"> 
+            <button id="p5" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s5" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t5" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p5" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p5" id="tab-ingredienti"> 
         <h4> Ingredienti </h4>
         <ul>
             <li>125 g Certosa</li>
@@ -494,7 +497,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s5" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s5" id="tab-procedimento"> 
         <h4>Preparazione </h4>
         <ol>
             <li>Tritare prezzemolo e erba cipollina e mescolarla alla Certosa Light con sale e pepe</li>
@@ -503,7 +506,7 @@
             <li>Preparare un’emulsione con olio, aceto, sale e pepe e condire insalata e bresaola al momento di servirla.</li>
         </ol>
     </div>
-    <div class="tab" name="t5" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t5" id="tab-info"> 
             <h4> Bresaola alla Valtellinese </h4>
         <ul>
             <li><span>difficolta</span>: molto facile</li>
@@ -525,7 +528,7 @@
 
 
 <!-- RICETTA 6-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -539,17 +542,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p6" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s6" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t6" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p6" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s6" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t6" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p6" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p6" id="tab-ingredienti">  
         <h4> Ingredienti </h4>
         <ul>
             <li>6 Uova grandi</li>
@@ -563,7 +566,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s6" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s6" id="tab-procedimento"> 
         <h4> Preparazione </h4>
         <ol>
             <li>In una ciotola capiente, sbattete le uova con una forchetta e unitevi il parmigiano, la noce moscata, sale e pepe nero</li>
@@ -575,7 +578,7 @@
             <li>Stendete ora la crema di asparagi anch’essa in maniera da coprire tutta la superficie della frittata. Adesso arrotolatela con cura senza far uscire gli ingredienti dai lati e avvolgetela ben stretta in pellicola alimentare. Lasciatela in frigo per almeno un’ora in modo da farla compattare. Servire fredda.</li>
         </ol>
     </div>
-    <div class="tab" name="t6" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t6" id="tab-info">
         <h4> Rolle di frittata asparagi e mozzarella</h4>
         <ul>
             <li><span>difficolta</span>: Media</li>
@@ -599,7 +602,7 @@
 
 
 <!-- RICETTA 7-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -613,17 +616,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p7" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s7" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t7" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p7" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s7" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t7" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p7" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p7" id="tab-ingredienti">  
         <h4> Ingredienti </h4>
         <ul>
             <li>1 kg di Patate</li>
@@ -635,7 +638,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s7" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s7" id="tab-procedimento">
         <h4> Preparazione </h4>
         <ol>
             <li>Per preparare il purè di patate cominciate lessando queste ultime. Quindi versatele in una pentola capiente e coprite con abbondante acqua fredda. Mettete il tegame sul fuoco e, dal momento in cui l’acqua avrà raggiunto il bollore, contate dai 30 ai 50 minuti</li>
@@ -647,7 +650,7 @@
             <li>Un’ultima mescolata per amalgamare il tutto ed ecco pronto il vostro purè di patate!</li>
         </ol>
     </div>
-    <div class="tab" name="t7" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t7" id="tab-info">
         <h4>  pur&egrave di patate </h4>
         <ul>
             <li><span>difficolta</span>:  facile</li>
@@ -668,7 +671,7 @@
 
 
 <!-- RICETTA 8-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta">
 
 
     <!--prima colonna-->
@@ -682,17 +685,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p8" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s8" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t8" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p8" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s8" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t8" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p8" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p8" id="tab-ingredienti">  
         <h4> Ingredienti </h4>
         <ul>
             <li>6 patate</li>
@@ -709,7 +712,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s8" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s8" id="tab-procedimento"> 
         <h4>Preparazione</h4>
         <ol>
             <li> dovete prima di tutto sbollentare le verdure in abbondante acqua salata, ricordandovi che le patate dovranno essere ben cotte.</li>
@@ -722,7 +725,7 @@
         
         </ol>
     </div>
-    <div class="tab" name="t8" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t8" id="tab-info">
         <h4>Verdure al forno </h4>
         <ul>
             <li><span>difficolta</span>:  facile</li>
@@ -748,7 +751,7 @@
 
 
 <!-- RICETTA 9-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -756,23 +759,22 @@
         <img src="../../assets/img/cucina/CucinareGallery9.jpg">
     </div>
   
-        
-
+    
    <!--la seconda colonna divisa a sua volta in 2 righe-->
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p9" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s9" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t9" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p9" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s9" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t9" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p9" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p9" id="tab-ingredienti">  
         <h4> Ingredienti </h4>
         <ul>
             <li>  100 g di albumi</li>
@@ -789,7 +791,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s9" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s9" id="tab-procedimento">
         <h4> Preparazione </h4>
         <ol>
            <li>Per realizzare i pancake light per prima cosa raccogliete gli albumi in una ciotola. Sbatteteli, con una frusta a mano, per 30 secondi. Aggiungete lo yogurt greco, i semi di vaniglia, il miele e l'olio. Lavorate il tutto fino a ottenere una crema omogenea.</li>
@@ -797,7 +799,7 @@
            <li>Ungete un padellino antiaderente con l'olio di semi e fatelo scaldare per bene, rimuovendo l'eccesso di olio con della carta da cucina. Versate un mestolino di pastella e lasciate che si stenda in un disco. Quando noterete comparire delle grosse bolle sulla superficie, girate il pancake e proseguite la cottura dall'altro lato. A cottura ultimata trasferite su un piatto. Procedete in questa maniera fino ad esaurimento della pastella. Servite i pancake light caldi con miele e mirtilli.</li>
         </ol>
     </div>
-    <div class="tab" name="t9" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t9" id="tab-info"> 
         <h4>  Pancake light </h4>
         <ul>
             <li><span>difficolta</span>:  facile</li>
@@ -818,7 +820,7 @@
 
 
 <!-- RICETTA 10-->
-<div class="ricetta"> <!-- questa sara divisa in 3 righe, foto,bottoni,info-->
+<div class="ricetta"> 
 
 
     <!--prima colonna-->
@@ -832,17 +834,17 @@
     <div class="info-ricetta">
 
         <!--prima riga-->
-        <div class="bt-ricetta"> <!-- messi in alto nella seconda colonna -->
-            <button id="p10" class="openbtn active" onclick="triggedButton(this)"><p>Ingredienti</p> </button>
-            <button id="s10" class="openbtn" onclick="triggedButton(this)"><p>Preparazione</p></button>
-            <button id="t10" class="openbtn" onclick="triggedButton(this)"><p>Info</p></button>
+        <div class="bt-ricetta"> 
+            <button id="p10" class="openbtn active" onclick="triggeredButton(this)"><p>Ingredienti</p> </button>
+            <button id="s10" class="openbtn" onclick="triggeredButton(this)"><p>Preparazione</p></button>
+            <button id="t10" class="openbtn" onclick="triggeredButton(this)"><p>Info</p></button>
         </div>    
 
 
     <!--seconda riga-->
     <div class="tabelle">
 
-    <div class="tab" name="p10" id="tab-ingredienti">  <!--nel javascript uso classe  e nome per riconoscere gli oggetti giusti. nel css uso l'id per lo stile-->
+    <div class="tab" name="p10" id="tab-ingredienti">
         <h4> Ingredienti </h4>
         <ul>
             <li>225 gr di cioccolato fondente</li>
@@ -856,7 +858,7 @@
         </ul>
 
     </div>
-    <div class="tab" name="s10" id="tab-procedimento"> <!--il nome deve corrispondere all'id del bottone della stessa ricetta-->
+    <div class="tab" name="s10" id="tab-procedimento"> 
         <h4>Preparazione</h4>
         <ol>
             <li>Prima di tutto, sciogliete il cioccolato a bagnomaria insieme al burro, fatelo a fiamma bassa, in modo che non si bruci, fino ad ottenere un composto liquido e liscio. Lasciate raffreddare da parte qualche minuto.</li>
@@ -871,7 +873,7 @@
         
         </ol>
     </div>
-    <div class="tab" name="t10" id="tab-info"> <!--id per il js e per il css-->
+    <div class="tab" name="t10" id="tab-info"> 
         <h4>Brownies al cioccolato fondente</h4>
         <ul>
             <li><span>difficolta</span>:  facile</li>
