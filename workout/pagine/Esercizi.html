@@ -18,6 +18,15 @@
   <!--questa funzione legge se il localstorage &egrave pieno o vuoto, quindi se &egrave attiva una sessione per quella persona.
     se non ci sta ti riporta alla home principale-->
 
+
+     <!-- Caricamento di jquery e javascript di bootstrap per il funzionamento della navbar ridimensionata -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -72,9 +81,8 @@
 
 
 
-  <!-- questa si deve muovere quando scrollo, il box serve a non farla sovrapporle all altra navbar-->
+  <!-- questa si deve muovere quando scrollo-->
   <nav id="nav-hide" class="navbar-expand-lg navbar navbar-dark bg-dark">
-    <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->
 
     <!--bottone che apre la Nvbar ridimensionata-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
@@ -87,9 +95,7 @@
       <!--l id mi serve per potermi riferire a questa navbar nel bottone della navbar ridimensionata-->
 
       <!-- bottoni che filtrano -->
-      <!-- Control buttons -->
       <ul class="navbar-nav mr-auto text-center">
-
 
         <li>
           <div id="myBtnContainer">
@@ -110,7 +116,7 @@
 
             <!-- anche fra le classi dei bottoni ho aggiunto una classe che non serve per effetti grafici ma serve per
     identificare quale bottone viene premuto, cosi che nella funzione js io possa aggiungere la classe active al 
-   bottone che &egrave stato premuto-->
+   bottone che è stato premuto-->
           </div>
         </li>
       </ul>
@@ -121,14 +127,14 @@
 
 
   <!--finite le navbar metto il titolo-->
-
-
   <h1 class="title text-center text-light">Esercizi</h1>
 
-  <!--dopo il titolo metto il card deck con le card con gli esercizi-->
 
+  <!--dopo il titolo metto il card deck con le card con gli esercizi-->
   <div class="row mio-container">
-    <!--tutti gli oggetti che sono soggetti al filtro li metto nel mio container-->
+    <!--tutti gli oggetti che sono soggetti al filtro li metto nel mio-container-->
+
+    <!-- le schede hanno tuttela classe filterDiv e la classe riguardante il tipo di esercizio-->
     <div class="card filterDiv show aerobica gambe">
       <!--!!!!!!le carte che hanno gia la classe show in partenza vengono mostrate fin dall'inizio-->
       <img src="../../assets/img/workout/EserciziBurpees.gif" class="card-img-top" alt="">
@@ -353,16 +359,7 @@
   </div>
   <!--chiusura container-->
 
-  <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+ 
 </body>
 
 </html>

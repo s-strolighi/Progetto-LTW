@@ -15,15 +15,10 @@
   
   
     
-    <!-- file JQuery -->
+    <!-- JQuery e javascript per la navbar ridimensionata-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-      <!--file per ajax-->
-      
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>      
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
@@ -37,7 +32,7 @@
 
   <!--PRIMA Navbar-->
 
-  <!-- fixed top la tiene ferma in alto anche mentre scrollo-->
+  <!-- sticky top la tiene ferma in alto anche mentre scrollo-->
   <nav id="nav-fixed" class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark shadow-lg rounded mt-0">
 
     <!--Logo-->
@@ -79,7 +74,7 @@
 
 
   
-  <!-- questa si deve muovere quando scrollo, il box serve a non farla sovrapporle all altra navbar-->
+  <!-- questa si deve muovere quando scrollo-->
   <nav id="nav-hide" class="navbar-expand-lg navbar navbar-dark bg-dark">
     <!--padding solo per verificare la grafica dei due navbar . non serve al risultato finale-->
 
@@ -95,7 +90,7 @@
 
      <!--nella navbar metto solo la casella cerca del filtro-->
       <ul class="navbar-nav mr-auto text-center">
-        <li>
+        <li>                                               <!-- la funzione viene triggerata quando scrivo qualcosa nel search-->
           <input class="search" type="text" id="myInput" onkeyup="myFunction()"  placeholder="Cerca per nome scheda">
         </li>
       </ul>
@@ -108,7 +103,7 @@
 
 
 
-<!-- fuori dalla navbar vado a mettere l'elenco(in questo caso sara di card) tra cui filtrare-->
+<!-- fuori dalla navbar vado a mettere l'elenco(in questo caso sara di card) tra cui filtrare.-->
 <ul id="myUL">
 
   <!--voce 1-->
@@ -302,7 +297,7 @@
         <h5 class="card-title"><a href="https://www.youtube.com/watch?v=pcSITRlz08g" target="_blank">Addominali</a></h5>
         <p class="card-text">Circuito rapido e che non richiede attrezzi o spazi eccessivi per sviluppare gli addominali. <br>
         si consiglia di eseguire il circuito una sola volta rispettando rigorosamente i tempi di recupero. <br> 
-        A meno che non vi troviate ad un livello avanzato, in quel caso potete o abbassare i recuperi o aumentare il tempo di attivit&agrace</p>
+        A meno che non vi troviate ad un livello avanzato, in quel caso potete o abbassare i recuperi o aumentare il tempo di attivit&agrave</p>
         <p class="card-text"><small class="text-muted">Fonti: canale YouTube Street Gorilla</small></p>
       </div>
     </div>
@@ -368,7 +363,7 @@
       <div class="card-body">
         <h5 class="card-title"><a href="https://www.youtube.com/watch?v=1bZ98SzsDnc" target="_blank">Bicipiti</a></h5>
         <p class="card-text">I bicipiti sono senza dubbio il muscolo piu difficile da allenare se non si disponde di neanche un manubrio. Questo circuito ci viene in aiuto. <br>
-        Lavorando in isometria riusciamo comunque a sviluppare le nostre braccia. Tutto quello di cui abbiamo bisogno è un asciugamano e una cassa d'acqua.bg-dark</p>
+        Lavorando in isometria riusciamo comunque a sviluppare le nostre braccia. Tutto quello di cui abbiamo bisogno è un asciugamano e una cassa d'acqua.</p>
         <p class="card-text"><small class="text-muted">Fonti: canale YouTube Umberto Miletto</small></p>
       </div>
     </div>

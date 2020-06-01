@@ -51,10 +51,9 @@ font-size: large;
   /*margin-bottom: ; /* Add some space below the input */
 }
 
-/*in questo modo gli stili gia esistenti di elenchi puntato sono tolti(senza questo verrebbe il classico elenco con il pallino a sinistra di tutte le voci*/
+/*stile dell'elenco puntato delle schede*/
 #myUL {
-  /* Remove default list styling */
-  list-style-type: none;
+  list-style-type: none; /*toglie lo stile di default delle liste*/
   padding: 0;
   margin: 0;
 }
@@ -66,27 +65,26 @@ font-size: large;
 }
 
 
-
-  /*da qui css per la tabella overlay*/
-.overlay {
-  position: absolute;
+/*CSS PER LA TABELLA OVERLAY*/
+.overlay /*la tabella con gli esercizi parte con un'altezza nulla*/
+{
+  position: absolute; /*quindi si relazione con il container dove si trova(il col-md-4)*/
   bottom: 0;
   left: 0;
   right: 0;
   background-color: whitesmoke;
-    width: 100%;
+  width: 100%;
   height: 0;
   transition: 0.5s ease;      /*tempo impiegato per passare da altezza di default 0 a quella impotata per quando passo con il mouse*/
   overflow: auto; 
 }
 
-  .col-md-4:hover .overlay { /* hover = quando ci passo con il mouse si aggiunge alla classe .overlay l'altezza 100%*/
+  .col-md-4:hover .overlay { /*quando passo con il mouse sopra la prima colonna(quella contenente l'immagine) l'altezza della classe overlay diventa 100%*/
     height: 100%;
   }
 
   
-/*stile della tabella dentro la slide che compare sulla foto, non riesco a mettere la tabella che prende tutta
-la slide per tutte le possibili dimensioni. Vanno tutte bene ma per ipad sfaciola*/
+/*stile della tabella dentro la slide che compare sulla foto*/
   .table {  
     border: 10rem;
     border-color: blanchedalmond;
@@ -96,7 +94,7 @@ la slide per tutte le possibili dimensioni. Vanno tutte bene ma per ipad sfaciol
 
 
   /*volevo rendere il colore della scritta del placeholder uguale al colore della gif search in tutti i browser*/
-::-webkit-input-placeholder { /* WebKit browsers */ /*tipo edge*/
+::-webkit-input-placeholder { /* WebKit browsers */ /* edge*/
   color:royalblue ;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -113,7 +111,7 @@ la slide per tutte le possibili dimensioni. Vanno tutte bene ma per ipad sfaciol
 
 @media (min-width: 768px) and (max-width: 900px)
 {
-.row{          /*IMPORTANTE: questa dimensione da modificare per avere l'immagine piu grande o piu piccola e far entrare sempre 
+.row{          /*questa dimensione da modificare per avere l'immagine piu grande o piu piccola e far entrare sempre 
               la tabella overlay al suo interno*/
      width:150%;
     }

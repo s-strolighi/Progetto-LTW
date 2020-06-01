@@ -31,7 +31,8 @@
   <script>controllaSessione();</script>
 
   <script>
-    function smooth() {
+    function smooth() /*cliccando sulle freccie vengo portato alle sezioni in basso lentamente e non in modo istantaneo:  behavior: "smooth"*/
+    {
       document.getElementById("sezioni").scrollIntoView({ behavior: "smooth" });
     }
   </script>
@@ -65,15 +66,15 @@
       <!--l'id serve a far puntare queste voci di menu al pulsante della navbar ridimensionata-->
 
       <ul class="navbar-nav mr-auto text-center">
-        <li class="nav-item active">
+        <li class="nav-item text-center active">
           <a class="nav-item nav-link active" href="#">Home </a><!-- <span class="sr-only">(current)</span> -->
 
         </li>
-        <li class="nav-item">
+        <li class="nav-item text-center">
           <a class="nav-item nav-link" href="pagine/Esercizi.html">Esercizi</a>
 
         </li>
-        <li class="nav-item">
+        <li class="nav-item text-center">
           <a class="nav-item nav-link" href="pagine/Schede.html">Schede</a>
           <!--ml sta per margin left (spacing in bootstrap)-->
 
@@ -90,17 +91,15 @@
 
   <div class="centrale">
     <h1 class="stile-testo-centrale text-light">Workout</h1>
-    <section id="scroll" onclick="smooth();">
+    <section id="scroll" onclick="smooth();">       <!-- quando clicco sugli span, cioe le freccie, si triggera smooth() che rimanda alle sezioni lentamente-->
       <a><span></span><span></span><span></span></a>
     </section>
   </div>
 
 
-  <!--per ora mi serve solo per mettere l'immagine fissa poi ci aggiungero qualcosa probabilmente-->
-  <!-- <img/workout src="img/workout/workoutsfondo2.jpg" style="width: 100%;"> -->
+ 
 
-
-  <!-- card groub mi permette di ordinare le carte in moodo compatto, margin top = 0-->
+  <!-- card group mi permette di ordinare le carte in moodo compatto, margin top = 0-->
   <div id="sezioni" class=" card-group">
     <div class="card bg-light text-dark text-center">
       <!--sfondo bianco scritte nere-->
@@ -110,13 +109,13 @@
           <h5 class="card-title">Esercizi</h5>
         </a>
         <p class="card-text">
-          Nella sezione Esercizi troverete alcuni esercizi a corpo libero, particolarmente adatti per chi non dispone di molto tempo o spazio o della possibilita di andare in palestra ma vuole comunque tenersi in forma se non addirittura guadagnare massa muscolare.
+          Nella sezione Esercizi troverete alcuni esercizi a corpo libero, particolarmente adatti per chi non dispone di molto tempo o spazio o della possibilita di andare in palestra ma vuole comunque tenersi in forma, se non addirittura guadagnare massa muscolare.
           L’allenamento a corpo libero, chiamato anche bodyweight, è un allenamento dove, semplicemente, usi il tuo peso come resistenza per sviluppare i muscoli.
           I benefici dell'allenamento a corpo libero sono: </p><br>
           <ul>
           <li> Puoi farlo dappertutto (casa, parco, palestra);</li> <br>
           <li>è un allenamento economico in quanto non ti servono gli attrezzi;</li> <br>
-          <li>è un allenamento vario (esiste un’infinita di esercizi);</li> <br>
+          <li>è un allenamento vario (esistono un’infinita di esercizi);</li> <br>
           <li>gli esercizi a corpo libero sono meno stressanti per le articolazioni, tonificano nel modo giusto, senza aumentare il volume muscolare, perché richiedono più tensione su più muscoli;</li> <br>
           <li>sono esercizi multiarticolari che, come nel caso degli affondi laterali,  in un unico esercizio tonificano gambe e glutei e attivano gli addominali.</li> <br>
           </ul>
@@ -140,18 +139,6 @@
     </div>
     
     </div>
-
-
-
-
-  <!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  -->
 
 </body>
 

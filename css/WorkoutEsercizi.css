@@ -1,6 +1,5 @@
 
 .card-body p,.card-body li{
-
   float: left;
   text-align: left;
 }
@@ -11,26 +10,17 @@ body {
 }
 
 #nav-fixed {
-  z-index: 2;
+  z-index: 2; /*pongo la navbar fissa sopra quella che scompare*/
 }
 
 #nav-hide {
   background-color: #333;
-  position: fixed;
+  position: fixed;          
   width: 100%;
-  display: block;
-  transition: top 0.3s;
+  display: block; /*l'elemento cosi prende tutta la larghezza disponibile*/
+  transition: top 0.3s;/* cosi scompare non all'istante*/
   z-index: 1;
 }
-
-/* se usiamo position poi gestiamo la collocazione con i 4 attributi top,bottom,right,left
-        position:
-                  relative --> indica che viene messo in relazione alla sua posizione di norma
-                  absolute --> rispetto alla radice html
-                  fixed     --> come absolute ma non si muove
-                  inherit   --> eredita position dal padre
-                  
-                  altre cose su bootstrap*/
 
 .title{
   margin-top: 5rem;
@@ -42,7 +32,7 @@ body {
 
 /*GRAFICA DEL FILTRO*/
 
-/* Style the buttons */
+/* stile dei bottoni */
 #nav-hide .btn {
   border: none;
   outline: none;
@@ -52,26 +42,36 @@ body {
   color: black
 }
 
-/* Add a light grey background on mouse-over */
+
 #nav-hide .btn:hover {
   background-color: #ddd;
 }
 
-/* Add a dark background to the active button */
+
 #nav-hide .btn.active {
   background-color: #666;
   color: white;
 }
 
 /*in questa sotto classe metto anche tutti gli stili delle carte, come la larghezza*/
-.filterDiv {
   /*tutti gli oggetti filtrabili devono avere questa classe per potermi riferire a loro nel javascript*/
   /*tutte le card hanno questa classe*/
-
-  display: none;
-  /*se metto none le card si vedono solo se premo tutti. quindi all'inizio la pagina è vuota*/
+.filterDiv {
+  display: none;  /*cosi vengono visualizzate solo le card selezionate*/
   margin: 1rem;
+}
 
+.mio-container {
+  /*il container che contiene tutti gli oggetti filtrabili*/
+  text-align: center; 
+  width: 96%;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+/* la classe show è aggiunta agli oggetti filtrati e display passa da none a block */
+.show {
+  width: 22.6vw;
+  display: block;
 }
 
 .card-img-top {
@@ -87,35 +87,18 @@ body {
 
 .card {
   margin: 0 auto;
-  /* Added */
   float: none;
-  /* Added */
   margin-bottom: 2%;
-  /* Added */
   overflow: auto;
-
 }
 
 .h1{
   font-size: 10rem;
 }
-.mio-container {
-  /*il container che contiene tutti gli oggetti filtrabili*/
-  text-align: center; 
-  width: 96%;
-  margin-right: 2%;
-  margin-left: 2%;
-}
 
-/* The "show" class is added to the filtered elements */
-.show {
-  width: 22.6vw;
-  display: block;
-}
+
 
 /*gestione dei breakpoint per visualizzare le schede bene su schermi di ogni dimensione*/
-
-
 
 @media (max-width: 1600px) {
   .show {
@@ -154,5 +137,4 @@ body {
 
 /*
 altri eventuali @media
-
 */
