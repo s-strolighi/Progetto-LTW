@@ -63,7 +63,6 @@ function assegnaEventHandler(){
             e che non sono già presenti nel DOM.*/
             if (tipo == "nessuno"){
                 for(i=0;i<arrayCards.length;i++){
-                    var prova = arrayCards[i].getAttribute("class");
                     arrayCards[i].accettabileTipo=true;
                     if (arrayCards[i].accettabilePrezzo==true && document.getElementById("card"+i)==null){
                         contenitore.appendChild(arrayCards[i]);
