@@ -52,7 +52,7 @@ h3{                     /*stile del titolo*/
 */
 /*setto le dimensioni delle slide del carousel*/
 .carousel-item img{                   
-    height:89%;
+    height: calc(100vh - 86px);
     object-fit: cover;
 }
 .carousel-item .content    /*contenuto del box di testo dentro le immagini del carousel*/
