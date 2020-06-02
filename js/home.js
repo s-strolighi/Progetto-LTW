@@ -59,7 +59,7 @@ function mostra_registrazione(e) {
             </div>
         </div>
     `;
-    //!!importante (riga 55) creo bottone effettua login per ripassare alla vista del login nella form
+    //!!importante (riga 57) creo bottone effettua login per ripassare alla vista del login nella form
 
     //aggiorno gli eventi sui nuovi bottoni inseriti
     assegnaEvent();
@@ -103,7 +103,6 @@ function mostra_login(e) {
                     <input type="password" class="form-control" size="25" name="password" placeholder="Your secret password" minlength="5">
                 </div>
             </div>
-            <div id="login-correct"class="alert" role="alert"></div>
             <div class="col-auto">
                 <div class="input-group mb-1 mt-3">
                     <div class="input-group-prepend">
@@ -293,7 +292,6 @@ function controllaLogin() {
             var nome = url.searchParams.get("name");
             changeModal("Benvenuto "+nome,"Grazie per esserti registrato!","Ora puoi iniziare ad usare il sito cliccando nelle varie sezioni")  //creo modal prima registrazione
             $("#messageModal").modal("show") //faccio apparire il modal
-            console.log("Benvenuto " + nome); //debug
         }
         return;
     }
@@ -320,7 +318,6 @@ function controllaLogin() {
 
         $("#messageModal").modal("show"); //mostro modal
         mostra_login(); //mostro form login
-        console.log("Errore login: "+error); //debug
     }
 
     if (url.searchParams.get("registrazione") == "false") { //se il file PHP ha segnalato un problema nella registrazione
@@ -341,7 +338,6 @@ function controllaLogin() {
         
         $("#messageModal").modal("show"); //mostro il modal
         mostra_registrazione();           //mostro la registrazione invece del login come primo form
-        console.log("Errore registrazione: " + error) //debug
     }
 }
 
