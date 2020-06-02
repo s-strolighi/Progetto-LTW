@@ -1,5 +1,6 @@
 //funzione chiamata quando si clicca il link "registrazione" dentro al form, cambia l'HTML della form aggiungendo campi
-function mostra_registrazione(e) {
+function mostra_registrazione(e) 
+{ //devo percio caricare il form della registrazione e levare quello del login
 
     //N.B l'ID del form rimane SEMPRE "form-login"
     var item = document.getElementById("form-login");                       // prendo l'item form
@@ -61,7 +62,7 @@ function mostra_registrazione(e) {
     `;
     //!!importante (riga 55) creo bottone effettua login per ripassare alla vista del login nella form
 
-    //aggiorno gli eventi sui nuovi bottoni inseriti
+    //aggiorno gli eventi sui nuovi bottoni inseriti. devo riassegnare gli event handler ogni volta che cambio form, altrimenti i bottoni non avrebbero funzioni associate
     assegnaEvent();
 
     // cambio testo sul bottone submit della form
@@ -80,7 +81,8 @@ function mostra_registrazione(e) {
 }
 
 //funzione chiamata quando si clicca il link "login" dentro al form, cambia l'HTML della form togliendo campi
-function mostra_login(e) {
+function mostra_login(e) 
+{
     var item = document.getElementById("form-login");                   // prendo l'elemento form
     item.setAttribute("name", "form-login");                            // cambio il nome della form
     item.setAttribute("action", "php/validateLogin.php");               // cambio il file php da eseguire dopo il submit della form
@@ -103,7 +105,6 @@ function mostra_login(e) {
                     <input type="password" class="form-control" size="25" name="password" placeholder="Your secret password" minlength="5">
                 </div>
             </div>
-            <div id="login-correct"class="alert" role="alert"></div>
             <div class="col-auto">
                 <div class="input-group mb-1 mt-3">
                     <div class="input-group-prepend">
@@ -133,10 +134,13 @@ function mostra_login(e) {
 }
 
 //funzione che assegna gli eventi per cambiamento form login-registrazione
-function assegnaEvent() {
+function assegnaEvent()
+ {
+
+    //nell'html ci sta sempre solo 1 dei due bottoni
     var login_button = document.getElementById("login-button");             // prendo elemento per switchare tra le form (link "effettua il login" nel form registrazione)
     if (login_button != null)                                               // SE ESISTE quel bottone (esiste solo se il form è di registrazione)
-        login_button.addEventListener("click", mostra_login);               // assegno la funzione per mostrare il form di login nel form di registrazione
+        login_button.addEventListener("click", mostra_login);               // assegno la funzione per mostrare il form di login nel form di registrazione al' onclick del componente
 
 
     var registr_button = document.getElementById("registr-button");         // prendo elemento per switchare tra le form (link "effettua la registrazione" nel form login)
@@ -147,7 +151,7 @@ function assegnaEvent() {
 } 
 
 //funzione che assegna il grado di sicurezza della password inserita, assegnato al campo password del form registrazione
-function validaPsw1(){
+function validaPsw1(){  //attivata onKeyUp
     var psw = document.getElementById("form-login").password.value;     //testo dell'input password del form
         var badge = document.getElementById("password-ok");             //elemento "badge" di bootstrap, per segnalazione password sicura ecc
                                                                         // di default il badge viene creato senza la classe grafica (quella che da il colore) e senza testo (invisibile)
@@ -228,7 +232,7 @@ function validaPsw2() {
     var alert = document.getElementById("password-match");            //elemento "alert" di bootstrap per segnalazione "le password non sono uguali" ecc
                                                                       // di default alert viene creato senza la classe grafica (quella che da il colore) e senza testo (invisibile)
     
-    //se il cmapo conferma password non è stato riempito
+    //se il campo conferma password non è stato riempito
     if(psw2.length == 0){
         alert.classList.remove("alert-success");    //tolgo classe per alert verde
         alert.classList.remove("alert-danger");     //tolgo classe per alert rosso
@@ -246,6 +250,7 @@ function validaPsw2() {
         alert.innerHTML = "Passwords match!"
     }
 }
+
 
 //funzione che cambia il testo del modal che appare per errori di login, di registrazione o la prima registrazione di un utente avvenuta con successo
 function changeModal(title, body1, body2){  //ogni modal ha tre testi (titolo del modal, titolo dell'evento accaduto, testo aggiuntivo)
@@ -278,7 +283,7 @@ function changeModal(title, body1, body2){  //ogni modal ha tre testi (titolo de
 //N.B gli errori di login e registrazione sono gestiti mediante passaggio di parametri nella URL (poiche gestiti da un file esterno PHP non è possibile modificare i parametri attuali della home)
 //viene eseguita "onload" del body
 function controllaLogin() {
-    //funzione che inizializza il localStorage
+    //funzione che inizializza il localStorage(spazio nel browser dove si puo salvare dati in frmato JSon)
     inizializzaStorage();
     var nav_button = document.getElementById("nav-button")  //bottone Login della navbar
     var url = new URL(window.location.href);                //oggetto URL, contiene l'url corrente della home
