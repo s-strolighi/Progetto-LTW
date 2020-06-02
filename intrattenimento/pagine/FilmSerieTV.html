@@ -52,7 +52,7 @@
                 </li>
                 <!--Film e serie-->
                 <li class="nav-item active">
-                    <a class="nav-link" href="FilmSerieTV.html">Film e Serie TV</a>
+                    <a class="nav-link" href="FilmSerieTV.html">Film e serie TV</a>
                 </li>
                 <!--Musica -->
                 <li class="nav-item">
@@ -60,7 +60,7 @@
                 </li>
                 <!--Videogame-->
                 <li class="nav-item">
-                    <a class="nav-link" href="Videogiochi.html">Videogame</a>
+                    <a class="nav-link" href="Videogiochi.html">Videogiochi</a>
                 </li>
             </ul>
             <!-- Tasto Logout -->
@@ -75,19 +75,24 @@
 
 
     <!-- CONTENUTO PAGINA -->
-    <div class="accordion" id="accordionServices">
 
+    <!-- contenitore di tutte le card -->
+    <div class="accordion" id="accordionServices">
         <!-- Netflix card (active) -->
+        <!-- div contenente gli elementi sulla riag (card + bottone "compara") -->
         <div class="row">
             <div class="card">
+                <!-- Titolo -->
                 <div class="card-header text-center" id="netflix-heading" data-toggle="collapse" data-target="#netflix"
                     aria-expanded="true" aria-controls="netflix">
                     <img class="logo logo-active" src="../../assets/img/intrattenimento/FilmSerieNetflixLogo.png">
                     <h4 class="title-fade title-fade-active">Netflix</h4>
                 </div>
 
+                <!-- Testo della card -->
                 <div id="netflix" class="collapse show" aria-labelledby="netflix-heading"
                     data-parent="#accordionServices">
+                    <!-- La classi nel testo servono per prendere le parti di testo da mettere nella tabella di comparazione -->
                     <div class="card-body">
                         <p>
                             Netflix è un <b>servizio di streaming</b> che offre una varietà di serie TV, film, documentari pluripremiati e tanto altro con la 
@@ -110,6 +115,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Bottone a destra della card -->
             <div class="button-div">
                 <button type="button" class="btn btn-outline-light side-button side-button-active">Compara</button>
             </div>
@@ -326,11 +332,10 @@
     </div>
 
 
-    <!-- ZONA COMPARAZIONE riempita dinamicamente da javascript-->
     <h2 class="m-2 mt-3 text-light text-center">Compara i nostri servizi per scegliere il più adatto a te!</h2>
+
     <div id="confronto" class="m-2">
-
-
+        <!-- ZONA COMPARAZIONE riempita dinamicamente da javascript-->
     </div>
 
 </body>

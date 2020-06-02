@@ -5,95 +5,119 @@ body{
    
 }
 
+/* contenitore principale */
 .accordion{
+    /* 2*margin + width superiore al 100% poiche voglio solo le card centrate, non card+bottoni centrati */
+    /* visto che larghezza della card = 60, metto margin 20 così risultera la card al centro */
     margin-left: 20vw;
     width: 75vw;
 }
 
+/* larghezza della card */
 .card{
     width: 60vw;
 }
 
+/* bottoni laterali */
 .side-button{
     margin-left: 2vw;
     margin-top: 1vw;
     transition: 0.5s ease !important;
 }
 
+/* effetto scorrimento quando la relativa card è "attiva" */
 .side-button-active{
    margin-top: 40%;
 }
 
+/* logo nel titolo della card */
 .logo{
     width:4vw;
     height: 4vw;
-    transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* tipo di animazione non lineare (effetto rimbalzo) */
 }
 
+/* effetto ingrandimento logo quando la card è attiva */
 .logo-active {
     width: 7vw;
     height: 7vw;
 }
 
+/* titolo della card (per default invisibile (0px)) */
 .title-fade{
     margin: 0px;
     font-size: 0px;
     transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
+/* effetto ingrandimento del titolo quando card attiva */
 .title-fade-active {
     font-size: 2vw;
 }
 
+/* div che contiene le tabelline per la comparazione */
 #confronto .card{
     width: 100%;
 }
+
+/* !! definisco 4 possibili classi per l'allineamento delle card comparate (max 4 sulla stessa riga) */
+
+/* una sola card comparata */
 .columns-1 {
     float: left;
     width: 100%;
     padding: 8px;
 }
 
+/* due card comparate */
 .columns-2 {
     float: left;
     width: 50%;
     padding: 8px;
 }
 
+/* tre card comparate */
 .columns-3 {
     float: left;
     width: 33.3%;
     padding: 8px;
 }
 
+/* quattro card comparate */
 .columns-4 {
     float: left;
     width: 25%;
     padding: 8px;
 }
 
+
+/* logo sulla tabella */
 .table-logo{
     width: 4vw;
     height: 4vw;
 }
 
+/* titolo sulla tabella */
 .table-title{
     font-size: 25px;
-    transition: 0.4s ease;
+    transition: 0.3s ease;
 }
 
+/* ingrandisco il titolo della tabella su hover (per far capire che è presente un link)*/
 .table-title:hover{
     font-size: 35px;
 }
 
+/* tolgo underline dal link del titolo della tabella */
 #confronto a{
     text-decoration: none;
 }
 
 
+/* quando lo schermo diventa troppo piccolo, riduco il numero di card massime sulla stessa linea */
 @media(max-width: 1230px) {
-    .columns-4 {
-        width: 33.3%;
+    .columns-4 {            /* classe per 4 card sulla stessa linea */
+        width: 33.3%;       /* codice per 3 card sulla stessa linea, le tabelle con classe "4" saranno comunque disposte a 3 */
     }
 }
 
@@ -118,7 +142,8 @@ body{
     }
 
     .card {
-        width: 75vw;
+        margin-left: 0px;
+        width: 65vw;
     }
 
     .logo {
@@ -139,12 +164,5 @@ body{
     .table-logo {
         width: 10vw;
         height: 10vw;
-    }
-}
-
-
-@media (max-width: 550px) {
-    .card {
-        width: 70vw;
     }
 }

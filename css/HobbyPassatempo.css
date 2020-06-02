@@ -7,6 +7,7 @@ body{
     overflow: hidden;
 }
 
+/* dimensione e posizione contenitore ajax */
 .content{
     width: 80vw;
     margin-left: 10vw;
@@ -14,20 +15,20 @@ body{
 
 }
 
+/* contenitore del dropdown del singolo gioco */
 .content .dropdown-menu{
     width: 70%;
     background-color: rgba(255, 255, 255, 0.92);
     border: 1px solid #1e2124;
 }
 
-
+/* testo del dropdown del singolo gioco  */
 .item{
-    width: 99%;
     color: #1e2124;
     font-weight: 400;
 }
 
-
+/* contenitore dell'area di gioco */
 .content iframe{
     width: 100%;
     height: calc(100% - 38px);

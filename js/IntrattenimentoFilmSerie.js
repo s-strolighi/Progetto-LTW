@@ -73,18 +73,21 @@ function toggleTable(current){
         }
     }
 
+    //salvo dal testo i campi che voglio comparare
     var costo = current.getElementsByClassName("costo")[0].innerText;
     var esclusive = current.getElementsByClassName("esclusive")[0].innerText;
     var formato = current.getElementsByClassName("formato")[0].innerText;
     var service_link = current.getElementsByClassName("link")[0].href;
     var logo_path = current.getElementsByClassName("logo")[0].src;
     var extra = "";
+    //se ci sono più "extra" li unisco
     for (var i = 0; i < current.getElementsByClassName("extra").length; i++){
         if(i > 0){
             extra += " - ";
         }
         extra += current.getElementsByClassName("extra")[i].innerText;
     }
+    
     //se esco dal for senza aver trovato lo stesso figlio, lo aggiungo alla tabella
     table.innerHTML += `
         <div class="column">
