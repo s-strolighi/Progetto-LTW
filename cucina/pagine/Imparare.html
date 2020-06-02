@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <!--pagina responsive-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -26,16 +27,15 @@
   <title>Imparare</title>
 </head>
 
-<body onload="assegnaEventHandler();">
+<body onload="assegnaEventHandler();"> <!-- funzione  per calcolare il prezzo massimo visualizzato dello slider e le card da visualizzare-->
+
   <!-- navbar-->
   <nav class="sticky-top navbar-expand-lg navbar navbar-dark bg-dark mb-3">
-    <!--Inserisci stile in file css-->
     <!--Logo-->
-    <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="60" height="60"
-        alt="" /></a>
-    <!--Immagine da cambiare-->
+    <a class="navbar-brand" href="../../index.html"><img src="../../assets/img/logo.png" width="60" height="60" alt="" /></a>
 
-    <!--bottone che apre la Nvbar ridimensionata-->
+
+    <!--bottone che apre la Navbar ridimensionata-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -66,17 +66,21 @@
     </div>
   </nav>
 
+ <!--resto della pagina divisa in 2 colonne-->
+
+
   <!--SIDEBAR-->
-  <div class="sidebar">
+  <div class="sidebar"> <!-- prima colonna divisa in 2 righe-->
     <!--range slider-->
-    <div class="slidecontainer">
+
+    <div class="slidecontainer"> <!-- prima riga con il filtra per prezzo-->
       <h2>Filtra per prezzo</h2>
-      <input type="range" min="0" max="" value="100" class="slider" id="myRange">
+      <input type="range" min="0" max="" value="100" class="slider" id="myRange"> <!-- input type=range per fare lo slider. nel css uso appearance per togliere lo stile base e aggiungere il mio-->
       <span>Prezzo massimo: </span><span id="demo"></span>
     </div>
 
-    <!--filtra radio-->
-    <div class="filtra-radio" id="filtro">
+    
+    <div class="filtra-radio" id="filtro"><!--seconda riga con il filtra radio-->
       <h2>Filtra per categoria</h2>
       <ul id="myUL">
         <li>
@@ -99,10 +103,12 @@
     </div>
   </div>
 
-  <!--CONTENITORE CARDS-->
-  <div class="contenitore-cards" id="contenitore">
+
+  <!-- seconda colonna CONTENITORE CARDS-->
+
+  <div class="contenitore-cards" id="contenitore">  <!--id contenitore al container delle carte per poterle individuare nel javascript-->
     <!--Prima carta   // class libro/tutorial/corso per filtro per categoria-->
-    <div class="card mb-3 libro" id="card0">
+    <div class="card mb-3 libro" id="card0"> <!-- ogni card ha un id diverso-->
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="../../assets/img/cucina/ImparareCard1.jpg" class="card-img" alt="...">

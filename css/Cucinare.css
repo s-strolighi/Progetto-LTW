@@ -5,6 +5,17 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#myUL  /*stile degli elenchi nelle tabelle di info*/
+{
+    list-style-type: none; /*toglie lo stile di default delle liste*/
+    padding: 0;
+    margin: 0;
+    margin-top: 5%;
+    text-align: left;
+    padding-left: 45%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
+  
+  }
 h2{                         /*titoli delle portate nella sezione delle ricette*/
     text-decoration: none;
     font-size: xx-large;
@@ -27,12 +38,6 @@ font-size: 120%;
 text-align: center;
 }
 
-.tab ul {                /*stile degli elenchi nelle tabelle di info*/
-    margin-top: 5%;
-    padding: 0;
-    text-align: left;
-    padding-left: 45%;  /*in questo modo riesco a visualizzare la lista al centro ma con le voci allineate a sinistra*/
-  }
 
 li span{                  /* i nomi delle voci nella tabella dellle info generali*/
     font-style: italic;
@@ -235,7 +240,7 @@ height: 15%;
 {
     height: 0; /*all'inizio la tabella ha altezza nulla*/
     width: 100%; 
-    background-color: whitesmoke; 
+    background-color: white; 
     overflow: auto;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
 }
@@ -244,7 +249,7 @@ height: 15%;
 {
     height: 0; /*all'inizio altezza nulla*/
     width: 100%;  
-    background-color: whitesmoke;
+    background-color: white;
     overflow: auto; /* scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
 }
@@ -252,7 +257,7 @@ height: 15%;
 {
     height: 100%; /*questa è la tabella visualizzata all'inizio*/
     width: 100%; 
-    background-color: whitesmoke;
+    background-color: white;
     overflow: auto; /* scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
 }

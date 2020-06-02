@@ -10,7 +10,8 @@ body {
 }
 
 /*spazio tra le carte + altezza delle carte*/
-.card{
+.card
+{
     margin-top:5%;
     height:20vw;
 }
@@ -44,6 +45,9 @@ small{
 }
 
 /*INIZIO CSS DELLO SLIDER*/
+
+/*adattamento dello stile anche a seconda del browser*/
+
 /*css per il range slider*/
 .slidecontainer {
     width: 100%; 
@@ -53,7 +57,7 @@ small{
   /*slider*/
   .slider {
     -webkit-appearance: none;  
-    appearance: none;
+    appearance: none;           /*leva lo stile base dello slider*/
     width: 100%; 
     height: 25px; 
     background: #d3d3d3; 
@@ -71,7 +75,7 @@ small{
   /* modifiche al look con -webkit- e -moz-*/
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; 
-    appearance: none;
+    appearance: none;     
     width: 25px; 
     height: 25px; 
     background: #4CAF50; 
@@ -86,6 +90,8 @@ small{
   }
 /*FINE CSS DELLO SLIDER*/
 
+
+
 /*sidebar*/
 .sidebar {
     margin: 0;
@@ -99,9 +105,8 @@ small{
     opacity:0.85;
   }
 
-  /*in questo modo gli stili gia esistenti di elenchi puntato sono tolti(senza questo verrebbe il classico elenco con il pallino a sinistra di tutte le voci*/
+  /*in questo modo gli stili gia esistenti di elenchi puntati sono tolti(senza questo verrebbe il classico elenco con il pallino a sinistra di tutte le voci*/
   #myUL {
-    /* Remove default list styling */
     list-style-type: none;
     padding: 0;
     margin: 0;

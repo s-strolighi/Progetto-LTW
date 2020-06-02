@@ -2,7 +2,7 @@ body{
     background-image:url("../assets/img/hobby/pattern.png");
     z-index:-1;
 }
-/*sidebar*/
+/*stile sidebar*/
 .sidebar {
     margin: 0;
     top:86px;
@@ -17,8 +17,9 @@ body{
 /*ridimensionamento bottoni*/
 .sidebar input[type="button"]{
     width:100%;
-    font-size: calc(1vw + 12px);
+    font-size: calc(1vw + 12px); /*cosi i bottoni sono responsive*/
 }
+
 /*margine della parte col contenuto (presente solo per la versione per pc)*/
 .contenitore-sezioni{
     margin-left:18vw;
@@ -32,15 +33,18 @@ body{
     padding-left:2vw;
     padding-right:2vw;
 }
+
 /*dimensionamento immagini*/
 .img-reduced{
     width:491px;
     max-width:100%;
 }
+
 /*per andare a capo senza usare br*/
 .codice{
     white-space:pre-line;
 }
+
 /*linea nera che separa le varie sezioni (stile dell'elemento hr)*/
 .separatore{
     margin-bottom:0px;

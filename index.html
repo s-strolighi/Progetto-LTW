@@ -23,7 +23,7 @@
         <title>Free-Time Zone Home</title>
 
     </head>
-    <body onload="assegnaEvent(); controllaLogin()">
+    <body onload="assegnaEvent(); controllaLogin()">  <!-- le due funzioni vengono triggerate appena caricato il documento-->
         <!---  Navbar  -->
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
             <!-- Logo -->
@@ -56,18 +56,22 @@
 
 
 
-        <!-- Login Modal -->
+        <!-- Login Modal(modal = pop up) -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
+                     <!-- titolo del form-->
                     <div class="modal-header">
                         <h5 class="modal-title modal-lg" id="loginModalLabel">Form Login</h5>
+                       <!-- bottone per chiuedere-->
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span> <!-- area hidden cambia in false quando premo log in-->
                         </button>
                     </div>
+                    <!-- le text area nel corpo-->
                     <div class="modal-body">
+                        <!-- la form manda i dati al file php che comunica con il DB-->
                         <form id="form-login" action="php/validateLogin.php" method="POST" name="form-login">
                             <!-- Form di Login (per default) poi cambiato da funzioni javascript tramite id-->
                             <div class="form-row align-items-center">
@@ -90,7 +94,7 @@
                                 </div>
                                 <div class="input-group mb-1 mt-3">
                                     <div class="input-group-prepend">
-                                        <!-- Bottone che triggera le funzioni javascript per il cambiamento della form -->
+                                        <!-- Bottone che triggera le funzioni javascript per il cambiamento della form mostra_registrazione-->
                                         <div>Non hai un account? Effettua la <a href="#"
                                                 id="registr-button">registrazione</a>!</a>
                                         </div>
@@ -108,7 +112,7 @@
         </div>
 
 
-        <!-- Message Modal -->
+        <!-- Message Modal riempito dinamicamente quando c'è un errore con innerHtml -->
         <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
         <!--  Page name -->
