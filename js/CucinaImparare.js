@@ -1,16 +1,26 @@
 /*JAVASCRIPT DELLO SLIDER E DEL FILTRO PER CATEGORIE*/
+
 /*da effettuare onload del body, assegna l'event handler oninput allo slider e onclick all'elemento radio*/
-function assegnaEventHandler(){
-    var slider = document.getElementById("myRange");  
-    var output = document.getElementById("demo");
-    var contenitore=document.getElementById("contenitore");
+function assegnaEventHandler()
+{
+    var slider = document.getElementById("myRange");   /* prendo lo slider dal DOM*/
+    var output = document.getElementById("demo");      /* il prezzo che verra visualizzato nel filtro per prezzo*/
+    var contenitore=document.getElementById("contenitore"); /*prendo il contenitore che contiene tutte le card*/
+
+
     /*prendo le card del documento e le inserisco in un array in modo che possa recuperarle anche dopo averle rimosse dal DOM!*/
-    var cards=document.getElementsByClassName("card"); 
-    var arrayCards=[];
-    var prezzomax=0;
-    for (var i=0;i<cards.length;i++){
+    var cards=document.getElementsByClassName("card"); /*array delle card*/
+    var arrayCards=[]; /*inizializzo l'array di carte che devono essere visualizzate */
+
+    var prezzomax=0; /*imposto il prezzo massimo iniziale a zero*/
+    for (var i=0;i<cards.length;i++) /*scorro tutte le carte*/
+    {           
+        /*Math.ceil ritorna Il più piccolo intero maggiore o uguale al numero passato come parametro.*/
         var prezzoAttuale=parseInt(Math.ceil(cards[i].getElementsByClassName("prezzo")[0].innerHTML));
-        if (prezzoAttuale > prezzomax) prezzomax=prezzoAttuale;   /*cerco il prezzo massimo cosi da inserirlo come valore dell'attributo max dello slider*/
+        /*prezzoAttuale = piu piccolo numero intero maggiore o uguale al prezzo della carta attuale*/
+
+        
+        if (prezzoAttuale > prezzomax) prezzomax=prezzoAttuale;   /*se il prezzo calcolato è ma*/
         arrayCards[i]=cards[i];
         arrayCards[i].accettabilePrezzo=true;
         arrayCards[i].accettabileTipo=true;
