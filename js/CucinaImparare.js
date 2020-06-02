@@ -20,7 +20,8 @@ function assegnaEventHandler()
         /*prezzoAttuale = piu piccolo numero intero maggiore o uguale al prezzo della carta attuale*/
 
         
-        if (prezzoAttuale > prezzomax) prezzomax=prezzoAttuale;   /*se il prezzo calcolato è ma*/
+        if (prezzoAttuale > prezzomax) prezzomax=prezzoAttuale;   /*se il prezzo calcolato è maggiore di quello attualmente visualizzato, cambio il prezzo visualizzato*/
+        
         arrayCards[i]=cards[i];
         arrayCards[i].accettabilePrezzo=true;
         arrayCards[i].accettabileTipo=true;

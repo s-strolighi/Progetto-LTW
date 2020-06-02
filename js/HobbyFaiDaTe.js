@@ -1,35 +1,50 @@
-$(document).ready(function(){
+$(document).ready(function()     //il codice della funzione al'interno della ready verra eseguito solo una volta che il DOM è stato caricato
+{
     //Variabili utili per l'event handler di scroll
-    var arrayLink=$(".sidebar-button"); //tutti i button della sidebar
-    var lastLink=arrayLink[0]; //primo button della sidebar
+    var arrayLink=$(".sidebar-button"); //prendo tutti i button della sidebar
+    var lastLink=arrayLink[0]; //prendo il primo button della sidebar
 
     //assegno un numero ad ogni sezione che serve per creare una corrispondenza tra sezione e bottone
     var contatore=0;
-    $(".sezione").each(function(){
-        $(this).prop("numero",contatore);
+    $(".sezione").each(function()/* each = la funzione passata verra eseguita per ogni elemento del DOM con la classe sezione (quindi per ogni porzione di pagina associata a un bottone)*/
+    {
+        $(this).prop("numero",contatore); /*per ogni sezione della pagina gli assegna una proprieta numero e la setta a contatore(che aumenta ogni volta)*/
         contatore++;
     })
 
     //il click sul primo link va gestito separatamente per portare la pagina all'inizio
-    $("#primo-link").click(function(){
-            window.scrollTo({top : 0});  //Per scrollare la versione per pc
-            document.getElementsByClassName("contenitore-sezioni")[0].scrollTo({top : 0});  //per scrollare la versione per telefono
+    $("#primo-link").click(function()   
+    {
+            window.scrollTo({top : 0});  //scrolla la pagina alle coordinate specificate(quindi all'inizio) //Per scrollare la versione per pc
+            document.getElementsByClassName("contenitore-sezioni")[0].scrollTo({top : 0}); //scrolla tutta la seconda colonna contenente le sezioni all'inizio della pagina //per scrollare la versione per telefono
     });
+
+
+
 
     //gestisco lo scroll di due elementi diversi (window e la div "contenitore-sezioni") nel seguente modo:
     // 1) se sono al pc (la larghezza della finesta è maggiore di 750px) gestisco lo scroll della finestra
     // 2) altrimenti se sono al telefono gestisco lo scroll della div "contenitore-sezioni"
-    if (window.innerWidth > 750){
-        $(window).scroll(function(){
+
+    if (window.innerWidth > 750)//se sono al pc
+    {
+        //PER SOTTOLINEARE IL BOTTONE GIUSTO QUANDO SCROLLO LA PARTE DI PAGINA CO LE SEZIONI:
+
+        $(window).scroll(function()  //quando scrolliamo la parte con le sezioni
+        {  
+
             var newElem;
-            var actualHeight=window.pageYOffset;    //offset attuale della pagina
+            var actualHeight=window.pageYOffset;        //offset attuale della pagina
             var windowHeight=window.innerHeight*40/100; //40% dell'altezza della finestra (usato per la sottolineatura del bottone giusto)
             var window80=window.innerHeight*80/100;     //80% dell'altezza della finesta  (usato per l'effetto di fadeIn)
             //alla fine di questo "ciclo" avrò trovato l'elemento al quale mettere la sottolineatura
             //e se non era già visibile lo avrò reso visibile
-            $(".sezione").each(function(){
-                    if ($(this).offset().top <= actualHeight + windowHeight){
-                        newElem = $(this);
+
+            $(".sezione").each(function()/*mentre si sta scrollando scorro le varie sezioni nella seconda colonna*/
+            {
+                    if ($(this).offset().top <= actualHeight + windowHeight)//se l'offset dell'attuale sezioni dal top della pagina è minore
+                    {
+                        newElem = $(this); //allora salvo quell elemento per renderlo visibile e sottolinearlo
                     }
                     if ($(this).css("opacity")==0 && $(this).offset().top <= actualHeight + window80){
                         $(this).fadeTo(500,1);
