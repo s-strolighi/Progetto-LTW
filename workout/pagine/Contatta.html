@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+ <html> 
+     <head>
+         <title>Contatta allenatore</title>
+
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- per rendere il sito responsive-->
+
+  <!-- collego i fogli di stle css e i fogli javascript fatti da me e di bootstrap-->
+  <script src="../../js/WorkoutContatta.js"></script>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/WorkoutContatta.css">
+
+
+  
+
+
+    <body> 
+      
+
+
+        <!--PRIMA Navbar-->
+
+  <!-- fixed top la tiene ferma in alto anche mentre scrollo-->
+  <nav id="nav-fixed" class="fixed-top navbar-expand-lg navbar navbar-dark bg-dark shadow-lg rounded mt-0">
+
+    <!--Logo-->
+    <a class="navbar-brand" href="../../index.html">
+      <img src="../../assets/img/logo.png" width="60" height="60" alt="">
+      <!--bisogna mettere il css inline e impostare la larghezza a 100% per resndere l immagine responsive-->
+    </a>
+
+    <!--bottone che apre la Nvbar ridimensionata-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--sezioni della Navbar-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="../HomeWorkout.html">Home </a>
+          <!-- <span class="sr-only">(current)</span> -->
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="Esercizi.html">Esercizi</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="Schede.html">Schede</a>
+          <!--ml sta per margin left (spacing in bootstrap)-->
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="Contatta.html">Contatta allenatore</a>
+        </li>
+      </ul>
+      <!-- Tasto Logout -->
+      <div class="text-center">
+        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="logout();">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+   <!--finite le navbar metto il titolo-->
+   <h1 class="title text-center text-light">Complila il form per contattare l'allenatore</h1>
+
+
+ 
+<div class="container">
+  <div class="row g-3">
+    <div class="col">
+      <input id="nome" type="text" class="form-control" placeholder="Nome" aria-label="First name">
+    </div>
+    <div class="col">
+      <input id="cognome" type="text" class="form-control" placeholder="Cognome" aria-label="Last name">
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col">
+      <select class="custom-select">
+        <option value="1"  id="nomeallenatore" selected>Scegli quale dei nostri allenatori vuoi contattare</option>
+        <option value="Lorenzo">Lorenzo</option>
+        <option value="Christian">Christian</option>
+        <option value="Donika">Donika</option>
+        <option value="Manuel">Manuel</option>
+      </select>
+      <!--<input id="nomeallenatore" type="text" class="form-control" placeholder="Nome allenatore" aria-label="First name">-->
+    </div>
+  </div>
+
+
+
+  <div class="row g-3">
+    <div class="col">
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Voglio modificare la mia scheda
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+    <label class="form-check-label" for="flexRadioDefault2">
+      Voglio una nuova scheda
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+    <label class="form-check-label" for="flexRadioDefault2">
+      Voglio prenotare un allenamento con il personal trainer
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+    <label class="form-check-label" for="flexRadioDefault2">
+      Voglio una nuova scheda
+    </label>
+  </div>
+</div>
+</div>
+
+
+<div class="row g-3">
+<div class="col">
+<div class="mb-3">
+  <textarea placeholder="Allega messaggio per l'allenatore" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+</div>
+</div>
+
+<div class="col-12">
+  <button onclick="return validateForm()" class="btn btn-success" type="submit">Invia messaggio</button>
+</div>
+
+
+</div> 
+
+
+
+ 
+
+
+
+<!-- Caricamento di jquery bootstrap dopo il caricamento degli elementi html-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    </head> 
+ 
+
+
+
+    </body>
+    </html>
